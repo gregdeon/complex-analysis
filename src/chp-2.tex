@@ -1,5 +1,194 @@
 \documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\renewcommand{\emph}{\textbf}
+
 \begin{document}
-\section{Frame 11}
+
+\section{Frame 12 -- Functions of Complex Variables}
+\subsection{Functions}
+If $S$ is a set of complex numbers, then a \emph{function} $f$ is a rule that assigns a complex number $w$ to each $z$ in $S$. The number $w$ is called the \emph{value} of $f$ at $z$. We denote it as
+\[
+	w = f(z)
+\]
+The set $S$ is called the \emph{domain of definition} of $f$. Note that we need both a rule ($f$) and a domain ($S$) for a function to be well defined.
+
+Suppose that $w = u + iv$ and $z = x + iy$. Then,
+\[
+	u + iv = f(x + iy)
+\]
+Then, we can express $f(z)$ as a pair of real functions of $x$ and $y$:
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+Alternatively, we could use polar coordinates to write
+\[
+	u + iv = f(re^{i\theta})
+\]
+so
+\[
+	f(z) = u(r, \theta) + iv(r, \theta)
+\]
+
+\textit{Example: the function $f(z) = z^2$ can be written as
+\begin{align*}
+	f(x + iy) &= (x + iy)^2 \\
+	&= (x^2 - y^2) + i2xy \\
+\intertext{so}
+	u(x, y) &= x^2 - y^2 \\
+	v(x, y) &= 2xy
+\end{align*} 
+In polar coordinates,
+\begin{align*}
+	f(x + iy) &= (re^{i\theta})^2 \\
+	&= r^2 e^{i2\theta} \\
+	&= r^2 \cos 2\theta + ir^2 \sin 2\theta
+\intertext{so}
+	u(r, \theta) &= r^2 \cos 2\theta \\
+	v(r, \theta) &= r^2 \sin 2\theta
+\end{align*}
+}
+
+
+\subsection{Real-Valued Functions}
+We say that $f$ is a \emph{real-valued function} if $v$ is zero everywhere. 
+
+\textit{Example: one real-valued function is
+\[
+	f(z) = |z|^2 = x^2 + y^2 + i0
+\]
+}
+
+
+\subsection{Polynomials}
+If $n$ is a non-negative integer and $a_0, a_1, a_2, \dots, a_n$ are complex numbers with $a_n \neq 0$, then the function
+\[
+	P(z) = a_0 + a_1 z + a_2 z^2 + \dots + a_n z^n
+\]
+is a \emph{polynomial} of degree $n$. Note that this sum has a finite number of terms and that the domain of definition is the entire $z$ plane.
+
+As in real numbers, a \emph{rational function} is a quotient of two polynomials:
+\[
+	R(z) = \frac{P(z)}{Q(z)}
+\]
+A rational function is defined everywhere that $Q(z) \neq 0$. 
+
+
+\subsection{Multi-Valued Functions}
+A generalization of a function is a rule that assigns more than one value to a point $z$. These \emph{multiple-valued functions} are usually studied by taking one of the possible values at each point and constructing a single-valued function.
+
+\textit{Example: we know that we can write
+\[
+	z^{1/2} = \pm \sqrt{r} e^{i\theta/2}
+\]
+where we denoted $-\pi < \theta \leq \pi$ as the \emph{principal value} of $\text{arg} z$. To turn this into a single valued function, we can choose the positive value of $r$ and write
+\[
+	f(z) = \sqrt{r} e^{i\theta / 2}
+\]
+Then, $f$ is well-defined on the entire plane.
+}
+
+\subsection{Exercises}
+\textbf{1(a)} 
+The function
+\[
+	f(z) = \frac{1}{z^2 + 1}
+\]
+is defined everywhere except where $z^2 + 1 = 0$; ie:
+\[
+	z \neq \pm i
+\]
+
+\textbf{1(b)}
+The function
+\[
+	f(z) = \text{Arg}\Big(\frac{1}{z}\Big)
+\]
+is defined wherever $\frac{1}{z}$ is defined:
+\[
+	z \neq 0
+\]
+
+\textbf{1(c)}
+The function
+\[
+	f(z) = \frac{z}{z + \bar z}
+\]
+can be written as
+\[
+	f(x, y) = \frac{x + iy}{(x + iy) + (x - iy)} = \frac{x + iy}{2x} = \frac{1}{2} + i \frac{y}{x}
+\]
+so the domain is
+\[
+	\text{Re}(z) \neq 0
+\]
+
+\textbf{1(d)}
+The function
+\[
+	f(z) = \frac{1}{1 - |z|^2}
+\]
+is equivalent to
+\[
+	f(r, \theta) = \frac{1}{1 - r^2}
+\]
+so the domain is
+\[
+	r \neq 1
+\]
+
+
+\textbf{2}
+Substituting $z = x + iy$ gives
+\begin{align*}
+	f(x, y) &= (x + iy)^3 + (x + iy) + 1 \\
+	&= x^3 + 3x^2(iy) + 3x(iy)^2 + (iy)^3 + x + iy + 1 \\
+	&= (x^3 - 3xy^2 + x + 1) + i(3x^2y - y^3 + y) 
+\intertext{so}
+	u(x, y) &= x^3 - 3xy^2 + x + 1 \\
+	v(x, y) &= 3x^2y - y^3 + y
+\end{align*}
+
+
+\textbf{3}
+Using the two expressions
+\begin{align*}
+	x &= \frac{z + \bar{z}}{2} \\
+	y &= \frac{z - \bar{z}}{2i}
+\end{align*}
+gives
+\begin{align*}
+	f(z) &= 
+	\Big(\frac{z + \bar{z}}{2}\Big)^2 
+	- \Big(\frac{z - \bar{z}}{2i}\Big)^2 
+	- 2 \frac{z - \bar{z}}{2i} \\
+	& \quad + i\Big[2 \frac{z + \bar{z}}{2} \Big(1 - \frac{z - \bar{z}}{2i}\Big) \Big] \\
+% 	
+	&= \frac{1}{4} (z^2 + 2z\bar{z} + \bar{z}^2 + z^2 - 2z\bar{z} + \bar{z}^2) 
+	+ i z - i \bar{z} \\
+	& \quad + i \Big[ z + \bar{z} + \frac{iz^2}{2} - \frac{i\bar{z}^2}{2}\Big] \\
+%
+	&= \frac{1}{2} (z^2 + \bar{z}^2) + 2iz - \frac{iz^2}{2} + \frac{\bar{z}^2}{2} \\
+%
+	&= \bar{z}^2 + 2iz
+\end{align*}
+
+
+\textbf{4}
+Using
+\[
+	z = re^{i\theta}
+\]
+the function can be written as
+\begin{align*}
+	f(z) &= re^{i\theta} + \frac{1}{re^{i\theta}} \\
+	&= re^{i\theta} + \frac{1}{r} e^{-i\theta} \\
+	&= (r + \frac{1}{r}) \cos \theta + i(r - \frac{1}{r}) \sin \theta
+\end{align*}
+
+
+
+
 
 \end{document}
