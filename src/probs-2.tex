@@ -2,6 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{parskip}
+\usepackage{tikz}
 \renewcommand{\emph}{\textbf}
 
 \begin{document}
@@ -105,7 +106,120 @@ the function can be written as
 \end{align*}
 
 
+\clearpage
+\section{Frame 14 -- Mappings by the Exponential Function}
+\textbf{1}
+We saw earlier that the hyperbolas
+\[
+	x^2 - y^2 = c_1
+\]
+map onto the horizontal lines $u = c_1$ and the hyperbolas
+\[
+	2xy = c_2
+\]
+map onto the vertical lines $v = c_2$. Thus, a domain on the z-plane that maps onto $1 \le u \le 2$ and $1 \le v \le 2$ is
+\[
+	1 \le x^2 - y^2 \le 2	\quad	1 \le 2xy \le 2
+\]
+A sketch of this region is:
+\begin{center}
+\begin{tikzpicture}[scale=3]
+	\draw [->] (-0.2,0) to (2,0) node[right]{$x$};
+	\draw [->] (0,-0.2) to (0,2) node[left] {$y$};
+	
+	\fill [fill=blue]
+		plot [domain=1.272:1.554] (\x, {2 / (2*\x)}) --
+		plot [domain=1.554:1.455] (\x, {sqrt(\x*\x - 2)}) --
+		plot [domain=1.455:1.099] (\x, {1 / (2*\x)}) --
+		plot [domain=1.099:1.272] (\x, {sqrt(\x*\x - 1)});
+	\draw [thick, domain=0.25:2]  plot [smooth] (\x, {1 / (2*\x)}) node[right]{$v = 1$};
+	\draw [thick, domain= 0.5:2]  plot [smooth] (\x, {2 / (2*\x)}) node[right]{$v = 2$};
+	\draw [thick, domain=1:2]     plot [smooth] (\x, {sqrt(\x*\x - 1}) node[right]{$u = 1$};
+	\draw [thick, domain=1.415:2] plot [smooth] (\x, {sqrt(\x*\x - 2}) node[right]{$u = 2$};
+\end{tikzpicture}
+\end{center}
 
+
+\textbf{2}
+The first hyperbola can be written as
+\[
+	y^2 - x^2 = |c_1|
+\]
+Then, substitution into the $v$ equation gives
+\[
+	u = c_1, \quad	v = \begin{cases}
+		 2x \sqrt{x^2 + |c_1|},	& y > 0 \\
+		-2x \sqrt{x^2 + |c_1|},	& y < 0 \\
+	\end{cases}
+\]
+This maps out the entire $v$ line as $x$ moves right (on the top branch) or left (on the bottom branch).
+
+The second hyperbola can be written as
+\[
+	2xy = -|c_2|
+\]
+and substituting this into the $u$ equation gives
+\[
+	u = x^2 - \frac{c_2^2}{4x^2}, 	\quad 	v = c_2 
+\]
+This maps out the entire $u$ line: as $x$ gets large in magnitude, so too does $u$. A sketch of these mappings is:
+\begin{center}
+\begin{tikzpicture}[scale=1]
+	\draw [->] (-3,0) -- (3,0) node[right]{$x$};
+	\draw [->] (0,-3) -- (0,3) node[right]{$y$};
+	
+	\draw [thick, ->]  plot [domain=-3:3] (\x, { sqrt(\x*\x + 1)});
+	\draw [thick, ->]  plot [domain=3:-3] (\x, {-sqrt(\x*\x + 1)});
+	\draw [dashed, ->] plot [domain=0.33:3] (\x, {-2 / (2*\x)});
+	\draw [dashed, ->] plot [domain=-0.33:-3] (\x, {-2 / (2*\x)});
+	
+	\draw [->] (4,0) -- (10,0) node[right]{$u$};
+	\draw [->] (7,-3) -- (7,3) node[right]{$v$};
+	
+	\draw [thick, ->] (5,-3) -- (5,3) node[right]{$u = c_1$};
+	\draw [dashed, ->] (4,-2) -- (10,-2) node[right]{$v = c_2$};
+\end{tikzpicture}
+\end{center}
+
+
+\textbf{3}
+The image of the sector $r \le 1, 0 \le \theta \le \pi/4$ under the mapping $w = z^n$ is
+\[
+	\rho \le 1,	\quad	0 \le \theta \le n\frac{\pi}{4}
+\]
+A sketch of these images for $n = 2, 3, 4$ is:
+\begin{center}
+\begin{tikzpicture}[scale=3, smooth]
+	\draw [->] (-1.5,0) -- (1.5,0) node[right]{$x$};
+	\draw [->] (0,-0.5) -- (0,1.5) node[right]{$y$};
+	
+	\fill[fill=blue] (1,0) -- plot [domain=1:-1] (\x, {sqrt(1 - \x*\x)}) --
+		(-1,0) -- (1,0);
+	\fill[fill=green] (1,0) -- plot [domain=1:-0.707] (\x, {sqrt(1 - \x*\x)}) --
+		(135:1) -- (0,0) -- (1,0);
+	\fill[fill=red] (1,0) -- plot [domain=1:0] (\x, {sqrt(1 - \x*\x)}) --
+		(0,0) -- (1,0);
+	\draw [thick] (0,0) -- (1,0);
+	\draw [thick] (0,0) -- ++ (90:1);
+	\draw [thick] (0,0) -- ++ (135:1);
+	\draw [thick] (0,0) -- ++ (180:1);
+	\draw [thick] plot [domain=1:-1] (\x, {sqrt(1 - \x*\x});
+	\node [above right] at (0.707, 0.707){$n = 2$};
+	\node [above left] at  (-0.4, 0.9)   {$n = 3$};
+	\node [above left] at  (-0.9, 0.4)   {$n = 4$};
+\end{tikzpicture}
+\end{center}
+
+
+\textbf{4}
+If $z$ follows the straight line $ay = x$, then the mapping $w = e^z$ is
+\begin{align*}
+	w &= e^{x + iy} \\
+	&= e^{ay}e^{iy} \\
+	&= e^{a\phi} e^{i\phi} \\
+	&= \rho e^{i\phi}
+\end{align*}
+where $ \rho = a\phi$.
 
 
 \end{document}
