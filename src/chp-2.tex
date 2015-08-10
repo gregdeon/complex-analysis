@@ -356,7 +356,24 @@ the limit as $z$ approaches a point $z_0$ is the polynomial's value:
 \]
 
 
+\clearpage
+\section{Frame 17 -- Limits Involving Infinity}
+\subsection{The point at infinity}
+Sometimes, it is useful to include the \emph{point at infinity} with the complex plane. This point is denoted by $\infty$. In order to visualize it, the complex plane can be drawn with a unit sphere centered at the origin. Then, a line can be drawn from the top of the sphere (or the \textit{north pole}, denoted by $N$) to any point on the plane; the line will pass through exactly one other point $P$ on the sphere. This correspondence (between points on the plane, $z$, and the sphere, $P$) is called a \emph{stereographic projection}, and the sphere is known as the \emph{Riemann sphere}.
 
+No point in the plane corresponds to the point $N$. We can let $N$ correspond to the point at infinity, giving us a one-to-one mapping between points on the sphere and points in the extended complex plane. 
 
+We will make the distinction that a point $z$ is a point in the finite plane unless we specifically describe the point at infinity -- we will specifically mention $\infty$.
+
+\subsection{Neighbourhoods around infinity}
+Next, we can define neighbourhoods around the point at infinity. Looking at the Riemann sphere, we notice that all of the points $P$ in the upper hemisphere project to points $z$ outside of the unit disk. 
+
+Further, if $\epsilon$ is a small, positive number, then points in the plane such that
+\[
+	|z| > \frac{1}{\epsilon}
+\]
+correspond to points on the sphere close to $N$. Thus, we call the set $|z| > 1/\epsilon$ an \emph{($\epsilon$) neighbourhood} of $\infty$.
+
+\subsection{Limits with infinity}
 
 \end{document}
