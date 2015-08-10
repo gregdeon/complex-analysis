@@ -208,5 +208,91 @@ The image of this region under the mapping $w = e^z$ is
 This is a one-to-one mapping if $d - c < 2\pi$. In particular, the region with $c = 0, d = \pi$ is mapped onto half of a circular ring.}
 
 
+\clearpage
+\section{Frame 15 -- Limits}
+\subsection{Definitions}
+Suppose that a function $f$ is defined at all points $z$ in some deleted neighborhood of $z_0$. The statement that the number $w_0$ is the \emph{limit} of $f(z)$ as $z$ approaches $z_0$ means that the point $w = f(z)$ can be made \textit{arbitrarily close} to $w_0$ if we choose $z$ close enough to $z_0$. We write this as
+\[
+	\lim_{z \to z_0} f(z) = w_0
+\]
+
+To be more precise, if this limit exists, then for each positive number $\epsilon$, there is a positive number $\delta$ such that
+\[
+	|f(z) - w_0| < \epsilon \text{ whenever } 0 < |z - z_0| < \delta
+\]
+
+Geometrically, this definition says that each $\epsilon$ neighbourhood around $w_0$ has a corresponding deleted $\delta$ neighbourhood around $z_0$ such that the image of each point in the $\delta$ neighbourhood maps to a point in the $\epsilon$ neighbourhood.
+
+Note that the deleted neighbourhood will always exist if $z_0$ is internal to the domain of definition of $f$. We can extend the definition of a limit to include boundary points by ignoring all of the neighbourhood's points that are outside the domain.
+
+Also note that this definition only allows a given point to be tested as a limit -- it does not provide a method for finding the limit. This will be covered in the next section.
+
+\subsection{Uniqueness}
+If the limit of a function $f(z)$ exists at $z_0$, it must be unique. To show this, consider two limits:
+\[
+	\lim_{z \to z_0} f(z) = w_0 \text{ and } \lim_{z \to z_0} f(z) = w_1
+\]
+This implies that we can find $\delta_0$ and $\delta_1$ such that
+\[
+	|f(z) - w_0| < \epsilon \text{ whenever } 0 < |z - z_0| < \delta_0
+\]
+and
+\[
+	|f(z) - w_1| < \epsilon \text{ whenever } 0 < |z - z_0| < \delta_1
+\]
+Now, suppose that $\delta$ is a positive number smaller than both $\delta_0$ and $\delta_1$. Then, for all $0 < |z - z_0| < \delta$, we find that the difference between the two limits is
+\begin{align*}
+	|w_1 - w_0| &= ||f(z) - w_0| - |f(z) - w_1|| \\
+	& \le |f(z) - w_0| + |f(z) - w_1| \\
+	& < \epsilon + \epsilon \\
+	& = 2\epsilon
+\end{align*}
+and since $\epsilon$ can be made arbitrarily small, we must have
+\[
+	w_1 = w_0
+\] 
+
+
+\subsection{Example -- basic limit}
+\textit{
+Consider the function $f(z) = \frac{i \bar{z}}{2}$. We can show that the limit of this function as $z \to 1$ is
+\[
+	\lim_{z \to 1} f(z) = \frac{i}{2}
+\]
+To do this, we observe that
+\begin{align*}
+	\left| f(z) - \frac{i}{2} \right| 
+	&= \left| \frac{i \bar{z}}{2} - \frac{i}{2} \right| \\
+	&= \frac{|z - 1|}{2}
+\end{align*}
+Then, we can fulfill the limit definition by writing
+\[
+	\left| f(z) - \frac{i}{2} \right| < \epsilon \text{ whenever } \left| z - 1\right| < 2\epsilon
+\]
+}
+
+
+\subsection{Example -- direction dependence}
+In order for $w_0$ to be a limit of $f$ at $z_0$, the limit conditions must hold if $z$ approaches $z_0$ in any arbitrary manner. 
+
+\textit{Consider the function
+\[
+	f(z) = \frac{z}{\bar{z}}
+\] 
+Then, the limit
+\[
+	\lim_{z \to 0} f(z)
+\]
+does not exist. To illustrate this, the function's value for any non-zero point $z = (x, 0)$ is
+\[
+	f(x, 0) = \frac{x + i0}{x - i0} = 1
+\]
+but the value for any non-zero point $z = (0, y)$ is
+\[
+	f(0, y) = \frac{0 + iy}{0 - iy} = -1
+\]
+so the limit would not be unique.
+}
+
 
 \end{document}
