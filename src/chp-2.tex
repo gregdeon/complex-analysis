@@ -177,6 +177,36 @@ is in a one-to-one mapping with the top plane, $0 \le \theta \le \pi$. Simiarly,
 Note that any mapping $w = z^n$ for positive integer $n$ has a similar form, where each non-zero point in the $w$ plane is the image of $n$ distinct points in the $z$ plane.
 
 
+\clearpage
+\section{Frame 14 -- Mappings by the Exponential Function}
+Now, we will look at the exponential function
+\[
+	e^z = e^{x + iy} = e^x e^{iy}
+\]
+We can again look at straight lines and find their images in this mapping.
+
+\textit{Consider the transformation
+\[
+	w = e^z = \rho e^{i\phi}
+\]
+where
+\[
+	p = e^x \quad \phi = y
+\]
+This means that the image of a vertical line $x = c_1$ is a circle with radius $p = e^{c_1}$. Each point on the circle is the image of infinitely many points, each spaced $2\pi$ units apart on the vertical line. Similarly, the horizontal line $y = c_2$ is a ray with an angle of $\phi = c_2$.}
+
+With these images in mind, we know that vertical and horizontal line segments are mapped onto arcs and rays, respectively. We can then use this information to map regions:
+
+\textit{Now, consider the rectangular region
+\[
+	a \le x \le b	\quad	c \le y \le d
+\]
+The image of this region under the mapping $w = e^z$ is
+\[
+	e^a \le \rho \le e^b	\quad	c \le \phi \le d
+\]
+This is a one-to-one mapping if $d - c < 2\pi$. In particular, the region with $c = 0, d = \pi$ is mapped onto half of a circular ring.}
+
 
 
 \end{document}
