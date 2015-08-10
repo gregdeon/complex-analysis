@@ -6,7 +6,7 @@ August 10
 * 15
 * 16
 August 11
-- 17
+* 17
 - 18
 - 19
 August 12

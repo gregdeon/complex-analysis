@@ -375,5 +375,53 @@ Further, if $\epsilon$ is a small, positive number, then points in the plane suc
 correspond to points on the sphere close to $N$. Thus, we call the set $|z| > 1/\epsilon$ an \emph{($\epsilon$) neighbourhood} of $\infty$.
 
 \subsection{Limits with infinity}
+With this new point at infinity, we can give meaning to the statement
+\[
+	\lim_{z \to z_0} f(z) = w_0
+\]
+when $z_0$ or $w_0$ are infinity. We can then use the following theorems:
+\begin{align*}
+	\lim_{z \to z_0} f(z) = \infty &\iff \lim_{z \to z_0} \frac{1}{f(z)} = 0 \\
+	\lim_{z \to \infty} f(z) = w_0 &\iff \lim_{z \to 0} f\Big(\frac{1}{z}\Big) = w_0 \\
+	\lim_{z \to \infty} f(z) = \infty &\iff \lim_{z \to 0} \frac{1}{f(1/z)} = 0
+\end{align*}
+
+\subsection{Examples}
+Three limits using these new properties follow.
+\begin{itemize}
+\item To find
+\[
+	\lim_{z \to -1} \frac{iz + 3}{z + 1}
+\]
+we notice that
+\[
+	\lim_{z \to -1} \frac{z + 1}{iz + 3} = 0
+\]
+so the limit is infinity.
+
+\item To find
+\[
+	\lim_{z \to \infty} \frac{2z + i}{z + 1}
+\]
+we evaluate
+\begin{align*}
+	\lim_{z \to 0} \frac{(2 / z) + i}{(1 / z) + 1} 
+	&= \lim_{z \to 0} \frac{2 + iz}{1 + z} \\
+	&= 2
+\end{align*}
+
+\item To find
+\[
+	\lim_{z \to \infty} \frac{2z^3 - 1}{z^2 + 1}
+\]
+we evaluate
+\begin{align*}
+	\lim_{z \to 0} \frac{(1/z^2) + 1}{(2/z^3) - 1}
+	&= \lim_{z \to 0} \frac{z + z^3}{2 - z^3} \\
+	&= 0
+\end{align*}
+so the original limit is infinity.
+\end{itemize}
+
 
 \end{document}
