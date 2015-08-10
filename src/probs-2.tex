@@ -222,4 +222,96 @@ If $z$ follows the straight line $ay = x$, then the mapping $w = e^z$ is
 where $ \rho = a\phi$.
 
 
+\textbf{5}
+The rectangular region $a \le x \le b$, $c \le y \le d$ is made up of the horizontal line segments
+\[
+	x = t,	\quad	y = c_1
+\]
+where $t$ is a parameter running from $a$ to $b$ and $c_1$ is a constant in the range $[c, d]$. These horizontal lines have the images
+\[
+	\rho = e^t,	\quad	\phi = c_1
+\]
+Since $t$ starts at $a$ and ends at $b$, these images have a radius in the range $[e^a, e^b]$. Then, the entire image is the set of these lines, which range from $\phi = c$ to $\phi = d$. Thus, the entire image is
+\[
+	e^a \le \rho \le e^b,	\quad	c \le \phi \le d
+\]
+
+
+\textbf{6}
+Looking at the $z$ plane, the initial set is the infinite strip
+\[
+	x \le 0, \quad	0 \le y \le \pi
+\]
+This maps to the image set
+\[
+	\lim_{a \to -\infty} e^{a} \le \rho \le e^0,	\quad 0 \le \phi \le \pi
+\]
+or
+\[
+	0 \le \rho \le 1,	\quad 0 \le \phi \le \pi
+\]
+This is the upper half of the unit disk, as shown in the figure.
+
+
+\textbf{7}
+In a similar manner to the previous problem, the image of the strip
+\[
+	x \ge 0, \quad	0 \le y \le \pi
+\]
+is the upper half-plane with a unit disk cut out:
+\[
+	\rho \ge 1,	\quad	0 \le \phi \le \pi
+\]
+A sketch of this region is:
+\begin{center}
+\begin{tikzpicture}	
+	\fill [fill=gray!50] (2,0) -- (1,0) -- 
+		plot [domain=1:-1] (\x, {sqrt(1 - \x*\x)}) --
+		(-1,0) -- (-2,0) -- (-2,2) -- (2,2) -- (2,0);
+		
+	\draw [->] (-2.2,0) -- (2.2,0) node [right]{u};
+	\draw [->] (0,-2.2) -- (0,2.2) node [above]{v};
+	
+	\draw [thick] (1,0) -- (2,0);
+	\node [below] at (1.5,0) {$y = 0$};
+	\draw [thick] (-1,0) -- (-2,0);
+	\node [below] at (-1.5,0) {$y = \pi$};
+	\draw [thick] plot [domain=1:-1] (\x, {sqrt(1 - \x*\x)});
+	\node [above right] at (0,1) {$x = 0$};
+\end{tikzpicture}
+\end{center}
+
+
+\textbf{8}
+Some sample vectors in these two fields are:
+\begin{center}
+\begin{tikzpicture}
+	\draw [->] (-5.5,0)  -- (-0.5,0) node [right]{$x$};
+	\draw [->] (-3,-2.5) -- (-3,2.5) node [right]{$y$};
+	
+	\draw [thick, ->] (-3,0) ++ (1,0) -- ++(90 :0.5);
+	\draw [thick, ->] (-3,0) ++ (2,0) -- ++(90 :1);
+	\draw [thick, ->] (-3,0) ++ (0,1) -- ++(180:0.5);
+	\draw [thick, ->] (-3,0) ++ (0,2) -- ++(180:1);
+	\draw [thick, ->] (-3,0) ++ (-1,0) -- ++(270 :0.5);
+	\draw [thick, ->] (-3,0) ++ (-2,0) -- ++(270 :1);
+	\draw [thick, ->] (-3,0) ++ (0,-1) -- ++(0:0.5);
+	\draw [thick, ->] (-3,0) ++ (0,-2) -- ++(0:1);
+	
+	
+	\draw [->] (0.5,0)  -- (5.5,0) node [above right]{$x$};
+	\draw [->] (3,-2.5) -- (3,2.5) node [right]{$y$};
+	
+	\draw [thick, ->] (3,0) ++ (1,0) -- ++(0:0.5);
+	\draw [thick, ->] (3,0) ++ (2,0) -- ++(0:1);
+	\draw [thick, ->] (3,0) ++ (0,1) -- ++(90:0.5);
+	\draw [thick, ->] (3,0) ++ (0,2) -- ++(90:1);
+	\draw [thick, ->] (3,0) ++ (-1,0) -- ++(180:0.5);
+	\draw [thick, ->] (3,0) ++ (-2,0) -- ++(180:1);
+	\draw [thick, ->] (3,0) ++ (0,-1) -- ++(270:0.5);
+	\draw [thick, ->] (3,0) ++ (0,-2) -- ++(270:1);
+\end{tikzpicture}
+\end{center}
+
+
 \end{document}
