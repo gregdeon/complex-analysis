@@ -9,6 +9,7 @@ LC = pdflatex -aux-directory=temp
 
 # Chapters
 SRC = chp-2.tex
+SRC += probs-2.tex
 
 SRC_PATH = src/
 OUT_PATH = out/
