@@ -271,7 +271,6 @@ Then, we can fulfill the limit definition by writing
 \]
 }
 
-
 \subsection{Example -- direction dependence}
 In order for $w_0$ to be a limit of $f$ at $z_0$, the limit conditions must hold if $z$ approaches $z_0$ in any arbitrary manner. 
 
@@ -293,6 +292,71 @@ but the value for any non-zero point $z = (0, y)$ is
 \]
 so the limit would not be unique.
 }
+
+
+\clearpage
+\section{Frame 16 -- Theorems on Limits}
+Next, it is helpful to connect limits of complex functions and real-valued functions, allowing us to use our knowledge of calculus to simplify the process of finding complex limits
+
+\subsection{Splitting into real functions}
+First, the following theorem is helpful:
+
+\textbf{Theorem 1.} Suppose that
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+and
+\[
+	z_0 = x_0 + iy_0, \quad	w_0 = u_0 + iv_0
+\]
+Then, the limit
+\[
+	\lim_{z \to z_0} = w_0
+\]
+holds iff
+\[
+	\lim_{(x,y) \to (x_0, y_0)} u(x, y) = u_0 \text{ and } 
+	\lim_{(x,y) \to (x_0, y_0)} v(x, y) = v_0
+\]
+The two implications of this theorem can be proved by considering the definitions of the neighbourhoods as open disks.
+
+\subsection{Combining simple limits}
+\textbf{Theorem 2.} Suppose that
+\[
+	\lim_{z \to z_0} f(z) = w_0 \text{ and } \lim_{z \to z_0} F(z) = W_0
+\]
+Then, we can write the following three limits:
+\begin{align*}
+	\lim_{z \to z_0} f(z) + F(z) &= w_0 + W_0 \\
+	\lim_{z \to z_0} f(z) F(z) &= w_0 W_0 \\
+	\lim_{z \to z_0} \frac{f(z)}{F(z)} &= \frac{w_0}{W_0} \text{ if } W_0 \neq 0
+\end{align*}
+These can be proved easily by applying Theorem 1 to each limit.
+
+\subsection{Polynomials}
+Using the basic limit definition from the previous section, it is simple to show that
+\[
+	\lim_{z \to z_0} c = c
+\]
+and
+\[
+	\lim_{z \to z_0} z = z_0
+\]
+for any complex numbers $c$ and $z_0$. Then, by the multiplication property,
+\[
+	\lim{z \to z_0} z^n = z_0^n
+\]
+for any positive integer $z$. These limits can be used to show that, for any polynomial
+\[
+	P(z) = a_0 + a_1 z + a_2 z^2 + \dots + a_n z^n
+\]
+the limit as $z$ approaches a point $z_0$ is the polynomial's value:
+\[
+	\lim_{z \to z_0} P(z) = P(z_0)
+\]
+
+
+
 
 
 \end{document}
