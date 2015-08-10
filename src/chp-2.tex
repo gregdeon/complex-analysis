@@ -89,4 +89,94 @@ where we denoted $-\pi < \theta \leq \pi$ as the \emph{principal value} of $\tex
 Then, $f$ is well-defined on the entire plane.
 }
 
+
+\clearpage
+\section{Frame 13 -- Mappings}
+\subsection{Definitions}
+There is no convenient way to graph the function $w = f(z)$ -- each of these complex numbers are located on a plane instead of a line. Instead, we can draw pairs of corresponding points on separate $z$ and $w$ planes. When we think of $f$ this way, we call it a \emph{mapping} or \emph{transformation}.
+
+If $f$ is defined on the domain of definition $S$, then the \emph{image} of a point $z \in S$ is the point $w = f(z)$. If $T$ is a subset of $S$, then the set of the images of each point in $T$ are called the image of $T$. In particular, the image of the entire domain, $S$, is called the \emph{range} of $f$. The \emph{inverse image} of a point $w$ is the set of points $z$ in $S$ that map to $w$ (possibly zero, one, or many points).
+
+\subsection{Basic transformations}
+Using this geometric interpretation, we can describe mappings using terms such as \emph{translation}, \emph{rotation}, and \emph{reflection}. For instance, the mapping
+\[
+	w = z + 1 = (x + 1) + iy
+\]
+can be thought of as a translation of each point $z$ one unit to the right. Another example is the rotational mapping
+\begin{align*}
+	w &= iz \\
+\intertext{where, using $i = e^{i\pi/2}$ and $z = re^{i\theta}$, is}
+	w &= r e^{i(\theta + \pi/2)}
+\end{align*}
+or, in other words, a 90$^\circ$ rotation. Finally, the mapping
+\[
+	w = \bar{z} = x - iy
+\]
+is a reflection across the real axis. Usually, it is more useful to sketch an image of a curve rather than a single point. 
+
+\subsection{Mapping a curve}
+\textit{For an example, consider the mapping $w = z^2$. We showed earlier that this can be written as
+\[
+	u = x^2 - y^2, \quad v = 2xy
+\]
+To sketch the image, we will first set $u = c_1$, which requires that
+\[
+	x^2 - y^2 = c_1, \quad c_1 > 0
+\]
+which is the equation for a hyperbola. This equation can then be used to solve for the image points:
+\[
+	u = c_1, \quad v = \pm2y\sqrt{y^2 + c_1}
+\]
+where the plus-minus is resolved depending on which side the image point is on. Simply put, as $z$ travels up the right-side hyperbola or down the left-side hyperbola, $w$ travels up the vertical line $u = c_1$.
+}
+
+\textit{
+Next, we can set $v = c_2$, which requires
+\[
+	2xy = c_2, \quad c_2 > 0
+\]
+This gives us the image set
+\[
+	u = x^2 - \frac{c_2^2}{4x^2}, \quad v = c_2
+\]
+As $x \to \pm\infty$, $u \to \infty$; as $x \to 0$, $u \to -\infty$. Thus, this hyperbola traces out the straight line $v = c_2$ towards the right as $z$ travels towards the left.
+}
+
+\subsection{Mapping a region}
+We can use some of the details from the previous example to find the image of a region, rather than a single curve.
+
+\textit{Consider the domain $x > 0, y > 0, xy < 1$. This region consists of the upper branches of the hyperbolas
+\[
+	2xy = c, \quad 0 < c < 2
+\]
+and we know from the previous example that these hyperbolas map to the straight lines
+\[
+	v = c
+\]
+Thus, this region maps to the horizontal strip $0 < v < 2$.
+}
+
+\textit{We can also close the domain to contain the curves $x = 0$, $y = 0$, and $xy = 1$. From the function $w = z^2$, we know that the points $(0, y)$ and $(x, 0)$ map to the points $(-y^2, 0)$ and $(x^2, 0)$, so including the two straight lines simply extends the strip to include $v = 0$. Similarly, the hyperbola $xy = 1$ maps to the horizontal line $v = 2$.}
+
+\textit{Simply put, the image of the closed region $x \ge 0$, $y \ge 0$, $xy \le 1$ is the closed region $0 \le v \le 2$.}
+
+
+\subsection{Mapping with polar coordinates}
+Finally, we can use polar coordinates to simplify some mappings. 
+
+\textit{Again, consider the mapping $w = z^2$. If we write $z = re^{i\theta}$, then the image point can be written as
+\[
+	w = r^2 e^{2i\theta}
+\]
+Looking at the magnitude of $w$, points on a circle $r = r_0$ are mapped onto a circle $r' = r_0^2$. Also, looking at the argument of $w$, the angle of the image is doubled. This means that the first quadrant, which is defined as
+\[
+	r \ge 0, \quad 0 \le \theta \le \pi/2
+\]
+is in a one-to-one mapping with the top plane, $0 \le \theta \le \pi$. Simiarly, the top place is mapped onto the entire complex plane (although this is not one-to-one, since the inverse image of the positive real axis is both real axes).}
+
+Note that any mapping $w = z^n$ for positive integer $n$ has a similar form, where each non-zero point in the $w$ plane is the image of $n$ distinct points in the $z$ plane.
+
+
+
+
 \end{document}
