@@ -424,4 +424,62 @@ so the original limit is infinity.
 \end{itemize}
 
 
+\clearpage
+\section{Continuity}
+\subsection{Definitions}
+A function is \emph{continuous} at a point $z_0$ if all of the three following conditions are true:
+\begin{align*}
+	&\lim_{z \to z_0} f(z) \text{ exists} \\
+	&f(z_0) \text{ exists} \\
+	&\lim_{z \to z_0} f(z) = f(z_0)
+\end{align*}
+This final statement says that for each positive number $\epsilon$ there is a positive number $\delta$ such that
+\[
+	|f(z) - f(z_0)| < \epsilon \text{ whenever } |z - z_0| < \delta
+\]
+
+We say that a function is said to be continuous in a region $R$ if it is continuous at each point in $R$. 
+
+\subsection{Theorems}
+The basic limit identities allow us to find the continuity of more complex functions. If two functions are continuous at a point, their sum, product, and quotients are also continuous (in the last case, provided that the denominator is non-zero). A polynomial is continuous in the entire plane.
+
+A complex function that can be split into its real and imaginary components
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+is continuous at $z_0 = (x_0, y_0)$ iff $u$ and $v$ are continuous at $z_0$.
+
+We can state three more theorems about continuity:
+\begin{itemize}
+	\item A composition of continuous functions is continuous.
+	
+	\textit{Suppose that $w = f(z)$ is defined in a neighbourhood of $z_0$ and $W = g(w)$ is defined in a neighbourhood of $f(z_0)$. Also, suppose that $f$ is continuous at $z_0$ and $g$ is continuous at $f(z_0)$. Then, the statement that the composition
+	\[
+		g[f(z)]
+	\]
+	is continuous is equivalent to the statement that
+	\[
+		|g[f(z)] - g[f(z_0)]| < \epsilon  \text{ whenever } | f(z) - f(z_0)| < \gamma
+	\]
+	Then, since $f$ is continuous, we can find a $\delta$ such that the right side is satisfied, so $g \circ f$ is continuous.
+	}
+	
+	\item If $f$ is continuous and non-zero at $z_0$, then there is some neighbourhood of $z_0$ where $f(z) \neq 0$.
+	
+	\textit{Suppose that we choose $\epsilon = |f(z_0)| / 2$. Then, if there is a point where $f(z) = 0$ in a $\delta$ neighbourhood around $z_0$, the limit inequality is
+	\[
+		|f(z_0)| < \frac{|f(z_0)|}{2}
+	\]
+	so we have a contradiction, and there must be a neighbourhood where $f(z) = 0$.
+	}
+	
+	\item If $f$ is continuous in a closed and bounded region $R$, then there exists a non-negative real number $M$ such that
+	\[
+		|f(z)| \le M
+	\]
+	where equality holds for one or more $z$.
+\end{itemize}
+
+
+
 \end{document}
