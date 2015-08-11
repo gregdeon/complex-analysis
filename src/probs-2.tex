@@ -340,8 +340,154 @@ The limit expression is
 \]
 For $z \neq 0$, the left side expression is $|z|$, so the limit holds where $\epsilon = \delta$.
 
-\textbf{2}
+\textbf{2(a)}
+The left side of the limit is
+\[
+	| (az + b) - (az_0 + b) | = |a(z - z_0)| = |a| |z - z_0|
+\]
+so the limit holds for $\delta = a \epsilon$.
 
+\textbf{2(b)}
+The left side is
+\[
+	| (z^2 + c) - (z_0^2 + c) | = |z^2 - z_0^2| = |z + z_0||z - z_0| \approx 2|z_0||z - z_0|
+\]
+for $\delta << |z_0|$. Thus, the limit holds for $\delta = 2z_0 \epsilon$. Note that if $z_0 = 0$, then this reduces to the limit of a constant value $c$, which is trivial.
+
+\textbf{2(c)}
+The right side is
+\begin{align*}
+	|z - (1 - i)| &= |[x - 1] + i[y + 1]| \\
+	&= \sqrt{(x - 1)^2 + (y + 1)^2}
+\end{align*}
+The left side is
+\begin{align*}
+	| [x + i(2x + y)] - [1 + i] | &= | [x - 1] + i[2x + y - 1] | \\ 
+	&= | [x - 1] + i[2(x - 1) + (y + 1)] | \\
+\end{align*}
+Not sure how to prove limits -- it appears as the right side goes to 0, the left side must too.
+
+\textbf{3(a)}
+If $z_0 \neq 0$, the limit must be
+\[
+	\lim_{z \to z_0} \frac{1}{z^n}
+	= \frac{\lim_{z \to z_0} 1}{\lim_{z \to z_0} z^n}
+	= \frac{1}{z_0^n}
+\]
+
+\textbf{3(b)}
+\[
+	\lim_{z \to i} \frac{iz^3 - 1}{z + i}
+	= \frac{\lim{z \to i} iz^3 - 1}{\lim{z \to i} z + i} 
+	= \frac{i(i^3) - 1}{(i) + i}
+	= 0
+\]
+
+\textbf{3(c)}
+\[
+	\lim_{z \to z_0} \frac{P(z)}{Q(z)}
+	= \frac{\lim_{z \to z_0} P(z)}{\lim_{z \to z_0} Q(z)}
+	= \frac{P(z_0)}{Q(z_0)}
+\]
+
+\textbf{4}
+The base case is
+\[
+	\lim_{z \to z_0} z = z_0
+\]
+which was shown earlier. 
+
+If it is known that
+\[
+	\lim_{z \to z_0} z^k = z_0^k
+\]
+then the following limit is
+\[
+	\lim_{z \to z_0} z^{k+1} 
+	= \left(\lim_{z \to z_0} z^k \right) \left(\lim_{z \to z_0} z \right)
+	= (z_0^k)(z_0) 
+	= z_0^{k+1}
+\]
+so, by induction, we are finished.
+
+\textbf{5}
+First, for any point $z = (x, 0)$, the function is
+\[
+	f(x, 0) = \left( \frac{x}{x} \right)^2 = (1)^2 = 1
+\]
+so the limit as $x \to 0$ is 1.
+
+Then, for any point $z = (x, x)$, the function is
+\[
+	f(x, x) = \left( \frac{x + ix}{x - ix} \right)^2 = (i)^2 = -1
+\]
+so the limit as $x \to 0$ is $-1$. This conflicts with the previous result, so the limit does not exist.
+
+\textbf{6(a)}
+\textit{The statement to be proved is
+\[
+	\lim_{z \to z_0}[f(z) + F(z)] = w_0 + W_0
+\]}
+
+If $f$ and $F$ are split into their real and imaginary parts ($u$, $v$, $U$, and $V$), then we know that
+\begin{align*}
+	\lim_{z \to z_0} u(x, y) &= u_0 \\
+	\lim_{z \to z_0} v(x, y) &= v_0 \\
+	\lim_{z \to z_0} U(x, y) &= U_0 \\
+	\lim_{z \to z_0} V(x, y) &= V_0
+\end{align*}
+Then, the sum $f(z) + F(z)$ has a real and imaginary part, which have the limits
+\begin{align*}
+	\lim_{z \to z_0} u(x, y) + U(x, y) &= u_0 + U_0 \\
+	\lim_{z \to z_0} v(x, y) + V(x, y) &= v_0 + V_0 \\
+\end{align*} 
+so the result is
+\[
+	\lim_{z \to z_0} f(z) + F(z) = u_0 + v_0 + U_0 + V_0 = w_0 + W_0
+\]
+
+\textbf{6(b)}
+The left side of the limit expression is
+\begin{align*}
+	|f(z) + F(z) - w_0 - W_0| &= |f(z) - w_0 + F(z) - W_0| \\
+	&\le |f(z) - w_0| + |F(z) - W_0| \\
+	&< \epsilon + \epsilon \\
+	&= 2\epsilon
+\end{align*}
+so the statement is true, and the limit is $w_0 + W_0$.
+
+\textbf{7}
+The left hand side of the expression is
+\[
+	| |f(z)| - |w_0|| \le |f(z) - w_0|
+\]
+which is the standard limit expression. Since $\lim_{z \to z_0} f(z) = w_0$, this expression is true, and the limit is $|w_0|$.
+
+\textbf{10(a)}
+Making the replacement in the expression, this limit is
+\begin{align*}
+	\lim_{z \to \infty} \frac{4z^2}{(z - 1)^2} 
+	&= \lim_{z \to 0} \frac{4(1/z)^2}{(1 - (1/z))^2} \\
+	&= \lim_{z \to 0} \frac{4}{(z - 1)^2} \\
+	&= \frac{4}{1} = 4
+\end{align*}
+
+\textbf{10(b)}
+The reciprocal of this expression has the limit
+\[
+	\lim_{z \to 1} (z - 1)^3 = 0
+\]
+so the limit is infinity.
+
+\textbf{10(c)}
+Taking both reciprocals,
+\begin{align*}
+	\lim_{z \to \infty} \frac{z - 1}{z^2 + 1}
+	&= \lim_{z \to 0} \frac{(1/z) - 1}{(1/z)^2 + 1} \\
+	&= \lim_{z \to 0} \frac{z - z^2}{1 + z^2} \\
+	&= \frac{0}{1} = 0
+\end{align*}
+so the limit is infinity.
 
 
 \end{document}
