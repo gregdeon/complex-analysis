@@ -570,4 +570,107 @@ or, in a different form, if $w = f(z)$ and $W = F(z)$,
 \]
 
 
+\clearpage
+\section{Frame 21: Cauchy-Riemann Equations}
+\subsection{Basic proof}
+We will obtain a formula in this chapter that a function must satisfy at a point if its derivative exists there.
+
+First, we can split up the following points into real and imaginary parts:
+\[
+	z_0 = x_0 + iy_0,	\quad \Delta z = \Delta x + i \Delta y	
+\]
+Then, the term $\Delta w$ becomes
+\begin{align*}
+	\Delta w &= f(z_0 + \Delta z) - f(z_0) \\
+	&= [u(x_0 + \Delta x, y_0 + \Delta y) - u(x_0, y_0)]
+	+ i[v(x_0 + \Delta x, y_0 + \Delta y) - v(x_0, y_0)]
+\end{align*}
+
+Next, we know that we can split up the derivative
+\[
+	f'(z_0) = \lim_{\Delta z \to 0} \frac{\Delta w}{\Delta z}
+\]
+into its real and imaginary components
+\[
+	f'(z_0) = \lim_{\Delta z \to 0} \left( \Re \frac{\Delta w}{\Delta z} \right)
+	+ i\lim_{\Delta z \to 0} \left( \Im \frac{\Delta w}{\Delta z} \right)
+\]
+
+We've seen several times that this expression must hold as $\Delta z$ tends to zero in any direction. In particular, we can use the test points $(\Delta x, 0)$ and $(0, \Delta y)$ to test this derivative. In the first case, $\Delta y = 0$, so the derivative is
+\begin{align*}
+	f'(z_0) 
+	&= \lim_{\Delta x \to 0} \frac{u(x_0 + \Delta x, y_0) - u(x_0, y_0)}{\Delta x}
+	+i \lim_{\Delta x \to 0} \frac{v(x_0 + \Delta x, y_0) - v(x_0, y_0)}{\Delta x} \\
+	&= u_x(x_0, y_0) + iv_x(x_0, y_0)
+\end{align*}
+where $u_x$ and $v_x$ are the partial derivatives with respect to $x$. Similarly, we can set $\Delta x = 0$ and obtain
+\begin{align*}
+	f'(z_0) 
+	&= \lim_{\Delta x \to 0} \frac{u(x_0+ \Delta x,y_0) - u(x_0,y_0)}{i\Delta y}
+	+i \lim_{\Delta x \to 0} \frac{v(x_0+ \Delta x,y_0) - v(x_0,y_0)}{i\Delta y} \\
+	&= \lim_{\Delta x \to 0} \frac{v(x_0+ \Delta x,y_0) - v(x_0,y_0)}{\Delta y}
+	-i \lim_{\Delta x \to 0} \frac{u(x_0+ \Delta x,y_0) - u(x_0,y_0)}{\Delta y}	\\
+	&= v_y(x_0, y_0) - iu_y(x_0, y_0)
+\end{align*}
+where $u_y$ and $v_y$ are the partial derivatives with respect to $y$. 
+
+Now, since these two values must be equal, we require two conditions for the derivative to exist
+\begin{align*}
+	u_x(x_0, y_0) &= v_y(x_0, y_0)	\\
+\intertext{and}
+	u_y(x_0, y_0) &= -v_x(x_0, y_0)
+\end{align*}
+These are the \emph{Cauchy-Riemann equations}. They are necessary conditions for a derivative to exist -- if they are not satisfied at a point, the derivative does not exist there. Note, however, that the derivative is not guaranteed to exist -- the Cauchy-Riemann equations are not a sufficient condition.
+
+\subsection{Formal theorem}
+We can summarize the above result.
+
+\textit{Suppose that
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+and that $f'(z)$ exists at a point $z_0 = x_0 + iy_0$. Then, the partial derivatives of $u$ and $v$ must exist at $(x_0, y_0)$, and they must satisfy the Cauchy-Riemann equations
+\[
+	u_x = v_y,	\quad	u_y = -v_x
+\]
+there. Also, the derivative can be written as
+\[
+	f'(z_0) = u_x(x_0, y_0) + iv_x(x_0, y_0).
+\]}
+
+\subsection{Examples}
+\textit{Example: to illustrate the Cauchy-Riemann equations, consider the function
+\[
+	f(z) = z^2 = (x^2 - y^2) + i(2xy)
+\]
+The real and imaginary functions are
+\[
+	u(x, y) = x^2 - y^2,	\quad	v(x, y) = 2xy
+\]
+and their partial derivatives are
+\[
+	u_x = 2x = v_y, 	\quad	u_y = -2y = -v_x
+\]
+Finally, we can write 
+\[
+	f'(z) = u_x + iv_x = 2x + i2y = 2z
+\]
+as expected.}
+
+\textit{Example: for the function
+\[
+	f(z) = |z|^2
+\]
+we have the real and imaginary components
+\[
+	u(x, y) = x^2 + y^2,	\quad	v(x, y) = 0
+\]
+In order for the Cauchy-Riemann equations to hold at a point, we require that
+\begin{align*}
+	u_x = 2x &= 0 \\
+	u_y = 2y &= 0
+\end{align*}
+or, in other words, the derivative does not exist anywhere except possibly for the point $(0, 0)$.}
+
+
 \end{document}
