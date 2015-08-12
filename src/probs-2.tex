@@ -490,4 +490,146 @@ Taking both reciprocals,
 so the limit is infinity.
 
 
+\clearpage
+\section{Frame 20 -- Differentiation}
+\textbf{1}
+These four derivatives are:
+\begin{itemize}
+	\item{(a)}
+	\[
+		\frac{d}{dz}(3z^2 - 2z + 4) = 6z - 2
+	\]
+	
+	\item{(b)}
+	\[
+		\frac{d}{dz}(1 - 4z^2)^3 = 3(1 - 4z^2)^2(-8z) = -24z(1 - 4z^2)^2
+	\]
+	
+	\item{(c)}
+	\[
+		\frac{d}{dz} \frac{z - 1}{2z + 1} = \frac{(1)(2z + 1) - (2)(z - 1)}{(2z + 1)^2} = \frac{-1}{(2z + 1)^2}
+	\]
+	
+	\item{(d)}
+	\begin{align*}
+		\frac{d}{dz} \frac{(1 + z^2)^4}{z^2} 
+		&= \frac{4(1 + z^2)^3(2z)(z^2) - 2z(1 + z^2)^4}{z^4} \\
+		&= \frac{8z^3(1 + z^2)^3 - (2z + 2z^3)(1 + z^2)^3}{z^4} \\
+		&= \frac{2z(3z^2 - 1)(1 + z^2)^3}{z^4}
+	\end{align*}
+\end{itemize}
+
+\textbf{2}
+First, each term of the polynomial $P_k(z)$ is
+\[
+	P_k(z) = a_k z^k
+\]
+All of these terms are differentiable everywhere, and the derivative is
+\[
+	P_k'(z) = k a_k z^{k-1}, \quad	k \neq 0
+\]
+where the derivative of $a_0$ is simply zero. Then, we proved that the derivative of a sum is the sum of two derivatives, so we can apply this repeatedly to find
+\[
+	P'(z) = a_1 + 2a_2 z + \dots + na_n z^{n-1}
+\]
+
+Notice that the function's value at zero is $P(0) = a_0$. The derivative's value at zero is similarly $P'(0) = a_1$. Applying the same process again, we find that
+\begin{align*}
+	P''(0) &= 2a_2 \\
+\intertext{and}
+	P^{(k)}(0) &= k! \cdot a_k
+\end{align*}
+Rearranging these terms, we can write
+\begin{align*}
+	a_0 &= P(0) \\
+	a_1 &= \frac{P'(0)}{1!} \\
+	a_2 &= \frac{P''(0)}{2!} \\
+	&\dots \\
+	a_n &= \frac{P^{(n)}(0)}{n!} 
+\end{align*}
+
+\textbf{3}
+We can find the derivative of $f(z) = \frac{1}{z}$ by using the definition:
+\[
+	\frac{d}{dz} \frac{1}{z}
+	= \lim_{\Delta z \to 0} \frac{\frac{1}{z + \Delta z} - \frac{1}{z}}{\Delta z}
+	= \lim_{\Delta z \to 0} \frac{(z) - (z + \Delta z)}{z\Delta z (z + \Delta z)}
+	= \lim_{\Delta z \to 0} \frac{-1}{z (z + \Delta z)}
+	= \frac{-1}{z^2}
+\]
+
+\textbf{4}
+Applying the definition of a derivative, we can see that
+\begin{align*}
+	\lim_{z \to z_0} \frac{f(z)}{g(z)} 
+	&= \lim_{z \to z_0} \frac{f(z) - f(z_0)}{g(z) - g(z_0)} \\
+	&= \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} \frac{z - z_0}{g(z) - g(z_0)} \\
+	&= \frac{f'(z_0)}{g'(z_0)}
+\end{align*}
+
+\textbf{5}
+Following the proof shown in the chapter, the derivative of a sum makes the term $\Delta w$ into
+\[
+	\Delta w = f(z + \Delta z) - f(z) + g(z + \Delta z) - g(z)
+\]
+Then, the derivative is
+\begin{align*}
+	\frac{d}{dz} [f(z) + g(z)] 
+	&= \lim_{\Delta z \to 0} \frac{\Delta w}{\Delta z} \\
+	&= \lim_{\Delta z \to 0} \frac{f(z + \Delta z) - f(z) + g(z + \Delta z) - g(z)}{\Delta z} \\
+	&= \lim_{\Delta z \to 0} \frac{f(z + \Delta z) - f(z)}{\Delta z} + \lim_{\Delta z \to 0}\frac{g(z + \Delta z) - g(z)}{\Delta z} \\
+	&= f'(z) + g'(z)
+\end{align*}
+
+\textbf{6}
+\textit{Base case:} the derivative of $z^1$ is $1$.
+
+\textit{$k+1$ case:} if the derivative of $z^k$ is $kz^{k-1}$, then the derivative of $z^{k+1}$ is
+\[
+	\frac{d}{dz} z^{k+1} 
+	= \frac{d}{dz} (z^k)(z) 
+	= (kz^{k-1})(z) + (z^k)
+	= (k+1)z^k
+\]
+Therefore, by induction, we are done.
+
+\textbf{7}
+When $n$ is a negative integer, we can write $m = -n$ and rewrite the function as
+\[
+	f(z) = \frac{1}{z^m}
+\]
+Then, using the quotient rule, the derivative of this function is
+\[
+	f'(z)
+	= \frac{(0)(z^m) - (1)(mz^{m-1})}{z^{2m}}
+	= \frac{nz^{-n-1}}{z^{-2n}}
+	= nz^{n-1}
+\]
+so the derivative formula is still valid.	
+
+\textbf{8(a)}
+The derivative of $f(z) = \Re z$ is
+\[
+	\frac{d}{dz} \Re z 
+	= \lim_{\Delta z \to 0} \frac{\Re(z + \Delta z) - \Re z}{\Delta z}
+	= \lim_{\Delta z \to 0} \frac{\Re (\Deltz z)}{\Delta z}
+\]
+To show that this limit doesn't exist, consider a point $z_1 = (x,0)$. The limit from this direction then becomes
+\[
+	f'(x, 0) = \lim_{x \to 0} \frac{x}{x} 
+	= 1
+\]
+Then, consider a different point $z_2 = (0, y)$. The limit this time is
+\[
+	f'(0, y) = \lim{y \to 0} \frac{0}{y} = 0
+\]
+Since the limit is different from these two directions, the derivative does not exist.
+
+The proof for $\Im (z)$ is nearly identical.
+
+
+
+
+
+
 \end{document}
