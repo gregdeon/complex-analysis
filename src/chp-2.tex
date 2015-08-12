@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{parskip}
 \renewcommand{\emph}{\textbf}
+\renewcommand{\bar}{\overline}
 
 \begin{document}
 
@@ -481,5 +482,61 @@ We can state three more theorems about continuity:
 \end{itemize}
 
 
+\clearpage
+\section{Frame 19 -- Derivatives}
+\subsection{Definitions}
+Suppose that a function $f$ is defined on a neighbourhood $|z - z_0| < \epsilon$. We define the \emph{derivative} of $f$ at $z_0$ as the limit
+\[
+	f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}
+\]
+or, if we write $\Delta z = z - z_0$, then the definition can be written as
+\[
+	f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
+\]
+We say that $f$ is \emph{differentiable} at $z_0$ when $f'(z_0)$ exists.
+
+As an augmented notation, we often write
+\[
+	\Delta w = f(z + \Delta z) - f(z)
+\]
+and we use the derivative notation
+\[
+	\frac{dw}{dz} = \lim_{\Delta z \to 0} \frac{\Delta w}{\Delta z}
+\]
+
+\subsection{Examples}
+\textit{Example: suppose $f(z) = z^2$. Then,
+\[
+	\lim_{\Delta z \to 0} \frac{\Delta w}{\Delta z}
+	= \lim_{\Delta z \to 0} \frac{(z + \Delta z)^2 - z^2}{\Delta z}
+	= \lim_{\Delta z \to 0} 2z + \Delta z = 2z
+\]}
+
+\textit{Example: suppose $f(z) = \bar{z}$. Then,
+\[
+	\lim_{\Delta z \to 0} \frac{\Delta w}{\Delta z} 
+	= \lim_{\Delta z \to 0} \frac{\overline{z + \Delta z} - \bar{z}}{\Delta z}
+	= \lim_{\Delta z \to 0} \frac{\bar{z} + \bar{\Delta z} - \bar{z}}{\Delta z}
+	= \lim_{\Delta z \to 0} \frac{\bar{\Delta z}}{\Delta z}
+\]
+and we showed earlier that this limit does not exist -- it has different values depending on the angle of approach.}
+
+\textit{Example: suppose $f(z) = |z|^2$. Then,
+\[
+	\lim_{\Delta z \to 0} \frac{\Delta w}{\Delta z}
+	= \lim_{\Delta z \to 0} \frac{|z + \Delta z|^2 - |z|^2}{\Delta z}
+	= \lim_{\Delta z \to 0} \frac{(z + \Delta z)(\bar{z + \Delta z} - z\bar{z}}{\Delta z}
+	= \lim_{\Delta z \to 0} \bar{z} + \bar{\Delta z} + z\frac{\bar{\Delta z}}{\Delta z}
+\]
+We see, once again, that the $\frac{\bar{\Delta z}}{\Delta z}$ term stops us from obtaining a derivative. However, this term is not present if $z = 0$ -- at this point, $dw/dz$ is zero. Thus, the derivative exists only at $z = 0$, and $f'(0) = 0$.}
+
+\subsection{Notes}
+We've seen that it is possible for a function to be differentiable at a point but nowhere else in a neighbourhood of that point. We can even note that our function, $f(z) = |z|^2$, can be written as
+\[
+	u(x, y) = x^2 + y^2,	\quad	v(x, y) = 0
+\]
+so we have no trouble finding the partial derivatives, but the function is still not differentiable aside from $z = 0$.
+
+We've also seen that our troublesome function, $f(z) = |z|^2$, was continuous but not differentiable. However, we can state that \emph{differentiability implies continuity} at a point. We can see this easily in the numerator of the derivative limit: $f(z)$ must approach the point $f(z_0)$ as $z$ approaches $z_0$, which implies continuity.
 
 \end{document}
