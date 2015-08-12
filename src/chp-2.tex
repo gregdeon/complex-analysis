@@ -539,4 +539,35 @@ so we have no trouble finding the partial derivatives, but the function is still
 
 We've also seen that our troublesome function, $f(z) = |z|^2$, was continuous but not differentiable. However, we can state that \emph{differentiability implies continuity} at a point. We can see this easily in the numerator of the derivative limit: $f(z)$ must approach the point $f(z_0)$ as $z$ approaches $z_0$, which implies continuity.
 
+
+\clearpage
+\section{Frame 20: Differentiation Formulas}
+The derivative definition in the previous section is extremely similar to the definition for real-valued functions. Similar basic differentiation formulas can be derived and used for complex functions. This section will cover the most useful formulas.
+
+If $c$ is a complex constant and $f$ is a function that is differentiable at $z$, then:
+\begin{align*}
+	\frac{d}{dz} c &= 0 \\
+	\frac{d}{dz} z &= 1 \\
+	\frac{d}{dz} [cf(z)] &= cf'(z)
+\end{align*}
+If $n$ is a non-zero integer,
+\[
+	\frac{d}{dz} z^n = nz^{n-1}
+\]
+If two functions $f$ and $g$ are differentiable at $z$, then
+\begin{align*}
+	\frac{d}{dz} [f(z) + g(z)] &= f'(z) + g'(z) \\
+	\frac{d}{dz} [f(z)g(z)] &= f(z)g'(z) + f'(z)g(z) \\
+	\frac{d}{dz} \left[\frac{f(z)}{g(z)}\right] &= \frac{f'(z)g(z) - g'(z)f(z)}{g^2(z)} \text{ if $g(z) \neq 0$}
+\end{align*}
+Finally, when composing functions (such as $F(z) = g[f(z)]$), the standard chain rule applies:
+\[
+	F'(z_0) = g'[f(z_0)] f'(z_0)
+\]
+or, in a different form, if $w = f(z)$ and $W = F(z)$,
+\[
+	\frac{dW}{dz} = \frac{dW}{dw} \frac{dw}{dz}
+\]
+
+
 \end{document}
