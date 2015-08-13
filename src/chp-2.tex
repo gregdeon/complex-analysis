@@ -793,4 +793,44 @@ so the derivative is
 \end{align*}
 }
 
+
+\clearpage
+\section{Frame 24 -- Analytic Functions}
+\subsection{Definitions}
+A function $f$ is \emph{analytic at a point} $z_0$ if it has a derivative at each point in some neighbourhood of $z_0$. By extension, if $f$ is analytic at $z_0$, it must be analytic at each point in some neighbourhood of $z_0$. A function is \emph{analytic in an open set} if it has a derivative everywhere in that set. For example, $f(z) = 1/z$ is analytic at each non-zero point, and $f(z) = |z|^2$ is analytic nowhere.
+
+An \emph{entire} function is a function that is analytic at each point in the finite complex plane. For example, a polynomial's derivative exists everywhere, so every polynomial is analytic.
+
+If a function is not analytic at a point $z_0$ but is analytic at some point in every neighbourhood of $z_0$, then $z_0$ is called a \emph{singular point} (or \emph{singularity}) of $f$. For example, $f(z) = 1/z$ has a singular point at $z = 0$.
+
+\subsection{Extensions}
+We can obtain some useful rules about analytic functions by looking at the conditions for differentiability. 
+
+Here, suppose $f$ and $g$ are two analytic functions in a domain $D$. Since their sum, $f + g$, their product, $fg$, and their quotient, $f/g$, are all differentiable (provided the denominator does not vanish in the last case), all three of these new functions are also analytic in $D$.
+
+We also know that the chain rule states that the composition $g[f(z)]$ is differentiable. Thus, the composition of two analytic functions is also also analytic.
+
+We can derive another useful property about analytic functions:
+
+\textit{If $f'(z) = 0$ everywhere in a domain $D$, then $f(z)$ must be constant through $D$.}
+
+This can be shown by writing $f$ in the form
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+Since $f'(z) = u_x + iv_x = 0$, both of these partial derivatives must be zero. Then, from Cauchy-Riemann,
+\[
+	u_x = u_y = v_x = v_y = 0
+\]
+at each point in $D$. Next, if we consider any line segment in $D$, we know that the derivative of $u$ along its arc length $s$ is
+\[
+	\frac{du}{ds} = (\text{grad } u) \cdot U
+\]
+where $U$ is a unit vector along the line segment. However, since $u_x = u_y = 0$, $\text{grad } u$ is also zero, so $u$ is constant on any line segment in $D$. Then, since we can connect any points in $D$ with a finite number of line segments, $u$ must have a constant value in $D$: ie,
+\[
+	u(x, y) = a
+\]
+We can apply the same logic to get $v(x, y) = b$. Then, we conclude that $f(z) = a + bi$ at each point in $D$.
+
+
 \end{document}
