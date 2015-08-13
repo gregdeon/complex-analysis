@@ -672,5 +672,42 @@ In order for the Cauchy-Riemann equations to hold at a point, we require that
 \end{align*}
 or, in other words, the derivative does not exist anywhere except possibly for the point $(0, 0)$.}
 
+\clearpage
+\section{Frame 22 -- Sufficient Conditions for Differentiability}
+\subsection{Extensions on Cauchy-Riemann}
+In the previous frame, we derived the Cauchy-Riemann equations, which are necessary for differentiability at a point. However, they are not sufficient. We can add some continuity conditions to improve the theorem as follows:
+
+\textit{Suppose that a function
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+is defined in some $\epsilon$ neighbourhood of a point $z_0$. If the partial derivatives $u_x$, $u_y$, $v_x$, and $v_y$ exist everywhere in the neighbourhood, are continuous at $z_0$, and satisfy the Cauchy-Riemann equations
+\[
+	u_x = v_y,	\quad	u_y = -v_x
+\]	
+then the derivative $f'(z_0)$ exists, and it has the value
+\[
+	f'(z_0) = u_x(z_0) + iv_x(z_0)
+\]}
+
+\subsection{Examples}
+\textit{Example: suppose that
+\[
+	f(z) = e^z = e^x e^{iy} = e^x \cos y + ie^x \sin y
+\]
+Then, the partial derivatives are
+\[
+	u_x = e^x \cos y = v_y,	\quad	u_y = -e^x \sin y = -v_x
+\]
+These derivatives are continuous everywhere and the Cauchy-Riemann equations are satisfied, so $f'(z_0)$ exists everywhere, and it has the value
+\[
+	f'(z) = e^x \cos y + ie^x \sin y = e^z
+\]}
+
+\textit{Example: suppose that
+\[
+	f(z) = |z|^2 = (x^2 + y^2) + i0
+\]
+We saw before that this function has a derivative at $z = 0$. However, at all other points, the Cauchy-RIemann equations are not satisfied, so the derivative does not exist anywhere else.}
 
 \end{document}
