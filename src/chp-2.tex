@@ -833,4 +833,67 @@ where $U$ is a unit vector along the line segment. However, since $u_x = u_y = 0
 We can apply the same logic to get $v(x, y) = b$. Then, we conclude that $f(z) = a + bi$ at each point in $D$.
 
 
+\clearpage
+\section{Frame 25 -- Examples of Analyticity}
+This section will give some examples of analytic functions.
+
+\emph{Example 1:} the function
+\[
+	f(z) = \frac{z^3 + 4}{(z^2 - 3)(z^2 + 1)}
+\]
+is analytic everywhere except for the points where the denominator vanishes due to the differentiation formulas available for polynomials, products, and quotients. There are four singular points at $z = \pm \sqrt{3}$ and $z = \pm i$.
+
+\emph{Example 2:} the function
+\[
+	f(z) = \text{cosh } x \cos y + i \text{ sinh } x \sin y
+\]
+has the component functions
+\[
+	u(x, y) = \text{cosh } x \cos y,	\quad	v(x, y) = \text{ sinh } x \sin y
+\]
+and the partial derivatives
+\[
+	u_x = \text{sinh } x \cos y = v_y,	\quad
+	u_y = -\text{cosh } x \sin y = -v_x	
+\]
+so $f$ is an entire function.
+
+\emph{Example 3:} suppose that a function
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+and its conjugate
+\[
+	\bar{f(z)} = u(x, y) - iv(x, y)
+\]
+are both analytic in a domain $D$. From applying the Cauchy-Riemann equations to $f$, we see that
+\[
+	u_x = v_y,	\quad u_y = -v_x
+\]
+and, applying them to the second function,
+\[
+	u_x = -v_y,	\quad u_y = v_x
+\]
+Solving these equations gives $u_x = v_x = 0$. Thus, the derivative of $f$ is
+\[
+	f'(z) = 0 + i0 = 0
+\]
+so $f$ is constant throughout $D$.
+
+\emph{Example 4:} suppose that a function has a constant magnitude -- ie,
+\[
+	|f(z)| = c
+\]
+for all $z$ in $D$. We can show that $f(z)$ is constant in $D$. First, if $c$ is zero, then we are done -- $0$ is constant. Otherwise, we can write
+\[
+	f(z) \bar{f(z)} = c^2
+\]
+Since $c \neq 0$, we know that $f(z)$ is never zero. Then, we can write
+\[
+	\bar{f(z)} = \frac{c^2}{f(z)}
+\]
+and since the quotient of two analytic functions is also analytic, both $f$ and its conjugate are analytic, so $f$ must be constant (see previous example).
+
+
+
 \end{document}
