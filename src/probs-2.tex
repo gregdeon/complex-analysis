@@ -859,4 +859,121 @@ so the derivative only exists if
 The only solution to this is at $(x, y) = (0, 1)$. This corresponds to $z = i$, so that is the only point where the derivative exists.
 
 
+\clearpage
+\section{Frame 25 -- Analytic Functions}
+\textbf{1(a)}
+The function
+\[
+	f(z) = (3x + y) + i(3y - x)
+\]
+has the partial derivatives
+\[
+	u_x = 3 = v_y,	\quad	u_y = 1 = -v_x
+\]
+so it is differentiable everywhere and, thus, entire.
+
+\textbf{1(b)}
+The components are
+\[
+	u(x, y) = \sin x \text{ cosh } y,	\quad
+	v(x, y) = \cos x \text{ sinh } y
+\]
+so the partial derivatives are
+\[
+	u_x = \cos x \text{ cosh } y = v_y,	\quad
+	u_y = \sin x \text{ sinh } y = -v_x
+\]
+so $f$ is differentiable and analytic everywhere.
+
+\textbf{1(c)}
+The components are
+\[
+	u(x, y) = e^{-y} \sin x, 	\quad
+	v(x, y) = -e^{-y} \cos x
+\]
+so the partial derivatives are
+\[
+	u_x = e^{-y} \cos x = v_y,	\quad
+	u_y = -e^{-y} \sin x = -v_x
+\]
+and $f$ is analytic.
+
+\textbf{2(a)}
+The partial derivatives are
+\begin{align*}
+	u_x &= y \\
+	u_y &= x \\
+	v_x &= 0 \\
+	v_y &= 1
+\end{align*}
+so the function is only differentiable at $(x, y) = (0, 1)$ or $z = i$. Thus, it is not differentiable over any neighbourhood, so it is nowhere analytic.
+
+\textbf{2(b)}
+The partial derivatives are
+\begin{align*}
+	u_x &= 2y \\
+	u_y &= 2x \\
+	v_x &= 2x \\
+	v_y &= -2y
+\end{align*}
+so the function is only differentiable at $z = 0$, and is nowhere analytic.
+
+\textbf{2(c)}
+The function is
+\[
+	f(z) = e^{y} e^{ix} = e^y \cos x + i e^y \sin x
+\]
+so the partial derivatives are
+\begin{align*}
+	u_x &= -e^y \sin x \\
+	u_y &=  e^y \cos x \\
+	v_x &=  e^y \cos x \\
+	v_y &=  e^y \sin x \\
+\end{align*}
+The function is only differentiable when
+\[
+	2 e^y \sin x = 0	\quad \text{ and } \quad	2 e^y \cos x = 0
+\]
+Since $e^y$ is never zero, this is only true if
+\[
+	\sin x = 0	\quad \text{and} \quad \cos x = 0
+\]
+However, this is never true, so the function is nowhere differentiable and thus nowhere analytic.
+
+\textbf{4(a)}
+The function has singular points where the denominator vanishes; ie:
+\[
+	z(z^2 + 1) = 0
+\]
+or $z = 0, z = \pm i$.
+
+\textbf{4(b)}
+The singular points are at
+\[
+	z^2 - 3z + 2 = 0
+\]
+or $z = 1, 2$.
+
+\textbf{4(c)}
+The singular points are at
+\[
+	(z + 2)(z^2 + 2z + 2)
+\]
+or $z = -2, -1 \pm i$.
+
+\textbf{7}
+Suppose that $f$ is a function of the form
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+If $f$ is real-valued, then $v(x, y) = 0$ for all $x, y$. This means that
+\[
+	v_x = v_y = 0
+\]
+Then, if $f$ is analytic in a domain $D$, then the Cauchy-Riemann equations require that
+\[
+	u_x = v_y = 0,	\quad	u_y = -v_x = 0
+\]
+Thus, all of the partial derivatives are zero, so $f'(z)$ is zero everywhere, and the function is constant throughout $D$.
+
 \end{document}
