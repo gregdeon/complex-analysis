@@ -4,6 +4,7 @@
 \usepackage{parskip}
 \usepackage{tikz}
 \renewcommand{\emph}{\textbf}
+\renewcommand{\bar}{\overline}
 
 \begin{document}
 
@@ -628,8 +629,234 @@ Since the limit is different from these two directions, the derivative does not 
 The proof for $\Im (z)$ is nearly identical.
 
 
+\clearpage
+\section{Frame 23 -- Differentiability}
+\textbf{1(a)}
+If 
+\[
+	f(z) = \bar{z} = x - iy
+\]
+then the derivatives are
+\[
+	u_x = 1,	\quad u_y = 0,	\quad v_x = 0,	\quad	v_y = -1
+\]
+and since $1 \neq -1$, the Cauchy-Riemann equations do not hold, so $f$ is not differentiable.
+
+\textbf{1(b)}
+If
+\[
+	f(z) = z - \bar{z} = (x + iy) - (x - iy) = 2iy
+\]
+then
+\[
+	u_x = u_y = v_x = 0,	\quad	v_y = 2
+\]
+so $f$ is not differentiable.
+
+\textbf{1(c)}
+Since
+\[
+	u(x, y) = 2x,	\quad v(x, y) = xy^2
+\]
+we find
+\[
+	u_x = 2, v_y = 2xy,	\quad u_y = 0, v_x = y^2
+\]
+so $f$ is not differentiable.
+
+\textbf{1(d)}
+The function is
+\[
+	f(x, y) = e^x e^{-iy} = e^x \cos y - e^x \sin y
+\]
+so
+\begin{align*}
+	u_x &=  e^x \cos y \\
+	v_y &= -e^x \cos y \\
+	u_y &= -e^x \sin y \\
+	v_x &= -e^x \sin y 
+\end{align*}
+and $f$ is not differentiable ($u_x \neq v_y$).
+
+\textbf{2(a)}
+The function is
+\[
+	f(z) = iz + 2 = (-y + 2) + ix
+\]
+so the partial derivatives are continuous everywhere. They are:
+\[
+	u_x = 0 = v_y,	\quad u_y = -1 = -v_x
+\]
+so the derivative is
+\[
+	f'(z) = u_x + iv_x = i
+\]
+This function has
+\[
+	u_x = u_y = v_x = v_y = 0
+\]
+so $f''(z)$ exists, and it is zero.
+
+\textbf{2(b)}
+The function is
+\[
+	f(z) = e^{-x}e^{-iy} = e^{-x} \cos y - ie^{-x} \sin y
+\]
+so the partial derivatives are
+\[
+	u_x = -e^{-x} \cos y = v_y, \quad
+	u_y = -e^{-x} \sin y = -v_x
+\]
+which are all continuous. Thus,
+\[
+	f'(z) = -e^{-x} \cos y + e^{-x} \sin y
+	= -e^{-x} (\cos y - \sin y)
+	= -e^{-x} e^{-iy} = -f(z)
+\]
+Since $f'(z)$ only differs from $f$ by a sign, the second derivative exists, and
+\[
+	f''(z) = f(z)
+\]
+
+\textbf{2(c)}
+The function is
+\[
+	f(z) = z^3 = (x + iy)^3 = (x^3 - 3xy^2) + i(3x^2y - y^3) 
+\]
+The partial derivatives are
+\[
+	u_x = 3x^2 - 3y^2 = v_y,	\quad
+	u_y = -6xy = -v_x
+\]
+so the derivative exists, and it is
+\[
+	f'(z) = (3x^2 - 3y^2) + i(6xy) = 3z^2
+\]
+Then, the second partial derivatives exist, with the values
+\[
+	u_x = 6x = v_y	\quad
+	u_y = -6y = -v_x
+\]
+Finally, $f''(z)$ exists, with the value
+\[
+	f''(z) = 6x + i6y = 6z
+\]
 
 
+\textbf{3(a)}
+The function is
+\[
+	f(z) = \frac{1}{z} = \frac{x}{x^2 + y^2} - i\frac{y}{x^2 + y^2}
+\]
+The partial derivatives are
+\begin{align*}
+	u_x &= \frac{(x^2 + y^2) - (x)(2x)}{(x^2 + y^2)^2} \\
+		&= \frac{-x^2 + y^2}{(x^2 + y^2)^2} \\
+	u_y &= \frac{-2xy}{(x^2 + y^2)^2} \\
+	v_x &= \frac{2xy}{(x^2 + y^2)^2} \\
+	v_y &= \frac{-(x^2 + y^2) + 2y^2}{(x^2 + y^2)^2} \\
+		&= \frac{-x^2 + y^2}{(x^2 + y^2)^2}
+\end{align*}
+so the Cauchy-Riemann equations hold for all $x, y$. The only point that they are not continuous at is $(0, 0)$, so the derivative exists for all $z \neq 0$. Its value is:
+\begin{align*}
+	f'(z) &= \frac{-x^2 + y^2}{(x^2 + y^2)^2} + i\frac{2xy}{(x^2 + y^2)^2} \\
+	&= -\frac{(x - iy)^2}{(x + iy)^2(x - iy)^2} \\
+	&= \frac{-1}{z^2}
+\end{align*}
+
+\textbf{3(b)}
+The function is
+\[
+	f(z) = x^2 + iy^2
+\]
+so the partial derivatives are
+\begin{align*}
+	u_x = 2x
+	u_y = 0
+	v_x = 0
+	v_y = 2y
+\end{align*}
+We see that $u_x = v_y$. However, for $u_y = -v_x$ to hold, we require
+\[
+	2x = -2y	\iff	x + y = 0
+\]
+so the derivative exists only on the line $y = -x$. There, it has the value
+\[
+	f'(z) = 2x
+\]
+
+\textbf{3(c)}
+The function is
+\[
+	f(z) = z \Im z = (x + iy)(y) = xy + iy^2
+\]
+The partial derivatives are
+\begin{align*}
+	u_x = y
+	u_y = x
+	v_x = 0
+	v_y = 2y
+\end{align*}
+Thus, the derivative is only defined where $y = 2y$ and $x = 0$. This only occurs at $z = 0$. The derivative's value is
+\[
+	f'(z) = y = 0
+\]
+
+
+\textbf{4(a)}
+The function is
+\[
+	f(z) = \frac{1}{z^4} = \frac{1}{r^4} e^{-i4\theta}
+	= \frac{1}{r^4} \cos 4\theta - \frac{1}{r^4} \sin 4\theta 
+\]
+The partial derivatives are
+\begin{align*}
+	u_r      &= \frac{-4}{r^5} \cos 4\theta \\
+	u_\theta &= \frac{-4}{r^4} \sin 4\theta \\
+	v_r      &= \frac{ 4}{r^5} \sin 4\theta \\
+	v_\theta &= \frac{-4}{r^4} \cos 4\theta
+\end{align*}
+Since $ru_r = v_\theta$ and $u_\theta = -rv_r$, so the derivative exists and has the value
+\begin{align*}
+	f'(z) &= e^{-i\theta} \frac{4}{r^5} ( -\cos 4\theta + \sin 4\theta ) \\
+	&= - \frac{4}{r^5 e^{i5\theta}} \\
+	&= \frac{-4}{z^5}
+\end{align*}
+for all $z \neq 0$.
+
+\textbf{4(b)}
+The function is
+\[
+	f(z) = \sqrt{r} e^{i\theta / 2}
+	= \sqrt{r} \cos \frac{\theta}{2} + i\sqrt{r} \sin \frac{\theta}{2}
+\]
+so the partial derivatives are
+\begin{align*}
+	u_r      &= \frac{1}{2\sqrt{r}} \cos \frac{\theta}{2} \\
+	u_\theta &= -\frac{\sqrt{r}}{2} \sin \frac{\theta}{2} \\
+	v_r      &= \frac{1}{2\sqrt{r}} \sin \frac{\theta}{2} \\
+	v_\theta &=  \frac{\sqrt{r}}{2} \cos \frac{\theta}{2}
+\end{align*}
+so the Cauchy-Riemann equations are satisfied, and the derivative has the value
+\[
+	f'(z) = e^{-i\theta} \frac{1}{2\sqrt{r}} \left( \cos \frac{\theta}{2} + \sin \frac{\theta}{2} \right)
+	= \frac{1}{2\sqrt{2} e^{\theta/2}}
+	= \frac{1}{2z^{1/2}}
+\]
+	
+\textbf{5}
+Applying the Cauchy-Riemann equations, the partial derivatives are
+\begin{align*}
+	u_x &= 3x^2 \\
+	u_y &= 0 \\
+	v_x &= 0 \\
+	v_y &= -3(1 - y)^2 
+\end{align*}
+so the derivative only exists if
+\[
+	x^2 + (y - 1)^2 = 0 
+\]
+The only solution to this is at $(x, y) = (0, 1)$. This corresponds to $z = i$, so that is the only point where the derivative exists.
 
 
 \end{document}
