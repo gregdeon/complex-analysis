@@ -14,7 +14,7 @@ August 12
 * 21
 * 22
 August 13
-- 23
+* 23
 - 24
 - 25
 August 14
