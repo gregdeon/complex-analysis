@@ -895,5 +895,92 @@ Since $c \neq 0$, we know that $f(z)$ is never zero. Then, we can write
 and since the quotient of two analytic functions is also analytic, both $f$ and its conjugate are analytic, so $f$ must be constant (see previous example).
 
 
+\clearpage
+\section{Frame 26: Harmonic Functions}
+\subsection{Definition}
+A \emph{harmonic} function $H$ of two real variables $x$ and $y$ is a function that has continuous first- and second-order derivatives that satisfy Laplace's equation:
+\[
+	H_{xx}(x, y) + H_{yy}(x, y) = 0
+\]
+
+\textit{Example: it is easy to verify that $T(x, y) = e^{-y} \sin x$ is harmonic over the entire $xy$ plane.}
+
+\subsection{A source of harmonic functions}
+The following theorem provides a source of harmonic functions.
+
+\textit{Theorem: if a function $f(z) = u(x, y) = iv(x, y)$ is analytic in a domain $D$, then its component functions $u$ and $v$ are harmonic in $D$.}
+
+This theorem can be proved by differentiating the Cauchy-Riemann equations with respect to $x$ and $y$, giving
+\begin{align*}
+	u_{xx} = v_{yx},	&\quad	u_{yx} = -v_{xx}	\\
+	u_{xy} = v_{yy},	&\quad	u_{yy} = -v_{xy}
+\end{align*}
+Then, since $u_{xy} = u_{yx}$ and $v_{xy} = v_{yx}$, it follows that
+\[
+	u_{xx} + u_{yy} = 0,	\quad	v_{xx} + v_{yy} = 0
+\]
+so $u$ and $v$ are harmonic in $D$.
+
+\textit{Example: the function
+\[
+	f(z) = e^{-y} \sin x - ie^{-y} \cos x
+\]
+is entire, so its real component must be harmonic in the entire $xy$ plane. This matches the result from the previous example.}
+
+\textit{Example: since the function
+\[
+	f(z) = \frac{i}{z^2}
+\]
+is analytic for all $z \neq 0$, we can write the function as
+\[
+	f(z) = \frac{i}{z^2} \frac{\bar{z}^2}{\bar{z}^2} = \frac{i\bar{z}^2}{|z|^4}
+	= \frac{2xy + i(x^2 - y^2)}{(x^2 + y^2)^2}
+\]
+and we obtain the two harmonic functions
+\begin{align*}
+	u(x, y) &= \frac{2xy}{(x^2 + y^2)^2} \\
+	v(x, y) &= \frac{x^2 - y^2}{(x^2 + y^2)^2}
+\end{align*}}
+
+\subsection{Harmonic conjugates}
+If two functions $u$ and $v$ are harmonic in a domain $D$ and their first-order derivatives satisfy Cauchy-Riemann in $D$, then we say that $v$ is a \emph{harmonic conjugate} of $u$. We can say that a function $f$ is analytic in $D$ iff $v$ is a harmonic conjugate of $u$. 
+
+\textit{Example: if we have the functions
+\[
+	u(x, y) = x^2 - y^2, 	\quad v(x, y) = 2xy
+\]
+then we know that these functions are the components of $f(z) = z^2$, so $v$ must be a harmonic conjugate of $u$. However, we verified earlier that $2xy + i(x^2 - y^2)$ is analytic nowhere, so $u$ is not a harmonic conjugate of $v$.}
+
+\textit{Example: the component function
+\[
+	u(x, y) = y^3 - 3x^2y
+\]
+is harmonic because $u_{xx} + u_{yy} = 0$ in the entire $xy$ plane. To find a harmonic conjugate, we can use the Cauchy-Riemann equations
+\[
+	u_x = v_y,	\quad u_y = -v_x
+\]
+so we can write, using the first equation,
+\[
+	v_y(x, y) = -6xy
+\]
+which integrates to give
+\[
+	v(x, y) = -3xy^2 + \phi(x)
+\]
+Then, the other equation gives
+\[
+	3x^2 - 3y^2 =  -3y^2 + \phi'(x)
+\]
+so
+\[
+	v(x, y) = -3xy^2 + x^3 + C
+\]
+These equations correspond to the form
+\[
+	f(z) = i(z^3 + C)
+\]
+}
+
+
 
 \end{document}
