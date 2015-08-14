@@ -976,4 +976,61 @@ Then, if $f$ is analytic in a domain $D$, then the Cauchy-Riemann equations requ
 \]
 Thus, all of the partial derivatives are zero, so $f'(z)$ is zero everywhere, and the function is constant throughout $D$.
 
+
+\clearpage
+\section{Frame 26 -- Harmonic Functions}
+\textbf{1(a)}
+The function $u(x, y) = 2x - 2xy$ has $u_{xx} = u_{yy} = 0$, so it is harmonic everywhere. Using Cauchy-Riemann,
+\[
+	v_y = u_x = 2 - 2y
+\]
+so
+\[
+	v(x, y) = -y^2 + 2y + \phi(x)
+\]
+Then,
+\[
+	v_x = \phi'{x} = -u_y = 2x
+\]
+so finally
+\[
+	v(x, y) = x^2 - y^2 + 2y +C
+\]
+
+\textbf{1(b)}
+The function $u(x, y) = 2x - x^3 + 3xy^2$ has $u_{xx} = -6x = -u_{yy}$, so it is harmonic everywhere. The harmonic conjugate has
+\[
+	v_y = u_x = 2 - 3x^2 + 3y^2
+\]
+so
+\[
+	v(x, y) = 2y - 3x^2y + y^3 + \phi(x)
+\]
+Then,
+\[
+	v_x = -6xy + \phi'(x) = -6xy
+\]
+so
+\[
+	v(x, y) = 2y - 3x^2y + y^3 + C
+\]
+
+\textbf{1(c)}
+The function $u(x, y) = \text{sinh } x \sin y$ has $u_{xx} = u(x, y) = -u_{yy}$, so it is harmonic everywhere. From Cauchy-Riemann,
+\[
+	v_y = u_x = \text{cosh } x \sin y
+\]
+so
+\[
+	v(x, y) = - \text{cosh } x \cos y + \phi(x)
+\]
+and
+\[
+	v_x = - \text{sinh } x \cos y + \phi'(x) = -u_y = -\text{sinh } x \cos y
+\]
+so
+\[
+	v(x, y) = - \text{cosh } x \cos y + C
+\]
+
 \end{document}
