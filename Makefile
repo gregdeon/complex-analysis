@@ -8,8 +8,8 @@
 LC = pdflatex -aux-directory=temp
 
 # Chapters
-SRC = chp-2.tex
-SRC += probs-2.tex
+SRC =  chp-2.tex   chp-3.tex
+SRC += probs-2.tex probs-3.tex
 
 SRC_PATH = src/
 OUT_PATH = out/
