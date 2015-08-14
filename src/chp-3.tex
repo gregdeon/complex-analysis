@@ -5,6 +5,7 @@
 \usepackage{tikz}
 \renewcommand{\emph}{\textbf}
 \renewcommand{\bar}{\overline}
+\newcommand{\Log}{\text{Log }}
 
 \begin{document}
 
@@ -81,5 +82,66 @@ so
 	z = \frac{1}{2} \ln 2 + \left( 2n + \frac{1}{4} \right) \pi i
 \]}
 
+
+\clearpage
+\section{Frame 30 -- The Logarithmic Function}
+\subsection{Motivation}
+We said in the previous section that $e^z$ can take on any non-zero complex value. To help us solve the equation
+\[
+	e^w = z
+\]
+we will define a \emph{logarithmic function}, such that
+\[
+	e^{\log z} = z	\quad (z \neq 0)
+\]
+We can solve for $w$ by writing the two complex numbers in the form
+\begin{align*}
+	z &= re^{i\theta} \\
+	w &= u + iv
+\end{align*}
+Substituting these into the original equation gives
+\[
+	e^u e^{iv} = re^{i\theta}
+\]
+so we get
+\[
+	w = \log z = \ln r + i(\theta + 2n\pi)
+\]
+Note that this is a multi-valued function.
+
+\textit{Example: if $z = -1 - i\sqrt{3}$, then $r = 2$ and $\theta = -2\pi/3$, so
+\[
+	\log(-1 - i\sqrt{3}) = \ln 2 + \left(n - \frac{1}{3}\right) 2\pi i
+\]}
+
+\subsection{Precise definition}
+A more precise definition of the multi-valued logarithmic function is
+\[
+	\log z = \ln |z| + i \arg z
+\]
+The \emph{principal value} of $\log z$ is obtained by using the single-valued principal argument instead:
+\[
+	\Log z = \ln |z| + i \theta
+\]
+Note that
+\[
+	\log z = \Log z + i 2n\pi
+\]
+
+\subsection{Notes}
+The principal logarithmic function $\Log z$ reduces to the usual logarithm from calculus when $z$ is positive and real -- if $z = r$, then
+\[
+	\Log r = \ln r
+\]
+However, we are now able to find the logarithm of negative real numbers, which we were unable to do in calculus.
+
+\textit{Example: the logarithm of $-1$ is
+\[
+	\log(-1) = \ln 1 + (1 + 2n)i\pi = (2n + 1)i\pi
+\]
+and
+\[
+	\Log(-1) = i\pi
+\]}
 
 \end{document}
