@@ -9,9 +9,77 @@
 \begin{document}
 
 \section{Frame 29 -- The Exponential Function}
-We define the exponential function $e^z$ by writing
+\subsection{Definition}
+We define the \emph{exponential function} $e^z$ by writing
 \[
 	e^z = e^x e^{iy}
 \]
+and we apply Euler's formula to get
+\[
+	e^z = e^x (\cos y + i \sin y)
+\]
+Note that, when $y = 0$, $e^z$ reduces to $e^x$. 
+
+Although we typically understand that $e^{1/n}$ would be the set of $n$th roots of $e$, here, we only use the real, positive root $\sqrt[n]{e}$.
+
+\subsection{Familar properties}
+First, in calculus, we know that
+\[
+	e^{x_1} e^{x_2} = e^{x_1 + x_2}
+\]
+It is easy to verify that this holds true for complex numbers:
+\[
+	e^{z_1} e^{z_2} = e^{z_1 + z_2}
+\]
+This also allows us to write
+\[
+	\frac{e^{z_1}}{e^{z_2}} = e^{z_1 - z_2}
+\]
+and, as a specific case,
+\[
+	\frac{1}{e^{z}} = e^{-z}
+\]
+
+We showed earlier that $e^z$ is differentiable everywhere in the complex plane, and that
+\[
+	\frac{d}{dz} e^z = e^z
+\]
+We also know that $e^z$ is never zero. This comes from the pair
+\[
+	|e^z| = e^x	\quad \text{and} \quad	\text{arg}(e^z) = y + 2n\pi
+\]
+and since $e^x$ is never zero, neither is $e^z$.
+
+\subsection{Unfamiliar properties}
+Since we can write
+\[
+	e^{z + 2\pi i} = e^z e^{2\pi i} = e^z
+\]
+the exponential function is periodic with an imaginary period of $2\pi i$.
+
+It is also possible for the complex exponential function to be negative. For an example, we know that Euler's identity states
+\[
+	e^{i\pi} = -1
+\]
+In fact, $e^z$ can be any given non-zero complex number.
+
+\textit{Example: suppose we want solutions to the equation
+\[
+	e^z = 1 + i
+\]
+The right side can be rewritten as
+\[
+	e^x e^{iy} = \sqrt{2} e^{i\pi / 4}
+\]
+and equating the parts of this equation gives
+\[
+	x = \ln \sqrt{2} = \frac{1}{2} \ln 2 \quad	\text{and} \quad 
+	y = \left(2n + \frac{1}{4}\right) \pi
+\]
+so
+\[
+	z = \frac{1}{2} \ln 2 + \left( 2n + \frac{1}{4} \right) \pi i
+\]}
+
 
 \end{document}
