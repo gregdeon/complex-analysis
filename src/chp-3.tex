@@ -5,7 +5,8 @@
 \usepackage{tikz}
 \renewcommand{\emph}{\textbf}
 \renewcommand{\bar}{\overline}
-\newcommand{\Log}{\text{Log }}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
 
 \begin{document}
 
@@ -154,7 +155,7 @@ We saw in the previous section that the multi-valued logarithm function of a com
 \]
 where $\theta$ can have any of the values
 \[
-	\theta = \text{Arg}(z) + 2n\pi
+	\theta = \Arg(z) + 2n\pi
 \]
 We can make the logarithmic function single-valued by restricting the value of $\theta$ to $\alpha < \theta < \alpha + 2\pi$ for any real value of $\theta$. Then, the function is single-valued and is continuous everywhere in the domain of the function (ie: $r > 0$ and $\theta \in (\alpha, \alpha + 2\pi)$). Note that we cannot include in the ray $\theta = \alpha$ -- the function would not be continuous here.
 
@@ -170,7 +171,7 @@ so the logarithmic function is analytic in this domain, with the derivative
 In particular, we can set $\alpha = -\pi$ and write
 \[
 	\frac{d}{dz} \Log z = \frac{1}{z}	\quad
-	(|z| > 0, - \pi < \text{Arg } z < \pi)
+	(|z| > 0, - \pi < \Arg z < \pi)
 \]
 
 Note that not all of the identities from calculus carry over to the complex plane.
@@ -192,7 +193,7 @@ so
 A \emph{branch} of a multi-valued function $f$ is any single-valued, analytic function $F$ such that $F(z)$ is one of the values of $f$ at each point within the domain of $F$. For instance, our limited-domain logarithm is a branch of the multi-valued $\log$ function. The principal logarithm function
 \[
 	\Log z = \ln r + i\theta	\quad
-	(|z| > 0, -\pi < \text{Arg } z < \pi)
+	(|z| > 0, -\pi < \Arg z < \pi)
 \]
 is known as the \emph{principal branch}.
 
