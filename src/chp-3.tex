@@ -201,4 +201,46 @@ A \emph{branch cut} is a line/curve that is used to define a branch $F$ of a mul
 
 
 
+\clearpage
+\section{Frame 32 -- Logarithm Identities}
+We said earlier that arguments, which are multi-valued functions, can be compared in a special way -- since each function is really a set of values, the sets will contain the same values. Specifically,
+\[
+	\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)
+\]
+Now, we know that $|z_1z_2| = |z_1||z_2|$, and from our knowledge of real-valued logarithms,
+\[
+	\ln|z_1 z_2| = \ln|z_1| + \ln|z_2|
+\]
+Putting together these two statements, we see that
+\[
+	\log(z_1 z_2) = \log z_1 + \log z_2
+\]
+which is to be understood as \textit{set equality}, and does not necessarily apply to the principal values. In a similar manner,
+\[
+	\log \left( \frac{z_1}{z_2} \right) = \log z_1 - \log z_2
+\]
+
+Two more properties will be useful in the next section. If $z$ is any non-zero complex number, then
+\[
+	z^n = e^{n \log z}
+\]
+for all values of $\log z$. When $n = 1$, this reduces to the familiar
+\[
+	z = e^{\log z}
+\]
+
+Also, for any non-zero $z$, it is true that
+\[
+	z^{1 / n} = e^{\frac{1}{n} \log z}
+\]
+where both sides have $n$ distinct values. To show this, we can write out the right side as
+\[
+	e^{\frac{1}{n} \log z}
+	= e^{\frac{1}{n} \ln r + \frac{i (\theta + 2k\pi}{n}}
+	= \sqrt[n]{r} e^{i(\theta/n + 2k\pi/n)}
+\]
+which has $n$ distinct values, for $k = 0, 1, \dots, n - 1$.
+
+
+
 \end{document}
