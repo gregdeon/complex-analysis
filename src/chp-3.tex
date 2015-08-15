@@ -144,4 +144,60 @@ and
 	\Log(-1) = i\pi
 \]}
 
+
+\clearpage
+\section{Frame 31 -- Branches \& Derivatives of Logarithms}
+\subsection{Limiting a logarithm's domain}
+We saw in the previous section that the multi-valued logarithm function of a complex number $z = re^{i\theta}$ can be written as
+\[
+	\log z = \ln r + i \theta
+\]
+where $\theta$ can have any of the values
+\[
+	\theta = \text{Arg}(z) + 2n\pi
+\]
+We can make the logarithmic function single-valued by restricting the value of $\theta$ to $\alpha < \theta < \alpha + 2\pi$ for any real value of $\theta$. Then, the function is single-valued and is continuous everywhere in the domain of the function (ie: $r > 0$ and $\theta \in (\alpha, \alpha + 2\pi)$). Note that we cannot include in the ray $\theta = \alpha$ -- the function would not be continuous here.
+
+In this limited domain, the components of the $\log$ function also satisfy the polar Cauchy-Riemann equations
+\[
+	ru_r = 1 = v_\theta;	\quad	u_\theta = 0 = -rv_r
+\]
+so the logarithmic function is analytic in this domain, with the derivative
+\[
+	\frac{d}{dz} \log z = e^{-i\theta}(u_r + iv_r) = \frac{1}{re^{i\theta}}
+	= \frac{1}{z}
+\]
+In particular, we can set $\alpha = -\pi$ and write
+\[
+	\frac{d}{dz} \Log z = \frac{1}{z}	\quad
+	(|z| > 0, - \pi < \text{Arg } z < \pi)
+\]
+
+Note that not all of the identities from calculus carry over to the complex plane.
+
+\textit{Example: using the principal branch, 
+\[
+	\Log(i^3) = \Log(-i) = -i \frac{\pi}{2}
+\]
+but
+\[
+	3\Log(i) = 3\left(i\frac{\pi}{2}\right) = i\frac{3\pi}{2}
+\]
+so
+\[
+	\Log(i^3) \neq 3\Log(i)
+\]}
+
+\subsection{Branches}
+A \emph{branch} of a multi-valued function $f$ is any single-valued, analytic function $F$ such that $F(z)$ is one of the values of $f$ at each point within the domain of $F$. For instance, our limited-domain logarithm is a branch of the multi-valued $\log$ function. The principal logarithm function
+\[
+	\Log z = \ln r + i\theta	\quad
+	(|z| > 0, -\pi < \text{Arg } z < \pi)
+\]
+is known as the \emph{principal branch}.
+
+A \emph{branch cut} is a line/curve that is used to define a branch $F$ of a multi-valued function $f$. Any point on the branch cut is a singular point of $F$. Any point that is common to all branch cuts of $f$ is called a \emph{branch point}. For example, the logarithmic function has a branch point at $z = 0$ and a branch cut on the ray $\theta = \alpha$. In particular, the ray $\theta = \pi$ is the branch cut for the principal logarithmic function.
+
+
+
 \end{document}

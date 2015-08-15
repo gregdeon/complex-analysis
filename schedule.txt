@@ -22,7 +22,7 @@ August 14
 * 29
 * 30
 August 15
-- 31
+* 31
 - 32
 August 16
 - 33
