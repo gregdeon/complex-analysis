@@ -242,5 +242,79 @@ where both sides have $n$ distinct values. To show this, we can write out the ri
 which has $n$ distinct values, for $k = 0, 1, \dots, n - 1$.
 
 
+\clearpage
+\section{Frame 33 -- Complex Exponents}
+\subsection{Definition and basics}
+For non-zero $z$ and complex $c$, we define the function $z^c$ as
+\[
+	z^c = e^{c \log z}
+\]
+Note that this definition uses the multi-valued $\log$ function.
 
+We saw earlier that the exponential function has the property
+\[
+	\frac{1}{e^z} = e^{-z}
+\]
+Now, for the general power equation, we have
+\[
+	\frac{1}{z^c} = \frac{1}{e^{c \log z}} = e^{-c \log z} = z^{-c}
+\]
+
+\textit{Example: the values of $i^{-2i}$ can be found by first writing
+\[
+	\log i = \ln 1 + i\left( \frac{\pi}{2} + 2n\pi\right)
+	= i \left( 2n + \frac{1}{2} \right) \pi
+\]
+and so
+\[
+	i^{-2i} = e^{-2i \cdot i(2n + 1/2)\pi}
+	= e^{(4n + 1) \pi}
+\]
+Note that all of these powers are real numbers.}
+
+The \emph{principal value} of $z^c$ uses the single-valued log function:
+\[
+	\text{P.V. } z^c = e^{c \Log z}
+\]
+
+\textit{Example: the principal value of $(-i)^i$ is
+\[
+	e^{i \Log(-i)}
+	= e^{i(-i \pi/2)}
+	= e^{\pi / 2}
+\]}
+
+\subsection{Other properties}
+To differentiate $z^c$, we can restrict the logarithmic function to a single branch
+\[
+	\log z = \ln + i\theta	\quad (r > 0, \alpha < \theta < \alpha + 2\pi)
+\]
+Then, $z^c$ is analytic in this domain. The derivative can be found through the chain rule:
+\[
+	\frac{d}{dz} z^c
+	= \frac{d}{dz} e^{c \log z}
+	= \frac{c}{z} e^{c \log z}
+	= c z^{c-1}
+\]
+
+Most of the laws of exponents remain valid in the complex plane. However, since the functions are multi-valued, we can only guarantee equality between sets -- when using principal values, not all of the rules of real exponents work. For example, the law
+\[
+	z_1^c z_2^c = (z_1 z_2)^c
+\]
+does not necessarily hold for all $z_1, z_2$ when using principal values.
+
+\subsection{Exponential functions with other bases}
+We can write the \emph{exponential function} with a non-zero base $c$ as
+\[
+	c^z = e^{z \log c}
+\]
+Note that this function is, again, multi-valued: if $c = e$, then we don't recover our usual definition of $e^z$. However, if we use the principal value of the logarithm, the usual interpretation occurs.
+
+This exponential function is an entire function for any non-zero $c$. It has the derivative
+\[
+	\frac{d}{dz} c^z 
+	= \frac{d}{dz} e^{z \log c}
+	= e^{z \log c} \log c
+	= c^z \log c
+\]
 \end{document}
