@@ -257,4 +257,88 @@ The values of $(-1 + i\sqrt{3})^{3/2}$ are
 	= \pm 2\sqrt{2}
 \]
 
+
+\clearpage
+\section{Frame 34 -- Trigonometric Functions}
+\textbf{15}
+To find all roots of the equation
+\[
+	\sin z = \cosh 4
+\]
+we can write
+\[
+	\sin z = \sin x \cosh y + i \cos x \sinh y
+\]
+Then, equating real and imaginary parts, we find that
+\begin{align*}
+	\sin x \cosh y &= \cosh 4 \\
+	\cos x \sinh y &= 0
+\end{align*}
+The second equation says that $x = (n + 1/2) \pi$. Since $\sin x$ here is one of $\pm 1$, the first equation becomes
+\[
+	\cosh y = \pm \cosh 4
+\]
+However, $\cosh y > 0$ for all $y$ snd $\cosh y = \cosh (-y)$, so the only solutions are
+\[
+	z = \left(2n + \frac{1}{2} \right) \pi \pm 4i
+\]
+
+\textbf{16}
+To find all roots of the equation
+\[
+	\cos z = 2
+\]
+we can write
+\[
+	\cos z = \cos x \cosh y - i \sin x \sinh y
+\]
+so
+\begin{align*}
+	\cos x \cosh y &= 2	\\
+	\sin x \sinh y &= 0
+\end{align*}
+The second equation states that $x = n\pi$ or $y = 0$. The second case has no solutions, so we must have $x = n\pi$. Then, $\cos x = \pm 1$. As above, we require that $\cos x = 1$ for any solutions to be found. This gives
+\[
+	x = 2n\pi 
+\]
+so
+\[
+	y = \cosh^{-1}(2)
+\]
+or, putting these together,
+\[
+	z = 2n\pi + i \cosh^{-1}(2)
+\]
+
+To simplify this, we can try to find a simpler expression for $y$. If $\cosh y = 2$, then
+\[
+	\frac{e^{y} + e^{-y}}{2} = 2
+\]
+or
+\[
+	(e^y)^2 - 4(e^y) + 1 = 0
+\]
+This has solutions when
+\[
+	e^y = 2 \pm \sqrt{3}
+\]
+or
+\[
+	y = \ln(2 \pm \sqrt{3})
+\]
+However, 
+\[
+	\frac{1}{2 - \sqrt{3}} = 2 + \sqrt{3}
+\]
+so
+\[
+	\ln(2 + \sqrt{3}) = -\ln(2 - \sqrt{3})
+\]
+and the solutions are
+\[
+	z = 2n\pi \pm i \ln(2 + \sqrt{3})
+\]
+
+
+
 \end{document}
