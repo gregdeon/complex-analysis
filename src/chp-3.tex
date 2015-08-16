@@ -8,6 +8,7 @@
 \DeclareMathOperator{\Log}{Log}
 \DeclareMathOperator{\Arg}{Arg}
 
+
 \begin{document}
 
 \section{Frame 29 -- The Exponential Function}
@@ -317,4 +318,111 @@ This exponential function is an entire function for any non-zero $c$. It has the
 	= e^{z \log c} \log c
 	= c^z \log c
 \]
+
+
+\clearpage
+\section{Frame 34 -- Trigonometric Functions}
+\subsection{Trigonometric functions -- definitions}
+We know from Euler's formula that
+\begin{align*}
+	e^{ix}  &= \cos x + i \sin x \\
+	e^{-ix} &= \cos x - i \sin x
+\end{align*}
+and we can rearrange this into
+\begin{align*}
+	\sin x &= \frac{e^{ix} - e^{-ix}}{2i} \\
+	\cos x &= \frac{e^{ix} + e^{-ix}}{2 }
+\end{align*}
+
+In a similar manner, we can define the complex \emph{trigonometric functions}
+\begin{align*}
+	\sin z &= \frac{e^{iz} - e^{-iz}}{2i} \\
+	\cos z &= \frac{e^{iz} + e^{ iz}}{2}
+\end{align*}
+
+\subsection{Trigonometric functions -- properties}
+First, the two trig functions are entire, since they are linear combinations of two entire functions. Thus, they are differentiable everywhere; their derivatives, from the complex exponential derivatives, are
+\begin{align*}
+	\frac{d}{dz} \sin z &= \cos z \\
+	\frac{d}{dz} \cos z &= -\sin z
+\end{align*}
+We can also see that the odd/even properties carry over:
+\begin{align*}
+	\sin(-z) &= - \sin z \\
+	\cos(-z) &=   \cos z
+\end{align*}
+and Euler's formula also applies:
+\[
+	e^{iz} = \cos z + i \sin z
+\]
+
+Many of the identities from trigonometry carry over. A sample of these identities is:
+\begin{align*}
+	\sin(z_1 + z_2) &= \sin z_1 \cos z_2 + \cos z_1 \sin z_2 \\
+	\cos(z_1 + z_2) &= \cos z_1 \cos z_2 - \sin z_1 \sin z_2 \\
+	\sin 2z &= 2 \sin z \cos z \\
+	\cos 2z &= \cos^2 z - \sin^2 z \\
+	\sin \left( z + \frac{\pi}{2} \right) &=   \cos z \\
+	\sin \left( z - \frac{\pi}{2} \right) &= - \cos z \\
+	\sin (z +   \pi) &= -\sin z \\
+	\sin (z + 2 \pi) &=  \sin z \\
+	\cos (z +   \pi) &= -\cos z \\
+	\cos (z + 2 \pi) &=  \cos z \\
+	\sin^2 z + \cos^2 z &= 1
+\end{align*}
+
+\subsection{Using hyperbolic functions}
+The hyperbolic trig functions of a real number $y$ are defined, from calculus, as
+\begin{align*}
+	\sinh y &= \frac{e^y - e^{-y}}{2} \\
+	\cosh y &= \frac{e^y + e^{-y}}{2}
+\end{align*}
+We can use these definitions to write
+\begin{align*}
+	\sin(iy) &= i \sinh y \\
+	\cos(iy) &=   \cosh y
+\end{align*}
+Then, if $z = x + iy$ is a complex number, we can write
+\begin{align*}
+	\sin z &= \sin x \cosh y + i \cos x \sinh y \\
+	\cos z &= \cos x \cosh y - i \sin x \sinh y
+\end{align*}
+These expressions allow us to write
+\begin{align*}
+	|\sin z|^2 &= \sin^2 x + \sinh^2 y \\
+	|\cos z|^2 &= \cos^2 x + \sinh^2 y
+\end{align*}
+and, since $\sinh y$ is unbounded in $y$, the trigonometric functions are \emph{unbounded} on the complex plane.
+
+\subsection{Extensions to other trigonometric functions}
+Since
+\[
+	|\sin z|^2 = \sin^2 x + \sinh^2 y
+\]
+we find that $\sin z$ only has zeroes at $x = n \pi$ and $y = 0$; ie:
+\[
+	\sin z = 0 \iff z = n\pi
+\]
+Since $\cos z = -\sin(z - \pi/2$, we find that 
+\[
+	\cos z = 0 \iff z = \left( \frac{1}{2} + n \right) \pi
+\]
+
+With these zeroes in mind, we can define the four other trigonometric functions as expected:
+\begin{align*}
+	\tan z &= \frac{\sin z}{\cos z} \\
+	\sec z &= \frac{1}{\cos z} \\
+	\cot z &= \frac{\cos z}{\sin z} \\
+	\csc z &= \frac{1}{\sin z}
+\end{align*}
+These functions are analytic everywhere except for the singularities caused by the denominators: $\tan$ and $\sec$ are analytic for all $z \neq (n + 1/2)\pi$, and $\cot$ and $\csc$ are analytic for all $z \neq n\pi$. 
+
+We can use our differentiation rules to find the expected differentiation formulas:
+\begin{align*}
+	\frac{d}{dz} \tan z &= \sec^2 z \\
+	\frac{d}{dz} \sec z &= \sec z \tan z \\
+	\frac{d}{dz} \cot z &= -\csc^2 z \\
+	\frac{d}{dz} \csc z &= -\csc z \cot z
+\end{align*}
+
 \end{document}
