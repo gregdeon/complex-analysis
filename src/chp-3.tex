@@ -7,6 +7,8 @@
 \renewcommand{\bar}{\overline}
 \DeclareMathOperator{\Log}{Log}
 \DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
 
 
 \begin{document}
@@ -423,6 +425,65 @@ We can use our differentiation rules to find the expected differentiation formul
 	\frac{d}{dz} \sec z &= \sec z \tan z \\
 	\frac{d}{dz} \cot z &= -\csc^2 z \\
 	\frac{d}{dz} \csc z &= -\csc z \cot z
+\end{align*}
+
+
+\clearpage
+\section{Frame 35 -- Hyperbolic Trigonometry}
+\subsection{Definitions}
+Following suit from the previous section, we can define the \emph{hyperbolic sine and cosine} of a complex variable as
+\begin{align*}
+	\sinh z &= \frac{e^z - e^{-z}}{2} \\
+	\cosh z &= \frac{e^z + e^{-z}}{2}
+\end{align*}
+As with the regular trigonometric functions, these are linear combinations of entire functions, so they are also entire, with the derivatives
+\begin{align*}
+	\frac{d}{dz} \sinh z &= \cosh z \\
+	\frac{d}{dz} \cosh z &= \sinh z
+\end{align*}
+
+\subsection{Properties}
+Due to the similar definitions of the regular and hyperbolic trig functions, we can write the following relationships:
+\begin{align*}
+	\cosh(iz) &= \cos z \\
+	\cos (iz) &= \cosh z \\
+	-i \sinh(iz) &= \sin z \\
+	-i \sin (iz) &= \sinh z
+\end{align*}
+Some common identities are:
+\begin{align*}
+	\sinh(-z) &= - \sinh z \\
+	\cosh(-z) &=   \cosh z \\
+	\cosh^2 z - \sinh^2 z &= 1 \\ 
+	\sinh(z_1 + z_2) &= \sinh z_1 \cosh z_2 + \cosh z_1 \sinh z_2 \\
+	\cosh(z_1 + z_2) &= \cosh z_1 \cosh z_2 + \sinh z_1 \sinh z_2 \\
+	\sinh z &= \sinh x \cos y + i \cosh x \sin y \\
+	\cosh z &= \cosh x \cos y + i \sinh x \sin y \\
+	| \sinh z |^2 &= \sinh^2 x + \sin^2 y \\
+	| \cosh z |^2 &= \sinh^2 x + \cos^2 y
+\end{align*}
+We can obtain most of these identities by converting the hyperbolic trig functions into regular trig (as above) and applying the identities discussed in the previous section.
+
+\subsection{Extensions}
+Since $\sin$ and $\cos$ are periodic with a period of $2\pi$, it is clear that $\sinh$ and $\cosh$ are also periodic with a period of $2\pi i$. Extending this, we can find the zeroes of each function:
+\begin{align*}
+	\sinh z = 0 &\iff z = n\pi i \\
+	\cosh z = 0 &\iff z = (n + 1/2) \pi i
+\end{align*}
+
+We can also define the remaining four hyperbolic trig functions as
+\begin{align*}
+	\tanh z &= \frac{\sinh z}{\cosh z} \\
+	\sech z &= \frac{1}{\cosh z} \\
+	\coth z &= \frac{\cosh z}{\sinh z} \\
+	\csch z &= \frac{1}{\sinh z} \\
+\end{align*}
+Again, using the quotient rule, we find that their derivatives are
+\begin{align*}
+	\frac{d}{dz} \tanh z &= \sech^2 z \\
+	\frac{d}{dz} \sech z &= - \sech z \tanh z \\
+	\frac{d}{dz} \coth z &= - \csch^2 z \\
+	\frac{d}{dz} \csch z &= - \csch z \coth z
 \end{align*}
 
 \end{document}
