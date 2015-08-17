@@ -465,4 +465,96 @@ Thinking back to the previous section, this can be simplified to
 	z = \pm \ln(2 + \sqrt{3}) + i(2n + 1)\pi
 \]
 
+
+\clearpage
+\section{Frame 36 -- Inverse Trigonometry}
+\textbf{1(a)}
+The values of $\tan^{-1}(2i)$ are
+\begin{align*}
+	\arctan(2i) 
+	&= \frac{i}{2} \log \frac{3i}{-i} \\
+	&= \frac{i}{2} \log {-3} \\
+	&= \frac{i}{2} [\ln 3 + i(2n + 1)\pi] \\
+	&= (n + 1/2)\pi + i \frac{\ln 3}{2}
+\end{align*}
+
+\textbf{1(b)}
+The values of $\tan^{-1}(1 + i)$ are
+\begin{align*}
+	\arctan(1 + i)
+	&= \frac{i}{2} \log \frac{1 + 2i}{-1} \\
+	&= \frac{i}{2} \log -(1 + 2i) \\
+	&= \frac{i}{2} [\ln \sqrt{5} + i(2n + \arctan(2) + 1)\pi] \\
+	&= [n - (1 + \arctan 2 )]\pi + \frac{i}{4} \ln 5  
+\end{align*}
+
+\textbf{1(c)}
+Since $(-1)^2 - 1 = 0$, the values of $\cosh^{-1}(-1)$ are
+\[
+	\cosh^{-1}(-1) = \log(-1)
+	= i(2n + 1)\pi
+\]
+
+\textbf{1(d)}
+The values of $\tanh^{-1}(0)$ are
+\begin{align*}
+	\tanh^{-1}(0)
+	&= \frac{1}{2} \log 1 \\
+	&= \frac{1}{2} (2n\pi i) \\
+	&= i n\pi
+\end{align*}
+
+\textbf{2}
+The solutions to the equation $\sin z = 2$ are
+\begin{align*}
+	z &= \sin^{-1} 2 \\
+	&= -i \log [2i + (-3)^{1/2}] \\
+	&= -i \log [i (2 \pm \sqrt{3})]
+\end{align*}
+The values of this logarithm are
+\[
+	\log[i (2 + \sqrt{3})]
+	= \ln(2 + \sqrt{3}) + i(2n + 1/2)\pi 
+\]
+and
+\[
+	\log[i (2 - \sqrt{3})]
+	= \ln(2 - \sqrt{3}) + i(2n + 1/2)\pi
+	= -\ln(2 + \sqrt{3}) + i(2n + 1/2)\pi
+\]
+or, combining these two sets,
+\[
+	\log[i (2 \pm \sqrt{3})]
+	= \pm \ln(2 + \sqrt{3}) + i(2n + 1/2)\pi
+\]
+Then,
+\[
+	\sin^{-1} 2
+	= \left(2n + \frac{1}{2} \right) \pi \pm i\ln(2 + \sqrt{3})
+\]
+
+\textbf{3}
+The values of $\cos^{-1} \sqrt{2}$ are
+\[
+	\cos^{-1} \sqrt{2}
+	= -i \log[\sqrt{2} + i(-1)^{1/2}]
+	= -i \log[\sqrt{2} \pm 1]
+\]
+This logarithm has two values:
+\[
+	\log[\sqrt{2} + 1] 
+	= \ln(\sqrt{2} + 1) + i2n\pi
+\]
+and
+\[
+	\log[\sqrt{2} - 1]
+	= \ln(\sqrt{2} - 1) + i2n\pi
+	= -\ln(\sqrt{2} + 1) + i2n\pi
+\]
+so the solutions are
+\[
+	\cos^{-1} \sqrt{2}
+	= 2n\pi \pm i \ln(1 + \sqrt{2})
+\]
+
 \end{document}
