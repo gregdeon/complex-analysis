@@ -340,5 +340,129 @@ and the solutions are
 \]
 
 
+\clearpage
+\section{Frame 35 -- Hyperbolic Trigonometry}
+\textbf{1}
+Since $\sinh z$ is defined as
+\[
+	\sinh z = \frac{e^z - e^{-z}}{2}
+\]
+its derivative is
+\[
+	\frac{d}{dz} \sinh z 
+	= \frac{d}{dz} \frac{e^z - e^{-z}}{2}
+	= \frac{e^z + e^{-z}}{2}
+	= \cosh z
+\]
+
+\textbf{2}
+Using the definitions,
+\[
+	\sinh 2z = \frac{e^{2z} - e^{-2z}}{2}
+	= 2\frac{e^z + e^{-z}}{2} \frac{e^z - e^{-z}}{2}
+	= 2 \cosh z \sinh z
+\]
+
+\textbf{4}
+Since $z = x + iy$, we can write
+\[
+	\sinh z = \sinh(x + iy)
+	= \sinh(x) \cosh(iy) + \sinh(iy) \cosh(x)
+	= \sinh(x) \cos(y) + i \cosh(x) \sin(y)
+\]
+
+\textbf{8}
+The zeroes of $\sinh$ are at 
+\begin{align*}
+	\sinh x \cos y &= 0 \\
+	\cosh x \sin y &= 0
+\end{align*}
+The second equation only holds when $y = n\pi$. At all of these points, $\cos y \neq 0$, so the first equation only holds when $x = 0$. The zeroes, then, occur at
+\[
+	z = 0 + in\pi
+\]
+
+Since $\cosh z = \sinh(z + \pi / 2)$, the zeroes of $\cosh$ are at
+\[
+	z = 0 + i(n + 1/2) \pi
+\] 
+
+\textbf{15(a)}
+Splitting $\sinh$ into its real and imaginary components, the equation is
+\begin{align*}
+	\sinh x \cos y &= 0 \\
+	\cosh x \sin y &= 1
+\end{align*}
+The first equation says that $x = 0$ or $y = (n + 1/2)\pi$. In the first case, $\cosh(0) = 1$, so the second equation simply becomes
+\[
+	\sin y = 1
+\]
+which has solutions at $y = (2n + 1/2) \pi$. In the second case, $\sin(y) = \pm 1$; examining these solutions, they result in the same set of numbers. Finally, putting the parts together, the solutions are at
+\[
+	z = 0 + i(2n + 1/2)\pi
+\]
+
+\textbf{15(b)}
+Splitting $\cosh$ into its real and imaginary parts, the equation is
+\begin{align*}
+	\cosh x \cos y &= \frac{1}{2} \\
+	\sinh x \sin y &= 0
+\end{align*}
+The second equation has two solutions:
+\begin{itemize}
+	\item $x = 0$: Here, $\cosh(0) = 1$, so the top equation becomes
+	\[
+		\cos y = \frac{1}{2}
+	\]
+	which has solutions at
+	\[
+		y = \begin{cases}
+			\frac{ \pi}{3} + 2n\pi, \\
+			\frac{-\pi}{3} + 2n\pi
+		\end{cases}
+	\]
+	
+	\item $y = n\pi$: Here, $\cos y = \pm 1$, so
+	\[
+		\cosh x = \pm \frac{1}{2}
+	\]
+	which has no solutions.
+\end{itemize}
+Overall, the solutions are the set
+\[
+	z = 0 + i\left( 2n \pm \frac{1}{3}\right)\pi
+\]
+
+\textbf{16}
+Equating the real and imaginary parts,
+\begin{align*}
+	\cosh x \cos y &= -2 \\
+	\sinh x \sin y &= 0
+\end{align*}
+As in the previous problem, there are two solutions to the second equation:
+\begin{itemize}
+	\item $x = 0$: The first equation reduces to
+	\[
+		\cos y = -2
+	\]
+	which has no solutions.
+	
+	\item $y = n\pi$: Depending on $y$, this reduces the first equation to
+	\[
+		\cosh x = \pm 2
+	\]
+	This only has solutions in the positive case, where
+	\[
+		x = \cosh^{-1} 2
+	\]
+\end{itemize}
+The solution set is simply
+\[
+	z = \cosh^{-1} 2 + i(2n + 1)\pi
+\]
+Thinking back to the previous section, this can be simplified to
+\[
+	z = \pm \ln(2 + \sqrt{3}) + i(2n + 1)\pi
+\]
 
 \end{document}
