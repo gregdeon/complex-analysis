@@ -29,7 +29,7 @@ August 16
 * 34
 * 35
 August 17
-- 36
+* 36
 - 37
 August 18
 - 38

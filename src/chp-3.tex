@@ -486,4 +486,78 @@ Again, using the quotient rule, we find that their derivatives are
 	\frac{d}{dz} \csch z &= - \csch z \coth z
 \end{align*}
 
+
+\clearpage
+\section{Frame 36 -- Inverse Trigonometry}
+\subsection{Inverse Sine}
+We can define the \emph{inverse sine} function, $\sin^{-1} z = \arcsin z$, through the relationship
+\[
+	w = \sin^{-1} z \iff z = \sin w
+\]
+Since we can write the right side of this relationship as
+\[
+	z = \frac{e^{iw} - e^{-iw}}{2}
+\]
+we can rearrange this equation as
+\[
+	(e^{iw})^2 - 2iz(e^{iw}) - 1 = 0
+\]
+and solve to find
+\[
+	e^{iw} = iz + (1 - z^2)^{1/2}
+\]
+or, finding $w$,
+\[
+	\sin^{-1} z = -i \log[iz + (1 - z^2)^{1/2}]
+\]
+
+\textit{Example: if $\sin z = -i$, then we can find $z$ as
+\[
+	z = \sin^{-1}(-i) = -i \log(1 \pm 2)
+\]
+We can evaluate the two logarithm values separately:
+\begin{align*}
+	\log(1 + \sqrt{2}) &= \ln(1 + \sqrt{2}) + i 2n\pi \\
+	\log(1 - \sqrt{2}) &= \ln(\sqrt{2} - 1) + i(2n + 1) \pi \\
+\end{align*}
+Then,
+\[
+	\ln(\sqrt{2} - 1) = \ln \frac{1}{1 + \sqrt{2}} = -\ln(1 + \sqrt{2})
+\]
+so the full set of logarithm values is
+\[
+	\log(1 \pm \sqrt{2}) = (-1)^n \ln(1 + \sqrt{2}) + i n\pi
+\]
+and
+\[
+	\sin^{-1}(-i) = n\pi + i(-1)^{n+1} \ln(1 + \sqrt{2})
+\]
+}
+
+\subsection{Inverse Trig \& Properties}
+Using the same techniques, we can find that
+\begin{align*}
+	\sin^{-1} z &= -i \log[iz + (1 - z^2)^{1/2}] \\
+	\cos^{-1} z &= -i \log[z + i(1 - z^2)^{1/2}] \\
+	\tan^{-1} z &= \frac{i}{2} \log \frac{i + z}{i - z}
+\end{align*}
+
+Note that all of these functions are multi-valued. However, if we use a particular branch of the logarithmic function, all of these functions become single-valued and analytic.
+
+These functions' derivatives can easily be found from these expressions:
+\begin{align*}
+	\frac{d}{dz} \sin^{-1} z &= \frac{ 1}{(1 - z^2)^{1/2}} \\
+	\frac{d}{dz} \cos^{-1} z &= \frac{-1}{(1 - z^2)^{1/2}} \\
+	\frac{d}{dz} \tan^{-1} z &= \frac{1}{1 + z^2}
+\end{align*}
+Note that the first two derivatives depend on which square root is chosen.
+
+\subsection{Inverse Hyperbolic Functions}
+Using a similar technique, the same inverse hyperbolic functions can be derived:
+\begin{align*}
+	\sinh^{-1} z &= \log[z + (z^2 + 1)^{1/2}] \\
+	\cosh^{-1} z &= \log[z + (z^2 - 1)^{1/2}] \\
+	\tanh^{-1} z &= \frac{1}{2} \log \frac{1 + z}{1 - z}
+\end{align*}
+
 \end{document}
