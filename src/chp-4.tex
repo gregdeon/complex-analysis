@@ -13,6 +13,45 @@
 \begin{document}
 
 \section{Frame 37 -- Derivatives with Real Variables}
+\subsection{Definition}
+In the previous chapter, we looked at derivatives of complex functions of a complex variable $z$. Now, we look at the derivatives of a complex-valued function of a real variable $t$. If we write our function as
+\[
+	w(t) = u(t) + iv(t)
+\]
+where $u$ and $v$ are real-valued, then we can define the derivative of $w$ at a point $t$ as
+\[
+	w'(t) = \frac{d}{dt} w(t) = u'(t) + iv'(t)
+\]
+provided that $u'$ and $v'$ exist at $t$.
 
+\subsection{Properties}
+If $z_0 = x_0 + iy_0$ is a complex constant, then we can show that
+\begin{align*}
+	\frac{d}{dt} [z_0 w(t)]
+	&= [(x_0 + iy_0)(u(t) + iv(t)]' \\
+	&= [x_0 u(t) - y_0 v(t)]' + i[y_0 u(t) + x_0 v(t)]' \\
+	&= [x_0 u'(t) - y_0 v'(t)] + i[y_0 u'(t) + x_0 v'(t)] \\
+	&= z_0 w'(t)
+\end{align*}
+as we expect.
+
+Next, if $z_0$ is still a complex constant, the derivative of $e^{z_0 t}$ is
+\begin{align*}
+	\frac{d}{dt} e^{z_0 t} 
+	&= \frac{d}{dt} e^{x_0 t}(\cos y_0 t + i sin y_0 t) \\
+	&= \frac{d}{dt} e^{x_0 t} \cos y_0 t + i \frac{d}{dt} e^{x_0 t} \sin y_0 t \\
+	&= (x_0 + iy_0)(e^{x_0 t} \cos y_0 t + ie^{x_0 t} \sin y_0 t) \\
+	&= z_0 e^{z_0 t}
+\end{align*}
+
+Many other rules carry over from standard calculus. However, some rules no longer apply. For instance, in calculus, the mean value theorem for derivatives states that
+\[
+	w'(c) = \frac{w(b) - w(a)}{b - a}
+\]
+for some $c$ in the interval $a \le c \le b$ as long as $w$ is continuous. However, this is easily disproved by the function
+\[
+	w(t) = e^{it}
+\]
+If $a = 0$ and $b = 2\pi$, then $w(a) = w(b) = 1$ and we expect to find a point $c$ in $[0, 2\pi]$ such that $w'(c) = 0$. However, no such points exist -- the magnitude of the derivative is always $1$.
 
 \end{document}
