@@ -54,4 +54,67 @@ for some $c$ in the interval $a \le c \le b$ as long as $w$ is continuous. Howev
 \]
 If $a = 0$ and $b = 2\pi$, then $w(a) = w(b) = 1$ and we expect to find a point $c$ in $[0, 2\pi]$ such that $w'(c) = 0$. However, no such points exist -- the magnitude of the derivative is always $1$.
 
+
+\clearpage
+\section{Frame 38 -- Definite Integrals of Complex Functions}
+\subsection{Definitions}
+If $w(t)$ is a complex-valued function of a real variable $t$, as in the previous section
+\[
+	w(t) = u(t) + iv(t)
+\]
+then we define the \emph{definite integral} of $w(t)$ over the interval $a \le t \le b$ as
+\[
+	\int_a^b w(t) dt = \int_a^b u(t) dt + i \int_a^b v(t) dt
+\]
+provided the two right-side integrals exist. Then,
+\begin{align*}
+	\Re\left[\int_a^b w(t)dt\right] &= \int_a^b \Re[w(t)] dt \\
+	\Im\left[\int_a^b w(t)dt\right] &= \int_a^b \Im[w(t)] dt
+\end{align*}
+Improper integrals over unbounded intervals are defined similarly.
+
+The two real integrals will exist as long as $u$ and $v$ are \emph{piecewise continuous} on the interval $[a, b]$ -- that is, continuous everywhere in the interval except possibly for a finite number of points where it has one-sided limits. When $u$ and $v$ are piecewise continuous, we say that $w$ is also piecewise continuous.
+
+\subsection{Properties}
+The most common rules of integrals from calculus apply here as well:
+\begin{itemize}
+	\item $\int z_0 w(t)dt = z_0 \int w(t)$
+	
+	\item $\int w_1(t) + w_2(t)dt = \int w_1(t)dt + \int w_2(t)dt$
+	
+	\item $\int_a^b w(t) dt = -\int_b^a w(t) dt$
+	
+	\item $\int_a^b w(t) dt = \int_a^c w(t) dt + \int_c^b w(t) dt$
+\end{itemize}
+
+We can also extend the fundamental theorem of calculus to complex integrals. Suppose that two functions
+\begin{align*}
+	w(t) &= u(t) + iv(t) \\
+	W(t) &= U(t) + iV(t) 
+\end{align*}
+are continuous on the interval $[a, b]$ and $W'(t) = w(t)$ when $a \le t \le b$. Then, we can write
+\[
+	\int_a^b w(t) dt = W(b) - W(a) = W(t) \Big|_a^b 
+\] 
+
+\textit{Example: noting that the derivative of $\frac{1}{i} e^{it}$ is
+\[
+	\frac{d}{dt} \left( \frac{1}{i} e^{it} \right)
+	= \frac{1}{i} ie^{it}
+	= e^{it}
+\]
+we can evaluate $\int e^{it} dt$ as
+\begin{align*}
+	\int_0^{\pi/4} e^{it} dt 
+	&= \frac{e^{it}}{i} \Big|_0^{\pi/4} \\
+	&= \frac{1}{i} \left[ e^{\pi/4} - 1 \right] \\
+	&= \frac{1}{i} \left[ \frac{1}{\sqrt{2}} - 1 + \frac{i}{\sqrt{2}} \right] \\
+	&= \frac{1}{\sqrt{2}} + i\left( 1 - \frac{1}{\sqrt{2}} \right)
+\end{align*}}
+
+As in the previous section, the mean value theorem for integrals does not apply. We can show this by finding the integral $\int_0^{2\pi} e^{it} dt = 0$, even though the function is never zero on this interval.
+
+
+
+
 \end{document}
