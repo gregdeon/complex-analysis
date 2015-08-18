@@ -12,6 +12,53 @@
 
 \begin{document}
 
-\section{Frame ??}
+\section{Frame 38 -- Derivatives and Integrals}
+\textbf{1(b)}
+Breaking the derivative into its complex components,
+\begin{align*}
+	\frac{d}{dt} [w(t)]^2
+	&= \frac{d}{dt} [u(t) + iv(t)]^2 \\
+	&= 2[u(t) + iv(t)][u(t) + iv(t)]' \\
+	&= 2w(t)w'(t)
+\end{align*}
+
+\textbf{2(a)}
+Evaluating the integral,
+\begin{align*}
+	\int_1^2 \left( \frac{1}{t} - i \right)^2 dt 
+	&= \int_1^2 \frac{1}{t^2} - 1 - i \frac{2}{t} dt \\
+	&= - \frac{1}{t} - t - 2i \ln t \Big|_1^2 \\
+	&= - (\frac{1}{2} - 1) - (2 - 1) - 2i (\ln 2 - 0) \\
+	&= - \frac{1}{2} - i\ln 4
+\end{align*}
+
+\textbf{2(b)}
+\begin{align*}
+	\int_0^{\pi/6} e^{i2t} 
+	&= \frac{1}{2i} e^{i2t} \Big|_0^{\pi/6} \\
+	&= \frac{1}{2i} (e^{i\pi/3} - 1) \\
+	&= \frac{1}{2i} \left(i \frac{\sqrt{3}}{2} - \frac{1}{2} \right) \\
+	&= \frac{\sqrt{3}}{4} + i \frac{1}{4}
+\end{align*}
+
+\textbf{2(c)}
+Converting this improper integral into a limit,
+\begin{align*}
+	\int_0^\infty e^{-zt} 
+	&= \lim_{L \to \infty} \int_0^L e^{-zt} \\
+	&= \lim_{L \to \infty} - \frac{1}{z} e^{-zt} \Big|_0^L \\
+	&= - \frac{1}{z} \lim_{L \to \infty} e^{-zL} - 1 \\
+	&= \frac{1}{z}
+\end{align*}
+
+\textbf{4}
+Evaluating the left-side integral,
+\begin{align*}
+	\int_0^\pi e^{1+i}x dx 
+	&= \frac{1}{1+i} e^{1+i}x \Big|_0^\pi \\
+	&= \frac{1}{1+i} (e^{\pi + i\pi} - 1) \\
+	&= \frac{1 - i}{2} (-e^\pi - 1) \\
+	&= -\frac{1}{2} (e^\pi + 1) + \frac{i}{2} (e^\pi + 1)
+\end{align*}
 
 \end{document}
