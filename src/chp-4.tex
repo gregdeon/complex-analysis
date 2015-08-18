@@ -181,4 +181,47 @@ The points on a simple closed arc are the boundary points of two different domai
 	\item The exterior of the arc, which is unbounded.
 \end{itemize}
 
+
+\clearpage
+\section{Frame 40 -- Contour Integrals}
+\subsection{Definitions and conditions}
+We can now integrate a complex function $f$ along a contour $C$, which starts and ends at points $z_1$ and $z_2$, respectively. This is effectively a line integral. These integrals can be written as
+\[
+	\int_C f(z) dz
+\]
+or, if the integral does not depend on the path taken,
+\[
+	\int_{z_1}^{z_2} f(z) dz
+\]
+
+This integral (along a complex path) represents an integral with respect to a real parameter $t$. If the contour $C$ is written as $z(t)$ on the interval $a \le t \le b$, then the integral represented is
+\[
+	\int_C f(z) dz = \int_a^b f[z(t)] z'(t) dt
+\]
+Since $z'(t)$ must be piecewise continuous, this integral exists as long as $f[z(t)]$ is also piecewise continuous on this interval.
+
+\subsection{Basic properties}
+From the definition and the properties of integrals, we can write
+\[
+	\int_C z_0 f(z) dz = z_0 \int_C f(z) dz
+\]
+and
+\[
+	\int_C [f(z) + g(z)] dz = \int_C f(z) dz + \int_C g(z) dz
+\]
+We can also create a new contour $-C$ that consists of the points in $C$ in reversed order -- this contour extends from $z_2$ to $z_1$. Integrating along this reversed contour, we find that
+\begin{align*}
+	\int_-C f(z) dz 
+	&= \int_{-b}^{-a} f[z(-t)] \frac{d}{dt} z(-t) dt \\
+	&= -\int_{-b}^{-a} f[z(-t)] z'(-t) dt \\
+	&= -\int_a^b f[z(t)] z'(t) dt \\
+	&= -\int_C f(z) dz
+\end{align*}
+We can also split up a contour $C$ into multiple legs $C_1, C_2, \dots$. If we can write a contour this way, then we say that $C = C_1 + C_2$. The contour integral along $C$ can then be written as
+\[
+	\int_C f(z) dz = \int_{C_1} f(z) dz + \int_{C_2} f(z) dz
+\]
+
+
+
 \end{document}
