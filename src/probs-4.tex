@@ -61,4 +61,70 @@ Evaluating the left-side integral,
 	&= -\frac{1}{2} (e^\pi + 1) + \frac{i}{2} (e^\pi + 1)
 \end{align*}
 
+
+\clearpage
+\section{Frame 39 -- Contours}
+\textbf{2}
+First, the original parametrization can be written as
+\[
+	z(\theta) = 2e^{i\theta} = 2\cos \theta + 2i\sin \theta
+\]
+If $\theta = \arctan \frac{y}{\sqrt{4 - y^2}}$, then this becomes
+\[
+	z(y) = 2\cos \arctan \frac{y}{\sqrt{4 - y^2}} 
+	+ 2i\sin \arctan \frac{y}{\sqrt{4 - y^2}}
+\]
+Next, these terms can be simplified using basic geometry. The expression $\arctan \frac{y}{\sqrt{4 - y^2}}$ represents a right-angled triangle with legs of lengths $\sqrt{4 - y^2}$ and $y$, so the hypotenuse must have a length of $2$. Then,
+\begin{align*}
+	\cos \arctan \frac{y}{\sqrt{4 - y^2}} &= \frac{\sqrt{4 - y^2}}{2} \\
+	\sin \arctan \frac{y}{\sqrt{4 - y^2}} &= \frac{y}{2} 
+\end{align*}
+so the arc is
+\[
+	z(y) = \sqrt{4 - y^2} + i y
+\]
+
+\textbf{6}
+\textbf{(a)}
+First, the function
+\[
+	z(t) = t + iy(t)
+	= t + it^3 \sin(\pi /t)
+\]
+intersects the real axis whenever $y(t) = 0$. If $t = 1/n$, then this expression becomes
+\[
+	y(1/n) = \frac{\sin\left(\frac{\pi}{1 / n} \right)}{n^3}
+	= \frac{\sin(n\pi)}{n^3}
+	= 0
+\]
+as predicted.
+
+\textbf{(b)}
+An arc is smooth if the function $z(t)$ is continuous and its derivative is piecewise continuous.
+
+First, $z(t)$ is continuous for $0 < x \le 1$ because $x(t) = x$ and $y(t) = y(x)$ are both continuous on this interval. To show continuity at $t = 0$, we must show that
+\[
+	\lim_{t \to 0+} y(t) = 0
+\]
+However, the magnitude of $y(t)$ must be in the range
+\[
+	0 \le \left| t^3 \sin\left( \frac{\pi}{t} \right)\right| \le t^3
+\]
+and the left- and right-hand limits are
+\begin{align*}
+	\lim_{t \to 0+} 0 &= 0 \\
+	\lim_{t \to 0+} t^3 &= 0
+\end{align*}
+so, by the squeeze theorem, the original limit holds, and $y(t)$ is continuous at $t = 0$.
+
+Finally, the derivative of $z(t)$ is
+\[
+	z'(t) = 1 + i\left[3t^2 \sin(\pi / t) - \pi t \cos(\pi / t) \right]	
+\]
+Using the same process as above, the limit as $t$ goes to zero is
+\[
+	\lim_{t \to 0+} z'(t) = 1 + i0
+\]
+\textit{How can I tell whether this is continuous? The derivative isn't defined at zero.}
+
 \end{document}
