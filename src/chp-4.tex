@@ -115,6 +115,70 @@ we can evaluate $\int e^{it} dt$ as
 As in the previous section, the mean value theorem for integrals does not apply. We can show this by finding the integral $\int_0^{2\pi} e^{it} dt = 0$, even though the function is never zero on this interval.
 
 
+\clearpage
+\section{Frame 39 -- Contours}
+\subsection{Definitions}
+In calculus, integrals are defined on intervals of the real line. In complex analysis, we instead use curves in the complex plane.
 
+An \emph{arc} is a set of points $z = (x, y)$ in the complex plane such that the functions
+\[
+	x = x(t),	\quad y = y(t);	\quad z = z(t) = x(t) + iy(t)
+\]
+are continuous functions of the parameter $t$, where $a \le t \le b$. This definition is a continuous mapping of the interval $a \le t \le b$ into the $z$ plane.
+
+We say that an arc is \emph{simple} if it does not cross itself; ie:
+\[
+	z(t_1) \ne z(t_2)	\quad \text{for all } t_1 \neq t_2
+\]
+If a simple arc starts and ends at the same point ($z(a) = z(b)$), it is called a \emph{simple closed curve}. These curves are \emph{positively oriented} when they are oriented in the counterclockwise direction. 
+
+\textit{Example: the unit circle
+\[
+	z = e^{i\theta}
+\]
+where $0 \le \theta \le 2\pi$ is a positively oriented simple closed curve centered at the origin with a radius of $1$. A more general circle is
+\[
+	z = z_0 + Re^{i\theta}
+\]
+which is centered at $z_0$ and has a radius of $R$.}
+
+\subsection{Uniqueness}
+Note that the parametric representation for any arc is not unique. If we know a function $\phi$ such that
+\[
+	t = \phi(\tau)
+\]
+maps the interval $\alpha \le \tau \le \beta$ onto the interval $a \le t \le b$. Then, the two equations
+\[
+	z(t) \quad (a \le t \le b)
+\]
+and
+\[
+	z(\phi(t)) \quad	(\alpha \le t \le \beta)
+\]
+represent the same arc.
+
+\subsection{Smoothness}
+Suppose that the real and imaginary components of $z$ are differentiable, and their derivatives are continuous. Then, the arc $z(t)$ is a \emph{differentiable arc}, and
+\[
+	|z'(t)| = |x'(t) + iy'(t)| = \sqrt{[x'(t)]^2 + [y'(t)]^2}
+\]
+is integrable. This allows us to find the length of an arc as
+\[
+	L = \int_a^b |z'(t)| dt
+\]
+
+If an arc is differentiable and $z'(t)$ is never zero (except maybe at $t = a$ or $t = b$), then we call the arc a \emph{smooth arc}. We can write the unit tangent vector
+\[
+	\mathbf{T} = \frac{z'(t)}{|z'(t)|}
+\]
+which has an angle of inclination of $\arg z'(t)$. 
+
+A \emph{contour} is an arc which consists of a finite number of smooth arcs joined together. Specifically, if $z(t)$ represents a contour, then $z(t)$ is continuous and $z'(t)$ is piecewise continuous. If a contour is also a simple closed arc, we call it a \emph{simple closed contour}. 
+
+The points on a simple closed arc are the boundary points of two different domains:
+\begin{itemize}
+	\item The interior of the arc, which is bounded;
+	\item The exterior of the arc, which is unbounded.
+\end{itemize}
 
 \end{document}
