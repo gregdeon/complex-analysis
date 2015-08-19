@@ -127,4 +127,178 @@ Using the same process as above, the limit as $t$ goes to zero is
 \]
 \textit{How can I tell whether this is continuous? The derivative isn't defined at zero.}
 
+
+\clearpage
+\section{Frame 42 -- Contour Integrals}
+\textbf{1(a)}
+The integrand on this circle is
+\[
+	f[z(\theta)] = \frac{2e^{i\theta} + 2}{2e^{i\theta}}
+	= 1 + e^{-i\theta}
+\]
+and the derivative of the contour is
+\[
+	z'(\theta) = 2ie^{i\theta}
+\]
+so the first contour integral is
+\begin{align*}
+	\int_C f(z) dz 
+	&= \int_0^\pi (1 + e^{-i\theta})(2ie^{i\theta}) d\theta \\
+	&= 2i \int_0^\pi e^{i\theta} + 1 d\theta \\
+	&= 2i \left( \frac{e^{i\theta}}{i} + \theta \right)_0^\pi \\
+	&= 2i \left( \frac{-2}{i} + \pi \right) \\
+	&= -4 + 2\pi i
+\end{align*}
+
+\textbf{1(b)}
+The integrand has not changed, so
+\begin{align*}
+	\int_C f(z) dz
+	&= 2i \left( \frac{e^{i\theta}}{i} + \theta \right)_\pi^{2\pi} \\
+	&= 4 + 2\pi i
+\end{align*}
+
+\textbf{1(c)}
+The integral along the entire circle is just the sum of the two previous results:
+\begin{align*}
+	\int_C f(z) dz
+	&= (-4 + 2\pi i) + (4 + 2\pi i) \\
+	&= 4\pi i
+\end{align*}
+
+\textbf{2(a)}
+The function is
+\[
+	f[z(\theta)] = 1 + e^{i\theta} - 1 = e^{i\theta}
+\]
+and the contour's derivative is
+\[
+	z'(\theta) = ie^{i\theta}
+\]
+so the integral is
+\begin{align*}
+	\int_C f(z) dz
+	&= \int_\pi^{2\pi} e^{i\theta} \cdot ie^{i\theta} \\
+	&= i \int_\pi^{2\pi} e^{2i\theta} \\
+	&= i \frac{e^{2i\theta}}{2i} \Big|_{\pi}^{2\pi} \\
+	&= \frac{e^{4i\pi} - e^{2i\pi}}{2} \\
+	&= 0
+\end{align*}
+
+\textbf{2(b)}
+Now, the function is
+\[
+	f[z(x)] = x - 1
+\]
+and the path's derivative is
+\[
+	z'(x) = 1
+\]
+so the integral is
+\[
+	\int_C f(z) dz 
+	= \int_0^2 x - 1 dx
+	= \frac{(x - 1)^2}{2} \Big|_0^2
+	= \frac{1 - 1}{2} 
+	= 0
+\]
+
+\textbf{3}
+Along the first edge, the integral is
+\[
+	\int_0^1 \pi e^{\pi x} dx 
+	= e^{\pi x} \Big|_0^1
+	= e^\pi - 1
+\]
+
+Along the second edge, the integral is
+\[
+	e^\pi \int_0^1 i \pi e^{-i \pi y} dy
+	= e^\pi \left( -\frac{\pi}{\pi} e^{-i \pi y}\right)_0^1
+	= 2e^\pi 
+\]
+
+On the third edge, the integral is
+\[
+	- \int_0^1 \pi e^{\pi x} \cdot (-1) dx 
+	= e^\pi - 1
+\]
+
+Finally, on the fourth edge, the integral is
+\[
+	-\int_0^1 i \cdot \pi e^{-i \pi y} dy
+	= \left( e^{-i\pi y} \right)_0^1
+	= -2
+\]
+so the whole integral is
+\[
+	\int_C f(z) dz = 2(e^\pi - 1) + 2e^\pi - 2
+	= 4(e^\pi - 1)
+\]
+
+\textbf{4}
+If the path is $y = x^3$, then the direction is
+\[
+	z'(x) = 1 + iy'(x) = 1 + i3x^2
+\]
+Then, the integral can be done in two parts. First, from $x = -1$ to $0$,
+\[
+	\int_{-1}^0 1 \cdot (1 + i3x^2) dx 
+	= \left(x + ix^3 \right)_{-1}^0
+	= 1 + i
+\]
+Then, from $x = 0$ to $1$,
+\[
+	\int_0^1 4x^3 \cdot (1 + i3x^2) dx
+	= \int_0^1 4x^3 + i12x^5 dx
+	= x^4 + i2x^6 \Big|_0^1
+	= 1 + 2i
+\]
+so the total contour integral is
+\[
+	\int_C f(z) dz = 2 + 3i
+\]
+
+\textbf{5}
+If $f(z) = 1$, then
+\[
+	\int_C f(z) dz
+	= \int_a^b 1 \cdot z'(t) dt
+	= z(b) - z(a) 
+	= z_2 - z_1
+\]
+	
+\textbf{6}
+If $z = e^{i\theta}$, then the function $f(z)$ is
+\[
+	f[z(\theta)] 
+	= (e^{i\theta})^{-1 + i}
+	= e^{-i\theta} e^{-\theta}
+\]
+and the contour integral is
+\begin{align*}
+	\int_C f(z) dz
+	&= \int_0^{2\pi} e^{-i\theta} e^{-\theta} \cdot ie^{i\theta} d\theta \\
+	&= i \int_0^{2\pi} e^{-\theta} d\theta \\
+	&= -i e^{-\theta} \Big|_0^{2\pi} \\
+	&= i (1 - e^{-2\pi})
+\end{align*}
+
+
+\textbf{7}
+On this semicircle,
+\[
+	f[z(\theta)] = (e^{i\theta})^i = e^{-\theta}
+\]
+so
+\begin{align*}
+	\int_C f(z) dz
+	&= \int_0^\pi e^{-\theta} \cdot ie^{i\theta} d\theta \\
+	&= i \int_0^\pi e^{(-1 + i) \theta} d\theta \\
+	&= \frac{i}{-1 + i} e^{(-1 + i) \theta} \Big|_0^\pi \\
+	&= \frac{i(-1 - i)}{2} ( -e^{-\pi} - 1 ) \\
+	&= \frac{-1 + i}{2}(e^{-\pi} + 1)
+\end{align*}
+
+
 \end{document}
