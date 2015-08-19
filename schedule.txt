@@ -37,7 +37,7 @@ August 18
 * 40
 August 19
 * 41
-- 42
+* 42
 - 43
 August 20
 - 44

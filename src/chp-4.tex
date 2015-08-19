@@ -299,4 +299,59 @@ This holds when $C$ is not a smooth contour. Since all contours are sums of fini
 Also, note that the integral of $f(z) = z$ around any closed contour in the plane is zero.
 
 
+\clearpage
+\section{Frame 42 -- Examples with Branch Cuts}
+A contour integral's path can include a point on a branch cut. The following two examples show this.
+
+\subsection{Example 1}
+Suppose we want to integrate the function 
+\[
+	f(z) = z^{1/2} = e^{\frac{1}{2} \log z}	\quad (0 < \arg z < 2\pi)
+\]
+on the semicircle
+\[
+	z = 3e^{i\theta}	\quad(0 \le \theta \le \pi)
+\]
+Although the function is not defined at $\theta = 0$, we can still write
+\[
+	f[z(\theta)] = e^{\frac{1}{2}(\ln 3 + i\theta)} = \sqrt{3} e^{i\theta/2}
+\]
+and the right hand limit of this function exists at $\theta = 0$. Thus, the integrand exists as long as we define the missing point as
+\[
+	f[z(0)] z'(0) = i3\sqrt{3}
+\]
+Then,
+\begin{align*}
+	\int_C f(z) dz 
+	&= 3\sqrt{3} \int_0^\pi e^{i3\theta / 2} \\
+	&= 3\sqrt{3} \frac{2}{3i} e^{i3\theta / 2} \Big|_0^\pi \\
+	&= -\frac{2}{3i} (1 + i) \\
+	&= -2\sqrt{3}(1 + i)
+\end{align*}
+
+
+\subsection{Example 2}
+Suppose that we want to integrate the function
+\[
+	f(z) = z^{a - 1} = e^{(a - 1) \Log z} \quad (-\pi < \Arg z < \pi)
+\]
+on the positively oriented circle
+\[
+	z = Re^{i\theta}	\quad (-\pi \le \theta \le \pi)
+\]
+The contour integral is
+\begin{align*}
+	\int_C z^{a - 1} dz
+	&= \int_{-\pi}^{\pi} iR^ae^{ia\theta} d\theta \\
+	&= iR^a \int_{-\pi}^{\pi} e^{ia\theta} d\theta \\
+	&= iR^a \left( \frac{e^{ia\theta}}{ia} \right)_{-\pi}^{\pi} \\
+	&= i\frac{2R^a}{a} \frac{e^{ia\pi} - e^{-ia\pi}}{2i} \\
+	&= i\frac{2R^a}{a} \sin a\pi
+\end{align*}
+Note that if $a$ is a non-zero integer, this integral is zero; if $a = 0$, this integral reduces to
+\[
+	\int_C \frac{dz}{z} = 2\pi i
+\]
+
+	
 \end{document}
