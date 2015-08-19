@@ -223,5 +223,80 @@ We can also split up a contour $C$ into multiple legs $C_1, C_2, \dots$. If we c
 \]
 
 
+\clearpage
+\section{Frame 41 -- Examples of Contour Integrals}
+This section will show several specific examples of contour integrals.
+
+\subsection{Example 1}
+Suppose that the contour $C$ is the right hand half of the circle $|z| = 2$:
+\[
+	z = 2e^{i\theta},	\quad \left( -\frac{\pi}{2} \le \theta \le \frac{\pi}{2}\right)
+\]
+Then,
+\begin{align*}
+	\int_C \bar{z} dz
+	&= \int_{-\pi/2}^{\pi/2} \bar{2e^{i\theta}} (2e^{i\theta})' d\theta \\
+	&= 4i\int_{-\pi/2}^{\pi/2} e^{-i\theta} e^{i\theta} d\theta \\
+	&= 4i\int_{-\pi/2}^{\pi/2} d\theta \\
+	&= 4\pi i
+\end{align*}
+Also, note that all of the points on this semicircle satisfy
+\[
+	z \bar{z} = |z|^2 = 4
+\]
+so we can see from this result that
+\[
+	\int_C \frac{1}{z} dz = \pi i
+\]
+
+\subsection{Example 2}
+Suppose that the points $O$, $A$, and $B$ are $0$, $i$, and $1 + i$, respectively. Then, if $C_1$ is the polyline $OAB$ and
+\[
+	f(z) = y - x - i3x^2
+\]
+then the contour integral of $f$ along $C_1$ is
+\begin{align*}
+	\int_{C_1} f(z) dz
+	&= \int_{OA} f(z) dz + \int_{AB} f(z) dz \\
+	&= \int_0^1 yi dy + \int_0^1 (1 - x - i3x^2) dx \\
+	&= \frac{i}{2} + \int_0^1 (1 - x)dx - 3i\int_0^1 x^2 dx \\
+	&= \frac{i}{2} + \frac{1}{2} - i \\
+	&= \frac{1 - i}{2}
+\end{align*}
+
+Next, if $C_2$ is the line $OB$, the contour integral along this curve is
+\begin{align*}
+	\int_{C_2} f(z) dz 
+	&= \int_0^1 -i3x^2(1 + i)dx \\
+	&= 3(1 - i) \int_0^1 x^2 \\
+	&= 1 - i
+\end{align*}
+
+Finally, the integral of $f$ over the simple closed contour $OABO$ is $C_1 - C_2$, which is
+\[
+	\int_{OABO} f(z) dz = \frac{-1 + i}{2}
+\]
+
+\subsection{Example 3}
+Suppose that $C$ is any arbitrary smooth arc from a fixed point $z_1$ to another point $z_2$:
+\[
+	z = z(t)	\quad (a \le t \le b)
+\]
+The contour integral of $f(z) = z$ along this curve is
+\begin{align*}
+	\int_C z dz 
+	&= \int_a^b z(t) z'(t) dt \\
+	&= \int_a^b \frac{d}{dt} \frac{[z(t)]^2}{2} dt \\
+	&= \frac{[z(t)]^2}{2} \Big|_a^b \\
+	&= \frac{z_2^2 - z_1^2}{2}
+\end{align*}
+Note that this integral only depends on the endpoints of $C$ and not the path. This lets us write
+\[
+	\int_{z_1}^{z_2} z dz = \frac{z_2^2 - z_1^2}{2}
+\]
+This holds when $C$ is not a smooth contour. Since all contours are sums of finite numbers of smooth arcs, this expression holds for each arc in $C$, leading to the same final expression.
+
+Also, note that the integral of $f(z) = z$ around any closed contour in the plane is zero.
+
 
 \end{document}
