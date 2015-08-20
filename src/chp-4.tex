@@ -353,5 +353,73 @@ Note that if $a$ is a non-zero integer, this integral is zero; if $a = 0$, this 
 	\int_C \frac{dz}{z} = 2\pi i
 \]
 
-	
+
+\clearpage
+\section{Frame 43 -- Upper Bounds for Contour Integrals}
+We can put a bound on the modulus of a contour integral by observing that
+\[
+	\left| \int_a^b w(t) dt \right| 
+	\le \int_a^b \left| w(t) \right| dt
+\]
+
+\subsection{Theorem}
+Suppose that $C$ is a contour with a length of $L$ and that $f(z)$ is a function that is piecewise continuous on $C$. If $M \ge 0$ is a real constant such that
+\[
+	|f(z)| \le M
+\]
+for all points on $C$, then
+\[
+	\left| \int_C f(z) dz \right| \le ML
+\]
+Note that such a number $M$ will always exist because $f$ is continuous on $C$.
+
+\subsection{Examples}
+\textit{Example: Suppose that
+\[
+	f(z) = \frac{z + 4}{z^3 - 1}
+\]
+and the contour $C$ is a quarter circle with a radius of $2$ in the first quadrant (running from $z = 2$ to $z = 2i$). Since $|z| = 2$ at all points on this contour, we can write that
+\[
+	|z + 4| \le |z| + 4 = 6
+\]
+and
+\[
+	|z^3 - 1| \ge |z|^3 - 1 = 7
+\]
+Since the length of the contour is $L = \pi$, we can write the upper bound
+\[
+	\left| \int_C \frac{z + 4}{z^3 - 1} dz \right| \le \frac{6\pi}{7}
+\]
+}
+
+\textit{Example: suppose that $C_R$ is the semicircular contour
+\[
+	z = Re^{i\theta}	\quad	(0 \le \theta \le \pi)
+\]
+and $f$ is the function
+\[
+	f(z) = \frac{z^{1/2}}{z^2 + 1}
+\]
+where $z^{1/2}$ denotes the branch $-\pi/2 < \theta < 3\pi/2$. Anywhere on this semicircle,
+\[
+	|z^{1/2}| = \sqrt{R}
+\]
+and
+\[
+	|z^2 + 1| \ge ||z^2| - 1| = R^2 - 1
+\]
+Since the contour has a length of $\pi R$, the contour integral of $f$ along $C$ can be limited by
+\begin{align*}
+	\int_C f(z) dz 
+	&\le \frac{\sqrt{R}}{R^2 - 1} \cdot \pi R \\
+	&= \frac{\pi R^{3/2}}{R^2 - 1} \\
+	&= \frac{\pi / \sqrt{R}}{1 - (1 / R^2)}
+\end{align*}
+As $R$ approaches infinity, this bound approaches zero, so
+\[
+	\lim_{R \to \infty} \int_C f(z) dz = 0
+\]}
+
+
+
 \end{document}

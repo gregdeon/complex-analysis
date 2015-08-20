@@ -38,8 +38,8 @@ August 18
 August 19
 * 41
 * 42
-- 43
 August 20
+* 43
 - 44
 - 45
 August 21
