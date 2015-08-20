@@ -421,5 +421,91 @@ As $R$ approaches infinity, this bound approaches zero, so
 \]}
 
 
+\clearpage
+\section{Frame 44 -- Antiderivatives}
+We saw earlier that some functions have integrals from $z_1$ to $z_2$ that are independent of path. This section will look more closely at such functions to extend the fundamental theorem of calculus.
+
+\subsection{Antiderivatives and their theorem}
+Recall that an antiderivative of a continuous function $f(z)$ on a domain $D$ is an analytic function $F(z)$ such that $F'(z) = f(z)$ for all $z$ in $D$. Also, note that antiderivatives are unique to an additive constant: if $F(z)$ and $G(z)$ are two antiderivatives of the same function, then $F'(z) - G'(z) = 0$, so $F(z) - G(z)$ must be constant everywhere.
+
+The following theorem makes several relationships between antiderivatives and their properties.
+
+\textit{Theorem: If $f(z)$ is a continuous function on a domain $D$, then any one of these statements implies the other two:
+\begin{enumerate}
+	\item $f(z)$ has an antiderivative $F(z)$ throughout $D$;
+	\item Any integral of $f(z)$ along a contour in $D$ is path independent, and
+	\[
+		\int_{z_1}^{z_2} f(z) dz = F(z_2) - F(z_1)
+	\]
+	\item The integral of $f(z)$ around any closed contour in $D$ is zero. 
+\end{enumerate}}
+
+\subsection{Examples}
+\textit{Example 1: the function $f(z) = z^2$ has an antiderivative $F(z) = z^3/3$ throughout the entire plane. This allows us to write, for any contour extending from $z = 0$ to $1 + i$,
+\begin{align*}
+	\int_0^{1+i} z^2 dz 
+	&= \frac{z^3}{3} \Big|_0^{1+i} \\
+	&= \frac{1}{3}(1 + i)^3 \\
+	&= \frac{1}{3} (\sqrt{2} e^{i\pi/4} \\
+	&= \frac{2}{3} \sqrt{2} e^{i3\pi/4} \\
+	&= \frac{2}{3} (-1 + i)
+\end{align*}}
+
+
+\textit{Example 2: the function $f(z) = \frac{1}{z^2}$ is continuous everywhere except for the point $z = 0$. In this domain, it has an antiderivative $F(z) = \frac{-1}{z}$. Thus, if $C$ is a positively oriented circle centered at the origin,
+\[
+	\int_C \frac{dz}{z^2} = 0
+\]}
+
+\textit{Example 3: the function $f(z) = \frac{1}{z}$ does not have a simple antiderivative on the entire plane. Although $\log z$ is an antiderivative where it is defined, it requires a branch cut to be single valued.}
+
+\textit{Suppose we want to evaluate the integral
+\[
+	\int_C \frac{dz}{z} 
+\]
+where $C$ is the full circle
+\[
+	z = 2e^{i\theta},	\quad -\frac{\pi}{2} \le \theta \le \frac{3\pi}{2}
+\]
+We can do this by splitting the contour into two legs: $C_1$ is the right semicircle ($-\pi/2 \le \theta \le \pi/2$) and $C_2$ is the left semicircle ($\pi/2 \le \theta \le 3\pi/2$). Then, the principal branch of the logarithm is a suitable antiderivative for $C_1$, so
+\[
+	\int_{C_1} \frac{dz}{z}
+	= \Log(2i) - \Log(-2i) 
+	= (\ln 2 + i\pi/2) - (\ln 2 - i\pi/2)
+	= i\pi
+\]
+To evaluate the integral along $C_2$, we switch to the branch $0 < \theta < 2\pi$. Here,
+\[
+	\int_{C_2} \frac{dz}{z}
+	= \log(-2i) - \log(2i)
+	= (\ln 2 + i3\pi/2) - (\ln 2 + i\pi/2) 
+	= i\pi
+\]
+so, adding these up,
+\[
+	\int_C \frac{dz}{z}
+	= \int_{C_1} \frac{dz}{z} + \int_{C_2} \frac{dz}{z} 
+	= i \pi + i \pi
+	= 2\pi i
+\]}
+
+\textit{Example 4: suppose we want to evaluate the integral
+\[
+	\int_{-3}^{3} z^{1/2} dz
+\]
+where $z^{1/2}$ denotes the branch for $0 < \theta < 2\pi$ and we use any contour that is always above the real axis (except at the endpoints). Since this branch is not defined at the endpoints, we can replace the integrand with the branch
+\[
+	z^{1/2} = \sqrt{r} e^{i\theta/2}
+	\quad (-\frac{\pi}{2} < \theta < \frac{3\pi}{2})
+\]
+This new function has an antiderivative of $\frac{2}{3} z^{3/2}$, so we can write
+\[
+	\int_{-3}^{3} z^{1/2} dz
+	= R^{3/2} e^{i3\theta/2} \Big|_{-3}^3
+	= 2\sqrt{3} (e^0 - e^{i3\pi/2})
+	= 2\sqrt{3} (1 + i)
+\]	
+We could evaluate the same integral for any contour below the real axis in a similar manner.}
+
 
 \end{document}
