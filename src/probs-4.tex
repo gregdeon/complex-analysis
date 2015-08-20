@@ -301,4 +301,62 @@ so
 \end{align*}
 
 
+\clearpage
+\section{Frame 43 -- Bounding Contour Integrals}
+\textbf{1}
+On the contour,
+\[
+	|z^2 - 1| \le ||z^2| - 1| = 3
+\]
+so
+\[
+	|f(z)| \le \frac{1}{3}
+\]
+and the integral must satisfy
+\[
+	\left| \int_C \frac{dz}{z^2 - 1} \right| \le \frac{1}{3} \cdot \pi = \frac{\pi}{3} 
+\]
+
+
+\textbf{2}
+On the line segment from $z = i$ to $z = 1$, the function $z^4$ is minimized at the midpoint:
+\[
+	|z^4| 
+	\ge \left| \frac{1 + i}{2} \right|^4 
+	= \left(\frac{1}{\sqrt{2}} \right)^4
+	= \frac{1}{4}
+\]
+so
+\[
+	|f(z)| 
+	\le \frac{1}{|z^4|}
+	\le 4
+\]
+Then, since the line segment has a length of $L = \sqrt{2}$,
+\[
+	\left| \int_C \frac{dz}{z^4} \right| \le 4 \cdot \sqrt{2}
+\]
+
+
+\textbf{3}
+On these three line segments, $|e^z|$ is maximized when $\Re z$ is maximized, so
+\[
+	| e^z | \le e^0 = 1
+\]
+Next, $|\bar{z}|$ is maximized when $|z|$ is maximized, so
+\[
+	| \bar{z} | \le | -4 | = 4
+\]
+Thus,
+\[
+	|f(z)|
+	= |e^z - \bar{z}|
+	\le |e^z| + |\bar{z}|
+	\le 1 + 4
+	= 5
+\]
+Finally, the three line segments have a total length of $12$, so
+\[
+	\left| \int_C (e^z - \bar{z}) dz \right| \le 5 \cdot 12 = 60
+\]
 \end{document}
