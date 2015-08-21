@@ -465,7 +465,102 @@ Taking this at the points $(R, \theta) = (1, \pi)$ and $(1, 0)$,
 \end{align*}
 
 
+\clearpage
+\section{Frame 49 -- The Cauchy-Goursat Theorem}
+\textbf{1}
+\begin{enumerate}
+	\item This function only has a singularity at $z = 3$, so the integral around $C$ is zero.
+	
+	\item This function is entire, so this integral is zero.
+	
+	\item This function has singularities at $z = -1 \pm i$, which are outside the unit circle, so the integral is zero.
+	
+	\item $\sech z$ has singularities at
+	\[
+		z = (n + 1/2) \pi i
+	\]
+	Since $\pi/2 > 1$, all of these are outside of the unit circle, so the integral is zero.
+	
+	\item $\tan z$ has singularities at
+	\[
+		z = (n + 1/2) \pi
+	\]
+	As above, these are all outside of the unit circle, and the integral is zero.
+	
+	\item $\Log(z + 2)$ has a branch point at $z = -2$ and a branch cut on the arc at $\theta = \pi$ starting at this point. Thus, no singularities are inside the unit circle, so the integral is zero.
+\end{enumerate}
 
+\textbf{2}
+\begin{enumerate}
+	\item This function only has singularities at $z = \pm \frac{1}{\sqrt{3}}$. There are no singularities between $C_1$ and $C_2$, so these integrals are the same.
+	
+	\item This function has singularities at
+	\[
+		z = 2n \pi
+	\]
+	Only one of these singularities is inside $C_2$, and it is also inside $C_1$, so the integrals are the same.
+	
+	\item This function has a singularity at $1 - e^z = 0$ or $z = 0$, so the integral is zero.
+\end{enumerate}
 
+\textbf{4(a)}
+The integral along the bottom leg is
+\[
+	\int_{-a}^a e^{-x^2} dx = 2 \int_0^a e^{-x^2} dx
+\]
+
+and the integral along the top leg is
+\[
+	- \left(\int_{-a}^{a} e^{-(x+ib)^2} dx \right)
+	= -2 \int_0^a e^{-(x^2 - b^2 + 2xib) } dx
+	= -2 e^{b^2} \int_0^a e^{-x^2} \cos 2bx dx
+\]
+
+The integral on the right leg is
+\[
+	\int_0^b e^{-(a + iy)^2} idy 
+	= i\int_0^b e^{-(a^2 - y^2 + i2ay) } dy
+	= ie^{-a^2} \int_0^b e^{y^2} e^{-i2ay} dy 
+\]
+and the integral on the left leg is
+\[
+	-\left( \int_0^b e^{-(-a + iy)^2} i dy \right)
+	= -i \int_0^b e^{-(a^2 - y^2 - i 2ay)} dy
+	= -i e^{-a^2} \int_0^b e^{y^2} e^{i2ay} dy
+\]
+Then, by Cauchy-Goursat,
+\[	
+	2 \int_0^a e^{-x^2} dx
+	-2 e^{b^2} \int_0^a e^{-x^2} \cos 2bx dx
+	+ ie^{-a^2} \int_0^b e^{y^2} e^{-i2ay} dy
+	-i e^{-a^2} \int_0^b e^{y^2} e^{i2ay} dy	= 0
+\]
+or
+\[
+	\int_0^a e^{-x^2} \cos 2bx~dx
+	= e^{b^2} \int_0^a e^{-x^2}~dx
+	+ e^{-a^2} e^{-b^2} \int_0^b e^{y^2} \sin 2ay~dy
+\]
+
+\textbf{4(b)}
+Now, as $a \to \infty$, the first integral is $\frac{\sqrt{\pi}}{2}$, so
+\[
+	\int_0^\infty e^{-x^2} \cos 2bx~dx
+	= e^{-b^2} \frac{\sqrt{\pi}}{2}
+	+ \lim_{a \to \infty} e^{-a^2} e^{-b^2} \int_0^b e^{y^2} \sin 2ay~dy
+\]
+Finding this second term, we see that
+\begin{align*}
+	\lim_{a \to \infty} \left| e^{-a^2}e^{-b^2}\int_0^b e^{y^2}\sin 2ay~dy \right|
+	&\le \lim_{a \to \infty} e^{-a^2}e^{-b^2}\int_0^b |e^{y^2} \sin 2ay|~dy \\
+	&\le \lim_{a \to \infty} e^{-a^2}e^{-b^2}\int_0^b |e^{y^2}|~dy \\
+	&= \lim_{a \to \infty} e^{-a^2} \cdot M \\
+	&= 0
+\end{align*}
+where $M$ is some positive number. Thus,
+\[
+	\int_0^\infty e^{-x^2} \cos 2bx~dx
+	= e^{-b^2} \frac{\sqrt{\pi}}{2}
+\]
 
 \end{document}
