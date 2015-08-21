@@ -359,4 +359,113 @@ Finally, the three line segments have a total length of $12$, so
 \[
 	\left| \int_C (e^z - \bar{z}) dz \right| \le 5 \cdot 12 = 60
 \]
+
+
+\clearpage
+\section{Frame 45 -- Antiderivatives}
+\textbf{1}
+Every function $z^n$ for $n$ a non-negative integer has an antiderivative
+\[
+	\frac{1}{n+1} z^{n+1}
+\]
+Thus, any contour integral of $z^n$ can be written as
+\[
+	\int_{z_1}^{z_2} z^n dz 
+	= \frac{1}{n+1} z^{n+1} \Big|_{z_1}^{z_2}
+	= \frac{1}{n+1} (z_2^{n+1} - z_1^{n+1})
+\]
+
+\textbf{2(a)}
+We know that
+\[
+	\frac{d}{dz} \frac{1}{\pi} e^{\pi z} = e^{\pi z}
+\]
+so
+\[
+	\int_i^{i/2} e^{\pi z} dz
+	= \frac{1}{\pi} e^{\pi z} \Big|_i^{i/2}
+	= \frac{1}{\pi} (e^{i \pi/2} - e^{i \pi})
+	= \frac{1 + i}{\pi}
+\]
+
+\textbf{2(b)}
+An antiderivative is
+\[
+	\frac{d}{dz} 2\sin(z / 2) = \cos(z / 2)
+\]
+so
+\begin{align*}
+	\int_0^{\pi + 2i} \cos(z/2) dz
+	&= 2\sin(z/2) \Big|_0^{\pi + 2i} \\
+	&= 2 (\sin(\pi/2 + i) - \sin(0)) \\
+	&= 2 (\sin(\pi/2) \cosh(1) + i\cos(\pi/2) \sinh(1) - 0) \\
+	&= 2 \cosh (1) \\
+	&= e + \frac{1}{e}
+\end{align*}
+
+\textbf{2(c)}
+An antiderivative is
+\[
+	\frac{d}{dz} \frac{1}{4} (z - 2)^4 = (z - 2)^3
+\]
+so
+\[
+	\int_1^3 (z - 2)^3 dz 
+	= \frac{1}{4} (z - 2)^4 \Big|_1^3
+	= \frac{1}{4} (1^4 - (-1)^4)
+	= 0
+\]
+
+\textit{3}
+The antiderivative of any function
+\[
+	f(z) = (z - z_0)^{n-1}
+\]
+is the function
+\[
+	F(z) = \frac{1}{n} (z - z_0)^{n}
+\]
+which is always continuous everywhere except possibly for the point $z = z_0$. Thus, according to the theorem, if $C_0$ is a closed contour on this domain,
+\[
+	\int_{C_0} (z - z_0)^{n-1} dz = 0
+\]
+
+\textit{4} 
+To evaluate this integral, we can use the branch
+\[
+	F_2(z) = \frac{2}{3} R^{3/2} e^{i3\theta/2} \quad
+	\left( \frac{\pi}{2} < \theta < \frac{5\pi}{2} \right)
+\]
+Then, the integral becomes
+\[
+	\int_{C_2} f(z) dz
+	= \frac{2}{3} 3^{3/2} (-1 + i)
+	= 2\sqrt{3} (-1 + i)
+\]
+Adding the original contour integral, we find that
+\[
+	\int_{C_2 - C_1} f(z) dz
+	= 2\sqrt{3} [(-1 + i) - (1 + i)]
+	= -4\sqrt{3} 
+\]
+
+\textbf{5}
+An antiderivative of $z^i$ is
+\[
+	F(z) = \frac{1}{i+1} z^{i+1} 
+	= \frac{1}{i+1} e^{(i+1)(\ln |z| + i\theta}
+	= \frac{1}{i+1} Re^{-\theta} e^{i (\ln R + \theta)} 
+\]
+Taking this at the points $(R, \theta) = (1, \pi)$ and $(1, 0)$,
+\begin{align*}
+	\int_{-1}^{1} f(z) dz
+	&= \frac{1}{1+i} \left[ 1e^{i0} - e^{-\pi}e^{i\pi} \right] \\
+	&= \frac{1-i}{2} (1 + e^{-\pi}) \\
+	&= \frac{1 + e^{-\pi}}{2} (1 - i)
+\end{align*}
+
+
+
+
+
 \end{document}
