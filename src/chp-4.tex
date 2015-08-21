@@ -572,4 +572,43 @@ This is a simple extension of the theorem -- if a contour intersects itself a fi
 Note that this implies, from the theorem earlier in the chapter, that \textit{every entire function has an antiderivative everywhere}.
 
 
+\clearpage
+\section{Frame 49 -- Multiply Connected Domains}
+We can further adapt the Cauchy-Goursat theorem to be useful on multiply connected domains.
+
+\subsection{Extended theorem}
+\textit{Theorem: Suppose that
+\begin{itemize}
+	\item $C$ is a simple, closed, positively oriented contour 
+	\item $C_k$ are simple, closed, negatively oriented contours interior to $C$ that do not overlap (interiors and contours are disjoint)
+\end{itemize}
+If a function $f$ is analytic on each contour and the multiply connected domain inside $C$ but outside $C_k$, then
+\[
+	\int_C f(z) + \sum_{k=1}^n \int_{C_k} f(z) dz = 0
+\]}
+
+Note that the multiply connected domain is to the left of each contour.
+
+\subsection{Applications and examples}
+A corollary of this extended theorem follows.
+
+\textit{Corollary: if $C_1$ and $C_2$ are two positively oriented contours such that $C_1$ is contained inside $C_2$, then for any function $f$ analytic inside $C_2$,
+\[
+	\int_{C_2} f(z) dz + \int_{-C_1} f(z) dz = 0
+\]
+so
+\[
+	\int_{C_2} f(z) dz = \int_{C_1} f(z) dz
+\]}
+
+\textit{Example: if $C$ is any positively-oriented, simple, closed contour that encloses the origin, then we can make positively oriented circular contour $C_0$ that is entirely inside $C$ and contains the origin. We've shown before that
+\[
+	\int_{C_0} \frac{dz}{z} = 2\pi i
+\]
+so
+\[
+	\int_C \frac{dz}{z} = \int_{C_0} \frac{dz}{z} = 2\pi i
+\]}
+
+
 \end{document}
