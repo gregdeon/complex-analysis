@@ -549,5 +549,27 @@ whenever $f$ is analytic and $f'$ is continuous in $R$. Note that, due to Goursa
 since $e^{z^3}$ is analytic everywhere.}
 
 
+\clearpage
+\section{Frame 48 -- Simply Connected Domains}
+The conditions on the contour in the previous section can be relaxed when the domain of interest is simply connected. The following theorem is an adapted version:
+
+\textit{Theorem: if a function $f$ is analytic throughout a simply connected domain $D$, then
+\[
+	\int_C f(z) dz = 0
+\]
+for every closed contour $C$ (simple or not) in $D$.}
+
+This is a simple extension of the theorem -- if a contour intersects itself a finite number of times, $k$, then the contour can be viewed as $k$ different simple and closed legs, which must all have an integral of zero. Thus,
+\[
+	\int_C f(z) dz = \sum_{i = 0}^{k} \int_{C_i} f(z) dz = 0
+\] 
+
+\textit{Example: if $C$ is any closed contour in the disk $|z| < 2$, then
+\[
+	\int_C \frac{ze^z}{(z^2 + 9)^5} dz = 0
+\] because the only singularities of this function are outside the disk (at $z = \pm 3i$).}
+
+Note that this implies, from the theorem earlier in the chapter, that \textit{every entire function has an antiderivative everywhere}.
+
 
 \end{document}
