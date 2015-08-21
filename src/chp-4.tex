@@ -508,4 +508,46 @@ This new function has an antiderivative of $\frac{2}{3} z^{3/2}$, so we can writ
 We could evaluate the same integral for any contour below the real axis in a similar manner.}
 
 
+\clearpage
+\section{Frame 46 -- Cauchy-Goursat Theorem}
+\subsection{The theorem}
+We will show some simple conditions under which a contour integral is guaranteed to be zero.
+
+Suppose that $C$ is a simple, closed, positively-oriented contour $z(t)$ (where $a \le t \le b$) and $f$ is a function that analytic at each point interior to and on $C$. Then, we can write
+\[
+	\int_C f(z) dz = \int_a^b f[z(t)] z'(t) dt
+\]
+Then, if
+\[
+	f(z) = u(x, y) + iv(x, y) 
+\]
+and
+\[
+	z(t) = x(t) + iy(t)
+\]
+we can write this integral as
+\[
+	\int_C f(z) dz = \int_C u dx - v dy + i\int_C v dx + u dy
+\]
+We can then use Green's theorem to write these line integrals as double integrals over the region $R$ bounded by $C$:
+\[
+	\int_C f(z) dz 
+	=  \int \int_R (-v_x - u_y) dA 
+	+ i\int \int_R  (u_x - v_y) dA 
+\]
+Finally, due to the Cauchy Riemann equations, both of these integrands are zero, so
+\[
+	\int_C f(z) dz = 0
+\]
+whenever $f$ is analytic and $f'$ is continuous in $R$. Note that, due to Goursat, the continuity condition is actually unnecessary.
+
+\subsection{Example}
+\textit{Example: if $C$ is a simple closed contour, then
+\[
+	\int_C e^{z^3} dz = 0
+\]	
+since $e^{z^3}$ is analytic everywhere.}
+
+
+
 \end{document}
