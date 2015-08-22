@@ -684,4 +684,62 @@ and
 for positive integers $n$.}
 
 
+\clearpage
+\section{Frame 52 -- Consequences of the Extension}
+This section will cover some consequences of the theorems proves in the last two frames.
+
+\subsection{Derivatives are analytic}
+\textit{Theorem: if a function $f$ is analytic at a point, then its derivatives of all orders are also analytic there.}
+
+To prove this, suppose that $f$ is analytic at a point $z_0$. This implies that it is analytic on some neighbourhood centered at $z_0$, so we can create a positively-oriented circle $C_0$ centered at $z_0$ such that $f$ is analytic in and on $C_0$. Then, we know that
+\[
+	f''(z) = \frac{1}{\pi i} \int_{C_0} \frac{f(s)}{(s - z)^3} ds
+\]
+so the second derivative exists, and the first derivative must be analytic. These steps can be repeated to show analyticity of any order of derivative, so every derivative $f^{(n)}$ is analytic at $z_0$.
+
+Note that this also implies that, if an analytic function can be written as
+\[
+	f(z) = u(x, y) + iv(x, y)
+\]
+then, since all derivatives of $f$ exist, the components $u$ and $v$ have continuous partial derivatives of all orders at $(x_0, y_0)$.
+
+\subsection{Contour integrals and analyticity} 
+\textit{Theorem: suppose that $f$ is continuous on a domain $D$. Then, if
+\[
+	\int_C f(z) dz = 0
+\]
+for every closed contour $C$ in $D$, then $f$ is analytic on $D$.}
+
+Proof: if this contour integral is always zero, then $f$ must have an antiderivative $F$ in $D$. However, since $f$ is the derivative of $F$, we know from the previous theorem that $f$ must be analytic, so we are done.
+
+\subsection{Bounds for derivatives}
+\textit{Theorem (Cauchy's Inequality): suppose that $C_R$ is a positively-oriented circle centered at $z_0$ with a radius of $R$ and $f$ is a function that is analytic in and on $C_R$. If
+\[
+	|f(z)| \le M_R
+\]
+on $C_R$, then
+\[
+	|f^{(n)}(z_0)| \le \frac{n! M_R}{R^n}
+\]}
+
+Proof: if $f$ is analytic in this closed domain, then
+\[
+	f^{(n)}(z_0) = \frac{n!}{2\pi i} \int_{C_R} \frac{f(z)}{(z - z_0)^{n+1}} dz
+\]
+The numerator and denominator of this integrand satisfy
+\[
+	|f(z)| \le M_R
+\]
+and
+\[
+	|(z - z_0)^{n+1}| = R^{n+1}
+\]
+so
+\[
+	|f^{(n)}(z_0)| 
+	\le \left|\frac{n!}{2\pi i}\right| \cdot \frac{M_R}{R^{n+1}} \cdot 2\pi R
+	= \frac{n! M_R}{R^n}
+\]
+
+
 \end{document}

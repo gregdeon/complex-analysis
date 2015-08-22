@@ -48,7 +48,7 @@ August 21
 August 22
 * 50
 * 51
-- 52
+* 52
 August 23
 - 53
 - 54
