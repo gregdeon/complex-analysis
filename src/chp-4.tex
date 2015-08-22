@@ -611,4 +611,32 @@ so
 \]}
 
 
+\clearpage
+\section{Frame 50 -- The Cauchy Integral Formula}
+\subsection{The theorem}
+\textit{Theorem: if $C$ is a positively oriented simple closed contour, $f$ is analytic everywhere inside and on $C$, and $z_0$ is a point interior to $C$, then
+\[
+	f(z_0) = \frac{1}{2\pi i} \int_C \frac{f(z)}{z - z_0} dz
+\]}
+
+This theorem effectively says that an analytic function's values inside a contour are completely determined by the function's values \emph{on} the contour. Notice that we can rearrange this formula as
+\[
+	\int_C \frac{f(z)}{z - z_0} dz = 2\pi i f(z_0)
+\]
+to evaluate the values of some contour integrals.
+
+\subsection{Example}
+\textit{Example: Suppose that $C$ is the positively oriented circle $|z| = 2$ and $f$ is the function
+\[
+	f(z) = \frac{z}{9 - z^2}
+\]
+To evaluate the integral of $f(z) / (z + i)$ around this contour, we can write
+\[
+	\int_C \frac{f(z)}{z + i} dz
+	= 2\pi i f(-i)
+	= 2\pi i \left( \frac{-i}{10} \right)
+	= \frac{\pi}{5}
+\]}
+
+
 \end{document}
