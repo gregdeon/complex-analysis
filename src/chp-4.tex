@@ -639,4 +639,49 @@ To evaluate the integral of $f(z) / (z + i)$ around this contour, we can write
 \]}
 
 
+\clearpage
+\section{Frame 51 -- An Extension}
+\subsection{Extending Cauchy's formula}
+We can extend the Cauchy integral formula to find the derivatives of $f$ at a point. If we use the same conditions as before ($C$ is positively oriented, simple, and closed; $f$ is analytic inside and on $C$), then the Cauchy integral formula states that
+\[
+	f(z) = \frac{1}{2\pi i} \int_C \frac{f(s)}{s - z} ds
+\]
+where $z$ is a point inside $C$ and $s$ denotes points on $C$. If we differentiate both sides of this expression with respect to $z$, we find that
+\[
+	f'(z) = \frac{1}{2\pi i} \int_C \frac{f(s)}{(s - z)^2} ds
+\]
+The same technique can be used to verify that
+\[
+	f''(z) = \frac{1}{\pi i} \int_C \frac{f(s)}{(s - z)^3} ds
+\]	
+and, in general,
+\[
+	f^{(n)}(z) = \frac{n!}{2\pi i} \int_C \frac{f(s)}{(s - z)^{n+1}} ds
+\]
+
+Alternatively, this formula can be written in the form
+\[
+	\int_C \frac{f(z)}{(z - z_0)^{n+1}} = \frac{2\pi i}{n!} f^{(n)}(z_0)
+\]
+
+\subsection{Examples}
+\textit{Example 1: suppose that $C$ is the positively oriented unit circle $|z| = 1$. Then, if we write $f(z) = e^{2z}$, we can find that
+\[
+	\int_C \frac{e^{2z}} z^4 dz 
+	= \int_C \frac{f(z)}{(z - 0)^{3 + 1}} dz
+	= \frac{2\pi i}{3!} f'''(0)
+	= \frac{8\pi i}{3}
+\]}
+
+\textit{Example 2: suppose that $z_0$ is any point inside a positively-oriented simple contour $C$ and $f(z) = 1$. Then,
+\[
+	\int_C \frac{1}{z - z_0} dz = 2\pi i \cdot f(z_0) = 2\pi i
+\]
+and
+\[
+	\int_C \frac{1}{(z - z_0)^{n+1}} dz = 0
+\]
+for positive integers $n$.}
+
+
 \end{document}
