@@ -742,4 +742,39 @@ so
 \]
 
 
+\clearpage
+\section{Frame 53 -- Liouville's Theorem \& The Fundamental Theorem of Algebra}
+\subsection{Liouville's Theorem}
+No entire function is bounded in the complex plane except for a constant. This is stated in the following theorem:
+
+\textit{Theorem: if a function $f$ is entire and bounded in the complex plane, then $f(z)$ is constant throughout the plane.}
+
+To show this, suppose that $f$ is bounded such that $|f(z)| \le M$ for all $z$. Then, Cauchy's inequality states that
+\[
+	|f'(z_0)| \le \frac{M}{R}
+\]
+This must also hold as $R$ gets arbitrarily large, so $f'(z) = 0$ everywhere, and the function must be constant. 
+
+\subsection{The fundamental theorem of algebra}
+We can derive the following theorem from Liouville's theorem:
+
+\textit{Theorem: any polynomial has at least one zero. That is, if
+\[
+	P(z) = a_0 + a_1 z + a_2 z^2 + \dots + a_n z^n
+\]
+then there exists at least one point $z_0$ such that $P(z_0) = 0$.}
+
+To show this, suppose that $P(z)$ is never zero. Then, the function
+\[
+	f(z) = \frac{1}{P(z)}
+\]
+is bounded over the entire plane. However, this implies that $f(z)$ is constant, and $P(z)$ is constant. This is a contradiction -- $P(z)$ is not constant -- so $P(z)$ must have at least one zero.
+
+Extending this theorem, we can write any polynomial in the form
+\[
+	P(z) = c(z - z_1)(z - z_2) \dots (z - z_n)
+\]
+This means that $P(z)$ can have no more than $n$ distinct zeros. It may have less -- it is possible for some of these constants $z_k$ to be the same.
+
+
 \end{document}
