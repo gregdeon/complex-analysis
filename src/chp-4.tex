@@ -777,4 +777,73 @@ Extending this theorem, we can write any polynomial in the form
 This means that $P(z)$ can have no more than $n$ distinct zeros. It may have less -- it is possible for some of these constants $z_k$ to be the same.
 
 
+\clearpage
+\section{Frame 54 -- Maximum Modulus Principle}
+\subsection{Lemma: constant functions}
+The following lemma will be helpful in the following subsection:
+
+\textit{Lemma: $f$ is analytic in a neighbourhood of $z_0$ and $|f(z)| \le |f(z_0)|$ for all $z$ in this neighbourhood, then $f(z) = f(z_0)$ throughout the neighbourhood.}
+
+Suppose that we find the value of $f(z_0)$ using Cauchy's integral formula with the contour $z = z_0 + \rho e^{i\theta}$:
+\[
+	f(z_0) = \frac{1}{2\pi i} \int_{C_\rho} \frac{f(z)}{z - z_0} dz
+\]
+Substituting the contour's equations in, we find that
+\[
+	f(z_0) = \frac{1}{2\pi i} \int_0^{2\pi} 
+		\frac{f(z_0 + \rho e^{i\theta})}{\rho e^{i\theta}} 
+		\cdot i\rho e^{i\theta} d\theta
+	= \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + \rho e^{i\theta}) d\theta
+\]
+From this, we see that
+\[
+	|f(z_0)| \le \frac{1}{2\pi} \int_0^{2\pi} |f(z_0 + \rho e^{i\theta})| d\theta
+\]
+However, $|f(z_0 + \rho e^{i\theta})| \le |f(z_0)|$, so we can extend this to
+\begin{align*}
+	|f(z_0)| 
+	&\le \frac{1}{2\pi} \int_0^{2\pi} |f(z_0 + \rho e^{i\theta})| d\theta \\
+	&\le \frac{1}{2\pi} \int_0^{2\pi} |f(z_0)| d\theta \\
+	&= |f(z_0)|
+\end{align*}
+Since the beginning and ending terms of this inequality are equal, we see that the two integrals are equal. Their integrands must also be equal, so
+\[
+	|f(z_0 + \rho e^{i\theta})| = |f(z_0)|
+\]
+This holds as long as the point $z_0 + \rho e^{i\theta}$ is in the neighbourhood. Thus, $|f(z)|$ is constant in this neighbourhood, so $f(z)$ must also be constant, with the value of $f(z_0)$.
+
+\subsection{The maximum modulus principle}
+We can use the previous lemma to prove the maximum modulus principle.
+
+\textit{Theorem: if an analytic function $f$ is not constant in a domain $D$, then $|f(z)|$ has no maximum value in $D$.}
+
+Suppose that the modulus of $f$ has a maximum value $|f(z_0)|$. Then, we can draw a neighbourhood $N_0$ at $z_0$ over which the function must be constant (due to the previous lemma). To be precise, the function has the value $f(z_0)$ over this entire neighbourhood.
+
+Then, we can choose any point $z_1 \ne z_0$ in the neighbourhood $N_0$ and draw another neighbourhood $N_1$ around it. Since $|f(z_1)| = |f(z_0)|$, $f$ must also be constant on $N_1$; as above the function has a value of $f(z_1) = f(z_0)$ over this entire neighbourhood.
+
+This process can be repeated to reach any point $P$ in the domain. In this manner, we will eventually find that $f(P) = f(z_0)$ for all points $P$ in $D$, so the function is constant on $D$.
+
+\subsection{Closed regions}
+The previous theorem can be used to state a simple corollary:
+
+\textit{Corollary: if $f$ is continuous on a closed, bounded region $R$ and both analytic and non-constant on the interior of $R$. Then, the maximum value of $|f(z)|$ in $R$, which will always be reached at one or more points, can only occur on the boundary of $R$.}
+
+Note that, if we write a function in terms of its components 
+\[
+	f(z) = u(x, y) + iv(x, y),
+\]
+then the component function $u(x, y)$ must also be maximized on the boundary of $R$ and not on the interior. This comes from the fact that the function
+\[
+	g(z) = e^{f(z)}
+\]
+must have a modulus |g(z)| that is maximum on the boundary. Since the modulus is $\exp{u(x, y)}$, this implies that $u$ is also maximum here.
+
+\subsection{Example}
+\textit{Example: recall that the modulus of the function $f(z) = \sin z$ can be written as
+\[
+	|\sin z| = \sqrt{\sin^2 x + \sinh^2 y}
+\]
+If we consider the region $0 \le x \le \pi$, $0 \le y \le 1$, then we know that the modulus must be maximized on the boundary.}
+
+\textit{We can find the maximum point by recognizing that $\sin^2 x$ is maximum at $x = \pi/2$ and $\sinh^2 y$ is maximum at $y = 1$, so $|\sin z|$ is maximum at the boundary point $z = (\pi / 2, 1)$.}
 \end{document}
