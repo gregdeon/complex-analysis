@@ -563,4 +563,119 @@ where $M$ is some positive number. Thus,
 	= e^{-b^2} \frac{\sqrt{\pi}}{2}
 \]
 
+
+\clearpage
+\section{Frame 52 -- The Cauchy Integral Formula}
+\textbf{1(a)}
+This integral has $f(z) = e^{-z}$ and $z_0 = i\pi/2$, so
+\[
+	\int_C \frac{e^{-z}}{z - i\pi/2} dz
+	= 2\pi i \cdot e^{-i\pi/2}
+	= 2\pi
+\]
+
+\textbf{1(b)}
+This integral has $f(z) = \frac{\cos z}{z^2 + 8}$ and $z_0 = 0$, so
+\[
+	\int_C \frac{\cos z}{z(z^2 + 8)} dz
+	= 2\pi i \cdot \left( \frac{\cos 0}{0 + 8} \right)
+	= i \frac{\pi}{4}
+\]
+
+\textbf{1(c)}
+This integral has $f(z) = \frac{z}{2}$ and $z_0 = -1/2$, so
+\[
+	\int_C \frac{z}{2z + 1} dz
+	= 2\pi i \cdot \frac{(-1/2)}{2}
+	= -i \pi/2
+\]
+
+\textbf{1(d)}
+This integral has $f(z) = \cosh z$ and $z_0 = 0$. Since
+\[
+	\frac{d^3}{dz^3} \cosh z = \sinh z
+\]
+we have
+\[
+	\int_C \frac{\cosh z}{z^4} dz
+	= \frac{2\pi i}{3!} \sinh 0
+	= 0
+\]
+
+\textbf{1(e)}
+This integral has $f(z) = \tan(z/2)$ and $z_0 = x_0$. Since
+\[
+	\frac{d}{dz} \tan(z / 2)
+	= \frac{1}{2} \sec^2(z / 2)
+	= \frac{1}{2 \cos^2(z / 2)}
+\]	
+we have
+\[
+	\int_C \frac{\tan(z/2)}{(z - x_0)^2} dz
+	= 2\pi i \cdot \frac{1}{2 \cos^2(x_0 / 2)}
+	= i \pi \sec^2(x_0 / 2)
+\]
+
+\textbf{2(a)}
+The integrand has two singularities at $z = \pm 2i$. Only the positive singularity is inside the contour, so we can write
+\[
+	g^*(z) = \frac{1}{z + 2i}
+\]
+noting that $g(z) = g^*(z) / (z - 2i)$. Then,
+\[
+	\int_C g(z) dz
+	= \int_C \frac{g^*(z)}{z - 2i} dz
+	= 2\pi i ~ g^*(2i)
+	= 2\pi i \frac{1}{4i}
+	= \frac{\pi}{2}
+\]
+
+\textbf{2(b)}
+In a similar manner to the previous problem, we can write
+\[
+	g_*(z) = \frac{1}{(z + 2i)^2}
+\]
+and note that
+\[
+	g_*'(z) = \frac{-2}{(z + 2i)^3}
+\]
+Then,
+\[
+	\int_C g(z) dz
+	= \int_C \frac{g_*(z)}{(z - 2i)^2} dz
+	= 2 \pi i ~ g_*'(2i)
+	= 2 \pi i \cdot \frac{-2}{(4i)^3}
+	= 2\pi \cdot \frac{1}{32}
+	= \frac{\pi}{16}
+\]
+
+\textbf{3}
+This integral is simply the Cauchy integral formula where $z_0 = z$ and 
+\[
+	f(z) = 2z^2 - z - 2
+\]
+so
+\[
+	g(z) = 2\pi i f(z) = 2\pi i(2z^2 - z - 2)
+\]
+At $z = 2$, this is
+\[
+	g(2) = 2\pi i \cdot (2 \cdot 2^2 - 2 - 2) = 8\pi i
+\]
+If $|z|> 3$, then this contour contains no singularities, and
+\[
+	g(z) = 0
+\]
+
+\textbf{4}
+Similar to the previous problem, this is
+\[
+	g(z) = \frac{2\pi i}{2} f''(z)
+\]
+where $f(z) = z^3 + 2z$. Thus,
+\[
+	g(z) = \pi i \cdot 6z = 6\pi i z
+\]
+as long as $z$ is inside $C$.
+
 \end{document}
