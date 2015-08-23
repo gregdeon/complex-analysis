@@ -11,6 +11,79 @@
 \DeclareMathOperator{\csch}{csch}
 
 \begin{document}
-Text goes here
+
+\section{Frame 55 -- Sequences and Convergence}
+\subsection{Definitions}
+An \emph{infinite sequence} of complex numbers,
+\[
+	z_1, z_2, \dots, z_n, \dots
+\]
+has a \emph{limit} if, for each positive number $\epsilon$, there exists a positive integer $n_0$ such that
+\[
+	|z_n - z| < \epsilon	\quad \text{whenever} \quad	n > n_0
+\]
+Geometrically, this limit implies that for all $n > n_0$, each number $z_n$ in the sequence will be inside an $\epsilon$ neighbourhood of $z$.
+
+A sequence can only have one limit, at most. When this limit exists, we say that the sequence \emph{converges} to $z$, and we write
+\[
+	\lim_{n \to \infty} z_n = z
+\]
+If a sequence has no limit, it \emph{diverges}.
+
+\subsection{Components}
+\textit{Theorem: If we write $z_n = x_n + iy_n$ and $z = x + iy$, then
+\[
+	\lim_{n \to \infty} z_n = z \iff
+	\lim_{n \to \infty} x_n = x \text{ and }
+	\lim_{n \to \infty} y_n = y
+\]}
+This theorem allows us to write
+\[
+	\lim_{n \to \infty} (x_n + iy_n)
+	= \lim_{n \to \infty} x_n 
+	+ i \lim_{n \to \infty} y_n
+\]
+as long as the limits on either side of this equation exist.
+
+\subsection{Examples}
+\textit{Example 1: we can evaluate the following limit easily:
+\begin{align*}
+	\lim_{n \to \infty} \frac{1}{n^3 + i}
+	&= \lim_{n \to \infty} \frac{1}{n^3} + i\lim_{n \to \infty} 1 \\
+	&= 0 + i\cdot1 \\
+	&= i
+\end{align*}
+}
+
+\textit{Example 2: Polar coordinates require some extra care. Looking at the sequence
+\[
+	z_n = -2 + i \frac{(-1)^n}{n^2}
+\]
+we can see that
+\[
+	\lim_{n \to \infty} z_n
+	= \lim_{n \to \infty} (-2)
+	+ i \lim_{n \to \infty} \frac{(-1)^n}{n^2}
+	= -2
+\]
+However, we can find that the principal polar representation of these numbers is
+\begin{align*}
+	r_n &= \sqrt{4 + \frac{1}{n^2}} \\
+	\Theta_n &= \Arg z_n = \tan^{-1} \left( \frac{(-1)^n}{-2n^2}\right)
+\end{align*}
+Evaluating the first limit, we find that
+\[
+	\lim_{n \to \infty} r_n = \sqrt{4} = 2
+\]
+which is fine. However, the second sequence does not converge. Looking at every second term, we see that
+\[
+	\lim_{n \to \infty} \Theta_{2n} = \pi
+\]
+and
+\[
+	\lim_{n \to \infty} \Theta_{2n - 1} = -\pi
+\]
+so $\Theta_n$ diverges.}
+
 
 \end{document}
