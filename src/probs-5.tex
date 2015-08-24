@@ -11,6 +11,52 @@
 \DeclareMathOperator{\csch}{csch}
 
 \begin{document}
-Text goes here
+
+\section{Frame 56 -- Sequences and Series}
+
+\textbf{3}
+If
+\[
+	\lim_{n \to \infty} z_n = z
+\]
+then, for some integer $n_0$, all of the terms $z_k$ ($k > n_0$) will be in some $\epsilon$ neighbourhood of $z$; ie:
+\[
+	|z_k - z| < \epsilon
+\]
+However,
+\[
+	||z_k| - |z| \le \epsilon
+\]
+so all of the terms $|z_k|$ must be inside the same $\epsilon$ neighbourhood of $|z|$, and we can say that
+\[
+	\lim_{n \to \infty} |z_n| = |z|
+\]
+
+\textbf{4}
+Starting from the series
+\[
+	\sum_{n=1}^\infty z^n = \frac{1}{1 - z} - 1 = \frac{z}{1 - z}
+\]
+the components of this expression can be written as
+\begin{align*}
+	\frac{z}{1 - z}
+	&= \frac{r \cos \theta + i r \sin \theta}{1 - r \cos \theta - i r \sin \theta} \\
+	&= \frac{r\cos \theta - r^2 \cos^2 \theta - r^2 \sin^2 \theta}{(1 - r\cos \theta)^2 + r^2 \sin^2 \theta}
+	+ i \frac{r\sin \theta - r^2 \sin \theta \cos \theta + r^2 \sin \theta \cos \theta}{(1 - r\cos \theta)^2 + r^2 \sin^2 \theta} \\
+	&= \frac{r \cos \theta - r^2}{1 - 2r\cos \theta + r^2}
+	+ i\frac{r\sin \theta}{1 - 2r\cos \theta + r^2}
+\end{align*}
+so, equating the real and imaginary parts of the sum,
+\[
+	\sum_{n=1}^\infty r^n \cos n\theta
+	= \frac{r \cos \theta - r^2}{1 - 2r\cos \theta + r^2}
+\]
+and
+\[
+	\sum_{n=1}^\infty r^n \sin n\theta
+	= \frac{r\sin \theta}{1 - 2r\cos \theta + r^2}
+\]
+
+
 
 \end{document}
