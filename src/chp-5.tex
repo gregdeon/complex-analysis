@@ -198,4 +198,39 @@ The moduli of these remaiders are
 so $\rho_N(z)$ tends to zero when $|z| < 1$.}
 
 
+\clearpage
+\section{Frame 57 -- Taylor Series}
+The following theorem is known as \emph{Taylor's theorem}:
+
+\textit{Theorem: If a function $f$ is analytic throughout a disk $|z - z_0| < R_0$, then $f(z)$ has the power series representation
+\[
+	f(z) = \sum_{n = 0}^\infty a_n (z - z_0)^n
+\]
+where
+\[
+	a_n = \frac{f^{(n)} (z_0)}{n!}
+\]
+This series converges to $f(z)$ when $z$ is in this disk.}
+
+Taylor's theorem allows us to write
+\[
+	f(z) = f(z_0) 
+	+ \frac{f'(z_0)}{1!}  (z - z_0)
+	+ \frac{f''(z_0)}{2!} (z - z_0)^2
+	+ \dots 
+\]
+This is true for any function that is analytic at $z_0$: the requirement for analyticity states that $f$ must be analytic in some neighbourhood of $z_0$, so the disk mentioned in the theorem exists. In particular, entire functions can use arbitrarily large disks, ie:
+\[
+	|z - z_0| < \infty
+\]
+so the series is convergent for all $z$ in the plane.
+
+It can be shown that Taylor's series converges at every point inside the disk -- no convergence tests are required. In fact, the smallest radius at which it does \emph{not} converge is the nearest point where $f$ is not analytic. 
+
+If $z_0 = 0$ in a Taylor series, it is known as a \emph{Maclaurin series}. Then, it takes the form
+\[
+	f(z) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!} z^n
+\]
+
+
 \end{document}
