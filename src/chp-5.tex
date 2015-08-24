@@ -86,4 +86,116 @@ and
 so $\Theta_n$ diverges.}
 
 
+\clearpage
+\section{Frame 56 -- Series Convergence}
+\subsection{Definitions}
+An infinite \emph{series} of complex numbers,
+\[
+	\sum_{n=1}^\infty z_n = z_1 + z_2 + z_3 + \dots + z_n + \dots,
+\]
+\emph{converges} to the sum $S$ if the sequence of partial sums,
+\[
+	S_N = \sum_{n=1}^N z_n = z_1 + z_2 + \dots + z_N,
+\]
+converges to $S$. If this is the case, then we can write
+\[
+	\sum_{n=1}^\infty z_n = S
+\]
+
+Note that, since a sequence can have at most one limit, a series can have at most one sum. If a series does not converge, it \emph{diverges}.
+
+\subsection{Properties -- Components}
+First, as with sequences, we can split a series into its real and imaginary components.
+
+\textit{Theorem: If $z_n = x_n + iy_n$ and $S = X + iY$, then
+\[
+	\sum_{n=1}^\infty z_n = S
+\]
+iff
+\[
+	\sum_{n=1}^\infty x_n = X \quad \text{and} \quad \sum_{n=1}^\infty y_n = Y
+\]}
+
+To prove this, we can write the partial sums $S_N$ as
+\[
+	S_N = X_N + iY_N
+\]
+where
+\[
+	X_N = \sum_{n=1}^N x_n \quad \text{and} \quad Y_N = \sum_{n=1}^N y_ns
+\]
+Then, the series only converges to $S$ if
+\[
+	\lim_{N \to \infty} X_N = X \quad \text{and} \quad \lim_{N \to \infty} Y_N = Y
+\]
+due to the theorem on sequences in the previous chapter. Thus, the theorem is proved.
+
+\subsection{Properties -- Boundedness}
+The following corollary is a consequence of the previous theorem: 
+
+\textit{Corollary 1: If a series of complex numbers converges, the summed terms $z_n$ converge to zero.}
+
+This is due to the fact that
+\[
+	\sum_{n=1}^\infty z_n = \sum_{n=1}^\infty x_n + i \sum_{n=1}^\infty y_n
+\]
+and, in order for these two terms to converge, $x_n$ and $y_n$ must converge to zero (from calculus). Thus,
+\[
+	\lim_{n \to \infty} z_n 
+	= \lim_{n \to \infty} x_n + i \lim_{n \to \infty} y_n
+	= 0
+\]
+
+This corollary implies that the terms within convergent series are bounded -- that is, there exists a constant $M$ such that $|z_n| < M$ for all $n$.
+
+\subsection{Properties -- Absolute Convergence}
+A series is \emph{absolutely convergent} if the related series
+\[
+	\sum_{n=1}^\infty |z_n| = \sum_{n=1}^\infty \sqrt{x_n^2 + y_n^2}
+\]
+converges. This has a simple implication:
+
+\textit{Corollary 2: If a series is absolutely convergent, it is convergent.}
+
+To show this, consider the real component of the series. It can be written as
+\[
+	\sum_{n=1}^\infty x_n
+	\le \left| \sum_{n=1}^\infty x_n \right|
+	\le \sum_{n=1}^\infty |x_n|
+	\le \sum_{n=1}^\infty \sqrt{x_n^2 + y_n^2}
+	= 0
+\]
+so the real component must converge. The same is true of the imaginary component, so the corollary is proved.
+
+\subsection{Remainders}
+It is often helpful to define the sequence of \emph{remainders} using the partial sums:
+\[
+	\rho_N = S - S_N
+\]
+or $S = S_N + \rho_N$. Since we can write that
+\[
+	|S_N - S| = |\rho_N|
+\]
+then a series is only convergent if the sequence of remainders tends to zero.
+
+\textit{Example: using remainders, we can verify that
+\[
+	\sum_{n=0}^\infty z_n = \frac{1}{1 - z} \quad \text{whenver} \quad |z| < 1
+\]
+To do this, we recall that
+\[
+	S_N(z) = 1 + z + z^2 + \dots + z^N = \frac{1 - z^{N+1}}{1 - z}
+\]
+so
+\[
+	\rho_N(z) = \frac{1}{1 - z} - \frac{1 - z^{N+1}}{1 - z}
+	= \frac{z^N}{1 - z}
+\]
+The moduli of these remaiders are
+\[
+	|\rho_N(z)| = \frac{|z|^N}{|1 - z|}
+\]
+so $\rho_N(z)$ tends to zero when $|z| < 1$.}
+
+
 \end{document}
