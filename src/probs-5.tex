@@ -58,5 +58,80 @@ and
 \]
 
 
+\clearpage
+\section{Frame 59 -- Taylor Series}
+\textbf{1}
+The Maclaurin series for $z \cosh(z^2)$ is
+\[
+	z \cosh(z^2)
+	= z \cdot \sum_{n=0}^\infty \frac{(z^2)^{2n}}{(2n)!}
+	= \sum_{n=0}^\infty \frac{z^{4n+1}}{(2n)!}
+\]
+
+\textbf{3}
+The Maclaurin series for this function is
+\[
+	\frac{z}{9} \frac{1}{1 + (z^4/9)}
+	= \frac{z}{9} \sum_{n=0}^\infty (-1)^n (z^4/9)^n
+	= \sum_{n=0}^\infty \frac{(-1)^n z^{4n+1}}{9^{n+1}}
+\]
+
+\textbf{4}
+Starting with the Maclaurin series for $\sin z$, this function's expansion is
+\[
+	\sin(z^2)
+	= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} (z^2)^{2n + 1}
+	= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} z^{4n+2}
+\]
+Thus, $a_k$ is only non-zero for $k = 2, 6, 10, 14, \dots$.
+
+\textbf{10}
+The function $\tanh z$ has singularities wherever $\cosh z = 0$, which occurs at $z = (k + 1/2) \pi i$. Thus, the closest singularity has a radius of $\pi/2$, and this is the radius of convergence.
+
+We can find some of the terms of the Taylor series. The constant is
+\[
+	\tanh(0) = 0
+\]
+The first derivative is
+\[
+	\frac{d}{dz} \tanh(z) \Big|_{z=0}
+	= \sech^2(0)
+	= 1
+\]
+The second derivative is
+\[
+	\frac{d}{dz} \sech^2(z) \Big|_{z=0}
+	= 2\sech(z) \cdot (-\sech z \tanh z) \Big|_{z=0}
+	= -2\sech^2 z \tanh z \Big|_{z=0}
+	= 0
+\]
+The third derivative is
+\[
+	\frac{d}{dz} -2\sech^2 z \tanh z \Big|_{z=0}
+	= -2 \left[ -2\sech^2 z \tanh^2 z + \sech^4 z \right] \Big|_{z=0}
+	= -2
+\]
+so the first few terms of the Taylor series are
+\[
+	\tanh z \approx z - \frac{z^3}{3}
+\]
+
+\textbf{11(a)}
+The series for this function is
+\[
+	\frac{e^z}{z^2}
+	= \frac{1}{z^2} \sum_{n=0}^\infty \frac{z^n}{n!}
+	= \sum_{n=0}^\infty \frac{z^{n-2}}{n!}
+	= \frac{1}{z^2} + \frac{1}{z} + \sum_{n=0}^\infty \frac{z^n}{(n+2)!}
+\]
+
+\textbf{11(b)}
+The series for this function is
+\begin{align*}
+	\frac{\sin(z^2)}{z^4}
+	&= \frac{1}{z^4} \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} (z^2)^{2n+1} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} z^{4n - 2} \\
+	&= \frac{1}{z^2} + \sum_{n=0}^\infty \frac{(-1)^{n+1}}{(2n+3)!} z^{4n+2}
+\end{align*}
 
 \end{document}
