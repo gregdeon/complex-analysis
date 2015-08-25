@@ -408,4 +408,73 @@ The domain of definition could expand to several different possibilities:
 \end{itemize}
 
 
+\clearpage
+\section{Frame 62 -- Examples of Laurent Series}
+This section will show some examples of Laurent series.
+
+\subsection{Example 1}
+First, using the expansion for $e^z$, the Laurent series for $e^{1/z}$ is
+\[
+	e^{1/z} = \sum_{n=0}^\infty \frac{1}{n! z^n}
+	= 1 + \frac{1}{z} + \frac{1}{2z^2} + \frac{1}{6z^3} + \dots
+\]
+Note that the coefficient $b_1$ here is $1$, which tells us that
+\[
+	\int_C e^{1/z} dz = 2\pi i
+\]
+for any positively-oriented simple closed contour that contains the origin.
+
+\subsection{Example 2}
+The function
+\[
+	\frac{1}{(z - i)^2}
+\]
+is already a Laurent series, where $c_n = 0$ for all $n$ except $c_{-2} = 1$. This tells us that
+\[
+	\int_C \frac{dz}{(z - i)^{n+3}} = \begin{cases}
+		0,		& n \ne -2 \\
+		2\pi i, & n   = -2
+	\end{cases}
+\]
+
+\subsection{Example 3}
+Consider the function
+\[
+	f(z) = \frac{1}{z - 1} - \frac{1}{z - 2}
+\]
+in the domain $|z| < 1$. Since $f$ is analytic in this domain, we can write the Maclaurin series
+\begin{align*}
+	f(z) 
+	&= \frac{-1}{1 - z} + \frac{1}{2} \frac{1}{1 - z/2} \\
+	&= -\sum_{n=0}^\infty z^n + \sum_{n=0}^\infty \frac{z^n}{2^{n+1}} \\
+	&= \sum_{n=0}^\infty (2^{-n-1} - 1) z^n 
+\end{align*}
+
+\subsection{Example 4}
+Consider the same function on the domain $1 < |z| < 2$. Here, we can write
+\[
+	|1/z| < 1 \quad \text{and} \quad |z/2| < 1
+\]
+so we can write the function as
+\begin{align*}
+	f(z)
+	&= \frac{1}{z} \frac{1}{1 - 1/z} + \frac{1}{2} \frac{1}{1 - z/2} \\
+	&= \sum_{n=0}^\infty \frac{1}{z^{n+1}} + \sum_{n=0}^\infty \frac{z^n}{2^{n+1}} \\
+	&= \sum_{n=0}^\infty \frac{z^n}{2^{n+1}} + \sum_{n=1}^\infty \frac{1}{z^n}
+\end{align*}
+which is the Laurent series for $f$ in this domain.
+
+\subsection{Example 5}
+Finally, consider this function on the domain $2 < |z| < \infty$. Now, we can write
+\begin{align*}
+	f(z)
+	&= \frac{1}{z} \frac{1}{1 - 1/z} - \frac{1}{z} \frac{1}{1 - 2/z} \\
+	&= \sum_{n=0}^\infty \frac{1}{z^{n+1}} - \sum_{n=0}^\infty \frac{2^n}{z^{n+1}} \\
+	&= \sum_{n=0}^\infty \frac{1 - 2^n}{z^{n+1}} \\
+	&= \sum_{n=1}^\infty \frac{1 - 2^{n-1}}{z^n}
+\end{align*}
+which is the Laurent series for $f$ in this domain. Note that $a_n = 0$ for all $n$.
+
+
+
 \end{document}
