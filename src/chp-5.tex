@@ -349,5 +349,63 @@ so we can write
 We refer to the first two terms as \emph{negative powers} of $z$.
 
 
+\clearpage
+\section{Frame 60 -- Laurent Series}
+\subsection{Definition}
+We saw in the previous section that we often able to find series representations of functions that are not analytic by using both positive and negative powers of $z$. These representations are known as \emph{Laurent series}. The central theorem for these functions is Laurent's theorem:
+
+\textit{Theorem: Suppose that a function $f$ is analytic over an annular domain,
+\[
+	R_1 < |z - z_0| < R_2
+\]
+Then, $f(z)$ has the series representation
+\[
+	f(z) 
+	= \sum_{n=0}^\infty a_n (z - z_0)^n
+	+ \sum_{n=0}^\infty \frac{b_n}{(z - z_0)^n}
+\]
+where
+\begin{align*}
+	a_n &= \frac{1}{2\pi i} \int_C \frac{f(z)}{(z - z_0)^{ n+1}} dz \\
+	b_n &= \frac{1}{2\pi i} \int_C \frac{f(z)}{(z - z_0)^{-n+1}} dz
+\end{align*}
+and where $C$ is any positively-oriented contour in this domain containing $z_0$.}
+
+\subsection{Alternate Form}
+Note that we can write this series more simply by defining
+\[
+	c_n = 
+	\begin{cases}
+		b_{-n},	& n < 0 \\
+		a_n,	& n \ge 0
+	\end{cases}
+\]
+and writing
+\[
+	f(z) = \sum_{n=-\infty}^\infty c_n (z - z_0)^n
+\]
+Looking at the expressions for $a_n$ and $b_n$,
+\[
+	c_n = \frac{1}{2\pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz
+\]
+
+\subsection{Observations}
+First, note that
+\[
+	b_n = \frac{1}{2\pi i} \int_C f(z) (z - z_0)^{n-1} dz
+\]
+If $f(z)$ is analytic wherever $|z - z_0| < R_2$, then all of these coefficients will be zero, and the Laurent series reduces to a Taylor series. 
+
+The domain of definition could expand to several different possibilities:
+\begin{itemize}
+	\item $|z - z_0| < R_2$, if $f$ is analytic everywhere inside this disk (note that this is now a Taylor series)
+	
+	\item $0 < |z - z_0| < R_2$, if $f$ is analytic everywhere except for $z_0$ inside the $R_2$ disk
+	
+	\item $R_1 < |z - z_0| < \infty$, if $f$ is analytic everywhere outside the $R_1$ disk
+	
+	\item $0 < |z - z_0| < \infty$, if $f$ is analytic everywhere in the plane except for $z_0$
+\end{itemize}
+
 
 \end{document}

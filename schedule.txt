@@ -58,7 +58,7 @@ August 24
 * 57
 August 25
 * 59
-- 60
+* 60
 August 26
 - 62
 - 63
