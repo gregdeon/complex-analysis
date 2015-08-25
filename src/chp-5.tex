@@ -233,4 +233,121 @@ If $z_0 = 0$ in a Taylor series, it is known as a \emph{Maclaurin series}. Then,
 \]
 
 
+\clearpage
+\section{Frame 59 -- Examples of Taylor Series}
+In this section, we will use the formula
+\[
+	a_n = \frac{f^{(n)}(z_0)}{n!}
+\]
+to find the Maclaurin expansions of some common functions.
+
+\subsection{Example 1}
+The function $e^x$ is entire, so its Maclaurin expansion is valid for all $z$. Since
+\[
+	f^{(n)}(z) = e^z
+\]
+each term is $a_n = 1/n!$, so we find that
+\[
+	e^z = \sum_{n=0}^\infty \frac{z^n}{n!}
+\]
+Note that, if $z = x + i0$, then
+\[
+	e^x = \sum_{n=0}^\infty \frac{x^n}{n!}
+\]
+as expected.
+
+We can use this result to find the Maclaurin series for the entire function $z^2 e^{3z}$. By replacing $z$ with $3z$ and multiplying through by $z^2$, we find
+\[
+	z^2 e^{3z} = \sum_{n=0}^\infty \frac{3^n}{n!} z^{n+2} 
+	= \sum_{n=2}^\infty \frac{3^{n-2}}{(n-2)!} z^n
+\]
+
+\subsection{Example 2}
+Using the expansion
+\[
+	\sin z = \frac{1}{2i} (e^{iz} - e^{-iz})
+\]
+we can find the Maclaurin series for $f(z) = \sin z$. To do this, we write
+\begin{align*}
+	\sin z 
+	&= \frac{1}{2i} \left[ \sum_{n=0}^\infty \frac{(iz)^n}{n!} - \sum_{n=0}^\infty \frac{(-iz)^n}{n!}  \right] \\
+	&= \frac{1}{2i} \sum_{n=0}^\infty [1 - (-1)^n] \frac{i^n}{n!} z^n \\
+\intertext{Then, $1 - (-1)^n$ is zero for $n$ even, so only taking odd terms gives}
+	&= \frac{1}{2i} \sum_{n=0}^\infty 2 \frac{i^{2n+1}}{(2n+1)!} z^{2n+1} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} z^{2n + 1}
+\end{align*}
+
+This expansion can be used directly to find $\cos z$. Since
+\[
+	\cos z = \frac{d}{dz} \sin z
+\]
+we can write
+\begin{align*}
+	\cos z
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} \frac{d}{dz} z^{2n + 1} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} (2n + 1) z^{2n} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} z^{2n}
+\end{align*}
+
+\subsection{Example 3}
+Since
+\[
+	\sinh z = -i\sin(iz)
+\]
+we can write
+\begin{align*}
+	\sinh z &= -i \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} (iz)^{2n + 1} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} (-1)^n z^{2n+1} \\
+	&= \sum_{n=0}^\infty \frac{1}{(2n + 1)!} z^{2n+1} \\
+\end{align*}
+Similarly,
+\[
+	\cosh z
+	= \sum_{n=0}^\infty \frac{1}{(2n)!} z^{2n}
+\]
+Also, note that $\cosh z = \cosh (z + 2\pi i)$, so
+\[
+	\cosh z = \sum_{n=0}^\infty \frac{1}{(2n)!} (z + 2\pi i)^{2n}
+\]
+
+\subsection{Example 4}
+If $f(z) = \frac{1}{1 - z}$, then
+\[
+	f^{(n)}(z) = \frac{n!}{(1 - z)^{n+1}}
+\]
+so
+\[
+	\frac{1}{1 - z} = \sum_{n=0}^\infty z^n
+\]
+
+If we substitute $-z$ for this expression, we find that
+\[
+	\frac{1}{1 + z} = \sum_{n=0}^\infty (-1)^n z^n
+\]
+and if we substitute $1 - z$ instead, we find
+\[
+	\frac{1}{z} = \sum_{n=0}^\infty (-1)^n (z - 1)^n
+\]
+
+Note that all three of these Taylor series have a radius of convergence of $1$.
+
+\subsection{Example 5}
+Notice that the function
+\[
+	f(z) \frac{1}{z^3} \frac{1}{1 + z^2}
+\]
+does not have a Maclaurin series -- it is not analytic at $z = 0$. However,
+\[
+	\frac{1}{1 + z^2} = 1 - z^2 + z^4 - z^6 + \dots
+\]
+so we can write
+\begin{align*}
+	f(z) 
+	&= \frac{1}{z^3} (1 - z^2 + z^4 - z^6 + \dots) \\
+	&= z^{-3} - z^{-1} + z^1 - z^3 + \dots
+\end{align*}
+We refer to the first two terms as \emph{negative powers} of $z$.
+
+
+
 \end{document}
