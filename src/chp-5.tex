@@ -476,5 +476,52 @@ Finally, consider this function on the domain $2 < |z| < \infty$. Now, we can wr
 which is the Laurent series for $f$ in this domain. Note that $a_n = 0$ for all $n$.
 
 
+\clearpage
+\section{Frame 63 -- Absolute \& Uniform Convergence}
+This section will discuss several properties of power series.
+
+\subsection{Absolute Convergence}
+The first theorem will discuss when a power series is convergent.
+
+\textit{Theorem: if a power series
+\[
+	\sum_{n=0}^\infty a_n(z - z_0)^n
+\]
+converges at the point $z = z_1 \neq z_0$, then it is absolutely convergent on the open disk $|z - z_0| < |z_1 - z_0|$.}
+
+Proof: since the series converges, all of its terms must be bounded, so we can write
+\[
+	|a_n (z_1 - z_0)^n| \le M
+\]
+for some positive $M$. Then, for each $z$ inside the open disk described above, we can write
+\[
+	|a_n (z - z_0)^n | = |a_n (z - z_1)^n | \left(\frac{|z - z_0|}{|z_1 - z_0|}\right)^n \le M\rho^n
+\]
+where $\rho$ must be less than one. Then, the series must be less than the convergent geometric series
+\[
+	\sum_{n=0}^\infty M\rho^n
+\]
+so the power series is absolutely convergent on this open disk.
+
+\textit{Note: we refer to the circle $|z - z_0| = |z_1 - z_0|$ as the \emph{circle of convergence} -- it is the largest circle around $z_0$ such that the power series converges everywhere inside it.}
+
+\subsection{Uniform Convergence}
+Next, we will define uniform convergence. We said earlier that the remainder of a series is the infinite sum less the partial sum
+\[
+	\rho_N(z) = S(z) - S_N(z)
+\]
+and that, in order to converge, these remainders must approach zero as $N$ approaches infinity. We can write this as
+\[
+	|\rho_N(z)| < \epsilon \quad \text{whenever} \quad N > N_\epsilon
+\]
+We say that a series is \emph{uniformly convergent} in a region if our choice of $N_\epsilon$ depends only on $\epsilon$ and not on $z$.
+
+\textit{Theorem: If $z_1$ is a point inside the circle of convergence of a power series
+\[
+	\sum_{n=0}^\infty a_n (z - z_0)^n
+\]
+then that series must be uniformly convergent in the closed disk $|z - z_0| \le |z_1 - z_0|$.}
+
+
 
 \end{document}
