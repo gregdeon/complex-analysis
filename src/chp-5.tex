@@ -523,5 +523,66 @@ We say that a series is \emph{uniformly convergent} in a region if our choice of
 then that series must be uniformly convergent in the closed disk $|z - z_0| \le |z_1 - z_0|$.}
 
 
+\clearpage
+\section{Frame 64 -- Continuity of Power Series}
+\subsection{Continuity}
+The following theorem is a consequence of uniform convergence.
+
+\textit{Theorem: A power series
+\[
+	\sum_{n=0}^\infty a_n (z - z_0)^n
+\]
+represents a continuous function $S(z)$ at each point inside its circle of convergence.}
+
+To show this, we can write $S(z)$ as a partial sum plus the remainder:
+\[
+	S(z) = S_N(z) + \rho_N(z)
+\]
+Then, we wish to show that
+\[
+	|S(z) - S(z_1)| < \epsilon \quad \text{whenever} \quad |z - z_1| < \delta
+\]
+but
+\begin{align*}
+	|S(z) - S(z_1)| 
+	&= |S_N(z) + \rho_N(z) - S_N(z_1) - \rho_N(z_1)| \\
+	&\le |S_N(z) - S_N(z_1)| + |\rho_N(z)| + |\rho_N(z_1)|
+\end{align*}
+Now, the first term is a difference of two polynomials, which are continuous, so we must be able to choose a $\delta$ small enough to satisfy
+\[
+	|S_N(z) - S_N(z_1)| < \frac{\epsilon}{3} \quad \text{whenever} \quad |z - z_1| < \delta
+\]
+Then, due to uniform convergence, there exists an $N_\epsilon$ such that
+\[
+	|\rho_N(z)| < \frac{\epsilon}{3} \quad \text{whenever} \quad N > N_\epsilon
+\]
+which takes care of the latter two terms. Thus, for all $N > N_\epsilon$,
+\[
+	|S(z) - S(z_1)| < 3 \cdot \frac{\epsilon}{3} \quad \text{whenever} \quad
+	|z - z_1| < \delta
+\]
+so $S(z)$ is continuous.
+
+\subsection{Adjustments for Laurent series}
+For series of the form
+\[
+	\sum_{n=1}^\infty \frac{b_n}{(z - z_0)^n}
+\]
+we can write the complex number
+\[
+	w = \frac{1}{z - z_0}
+\]
+to turn the series into the form
+\[
+	\sum_{n=1}^\infty b_n w^n
+\]
+which converges absolutely to a continuous function whenever $|w| < \frac{1}{|z_1 - z_0|}$. This implies that the function converges on the \emph{outside} of the circle
+\[
+	|z - z_0| > |z_1 - z_0|
+\]
+rather than the inside.
+
+
+
 
 \end{document}
