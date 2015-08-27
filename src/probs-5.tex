@@ -186,4 +186,100 @@ In the domain $1 < |z| < \infty$, this function is
 	&= \sum_{n=1}^\infty \frac{(-1)^{n+1}}{z^{2n+1}}
 \end{align*}
 
+
+\clearpage
+\section{Frame 66 -- Integrating and Differentiating Power Series}
+\textbf{1}
+Since
+\[
+	\frac{d}{dz} \frac{1}{1 - z} = \frac{1}{(1 - z)^2}
+\]
+we can write
+\begin{align*}
+	\frac{1}{(1 - z)^2} 
+	&= \sum_{n=0}^\infty \frac{d}{dz} z^{n} \\
+	&= \sum_{n=-1}^\infty nz^{n-1} \\
+	&= \sum_{n=0}^\infty (n+1)z^n
+\end{align*}
+
+\textbf{3}
+The Taylor series for $1/z$ is
+\begin{align*}
+	\frac{1}{z}
+	&= \frac{1}{2 + (z - 2)} \\
+	&= \frac{1}{2} \frac{1}{1 + (z - 2)/2} \\
+	&= \frac{1}{2} \sum_{n=0}^\infty (-1)^n \frac{(z - 2)^n}{2^n} \\
+	&= \sum_{n=0}^\infty (-1)^n \frac{1}{2^{n+1}} (z - 2)^n
+\end{align*}
+Then, since $-\frac{d}{dz} \frac{1}{z} = \frac{1}{z^2}$, the series for $\frac{1}{z^2}$ is
+\begin{align*}
+	\frac{1}{z^2}
+	&= -\sum_{n=0}^\infty \frac{(-1)^n}{2^{n+1}} \frac{d}{dz} (z - 2)^n \\
+	&= -\sum_{n=0}^\infty \frac{(-1)^n}{2^{n+1}} n(z - 2)^{n-1} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{2^{n+2}} (n+1) (z - 2)^n \\
+	&= \frac{1}{4} \sum_{n=0}^\infty (-1)^n (n+1) \left( \frac{z - 2}{2} \right)^n
+\end{align*}
+
+\textbf{4}
+The Maclaurin series for $\sin z / z$ is
+\begin{align*}
+	\frac{\sin z}{z}
+	&= \frac{1}{z} \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} z^{2n+1} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} z^{2n}
+\end{align*}
+Evaluating this at $z = 0$ gives
+\[
+	\lim_{z \to 0} \frac{\sin z}{z}
+	= \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} (0)^{2n}
+	= 1
+	= f(0)
+\]
+so this function is entire.
+
+\textbf{5}
+A series for 
+\[
+	f(z) = \frac{\cos z}{(z + \pi/2)(z - \pi/2)}
+\]
+centered at $z_0 = -\pi/2$ is
+\begin{align*}
+	f(z)
+	&= \frac{1}{z + \pi/2}{z - \pi/2} \sin(z + \pi/2) \\
+	&= \frac{1}{z + \pi/2}{z - \pi/2} \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} (z + \pi/2)^{2n+1} \\
+	&= \frac{1}{z - \pi/2} \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} (z + \pi/2)^{2n}
+\end{align*}
+At $z = -\pi/2$, this is
+\begin{align*}
+	f(\pi/2) 
+	&= \frac{1}{-\pi} \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)}! (0)^{2n} \\
+	&= -\frac{1}{\pi}
+\end{align*}
+so the function is continuous at $z = -\pi/2$. A similar proof would work for $z = +\pi/2$.
+
+\textbf{6}
+On this limited domain,
+\[
+	\int_{1}^{z} \frac{1}{w} dw
+	= \Log w \Big|_1^z
+	= \Log z - 0
+	= \Log z
+\]
+so
+\begin{align*}
+	\Log z 
+	&= \sum_{n=0}^\infty \int (-1)^n (z - 1)^n \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{n+1} (z - 1)^{n+1} \\
+	&= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} (z - 1)^n 
+\end{align*}
+
+\textbf{7}
+By dividing through by a factor of $z - 1$, we find that
+\begin{align*}
+	\frac{\Log z}{z - 1}
+	&= \frac{1}{1 - z} \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} (z - 1)^n  \\
+	&= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} (z - 1)^{n-1} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{n+1} (z - 1)^n
+\end{align*}
+Then, at $z = 1$, this sum is $1$, so the function is analytic at this point and throughout the specified domain.
+
 \end{document}
