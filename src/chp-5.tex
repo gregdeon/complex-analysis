@@ -583,6 +583,116 @@ which converges absolutely to a continuous function whenever $|w| < \frac{1}{|z_
 rather than the inside.
 
 
+\clearpage
+\section{Frame 65 -- Integration and Differentiation}
+\subsection{Integration}
+Next, we will look at integration of the power series
+\[
+	S(z) = \sum_{n=0}^\infty a_n(z - z_0)^n
+\]
+which represents a continuous function on its circle of convergence.
+
+\textit{Theorem: Suppose that $C$ is a contour that is inside the circle of convergence of this power series, and let $g(z)$ be any function that is continuous on $C$. Then,
+\[
+	\int_C g(z) S(z) dz = \sum_{n=0}^\infty a_n \int_C g(z) (z - z_0)^n
+\]}
+
+Since both $g(z)$ and $S(z)$ are continuous on $C$, their product can be written as
+\[
+	g(z) S(z) = \sum_{n=0}^{N-1} a_n g(z) (z - z_0)^n + g(z) \rho_N(z)
+\]
+so the integral can be written as
+\[
+	int_C g(z) S(z) dz = \sum_{n=0}^{N-1} a_n \int_C g(z) (z - z_0)^n dz
+	+ \int_C g(z) \rho_N(z) dz
+\]
+Then, uniform convergence tells us that there exists an integer $N_\epsilon$ such that
+\[
+	|\rho_N(z)| < \epsilon \quad \text{whenever} \quad N > N_\epsilon
+\]
+so
+\[
+	\left| \int_C g(z) \rho_N(z) dz \right| < M\epsilon L \quad \text{whenever} \quad N > N_\epsilon
+\]
+which implies that this integral vanishes as $N$ approaches infinity, and the theorem is proved.
+
+\subsection{Analyticity}
+Using the previous theorem, consider the special case $g(z) = 1$. Then, each of the integrals evaluate to
+\[
+	\int_C g(z) (z - z_0)^n dz = \int_C (z - z_0)^n dz = 0
+\]
+since these polynomials are entire. Thus,
+\[
+	\int_C S(z) dz = 0
+\]
+which implies the following corollary:
+
+\textit{Corollary: the sum of a power series, $S(z)$, is analytic at each point interior to the circle of convergence.}
+
+\textit{Example: Consider the function
+\[
+	f(z) = \begin{cases}
+		(e^z - 1) / z,	& z \neq 0 \\
+		1,				& z = 0
+	\end{cases}
+\]
+This function has the Maclaurin series expansion
+\[
+	f(z) = \sum_{n=1}^\infty \frac{z^{n-1}}{n!}
+	= 1 + \frac{z}{2!} + \frac{z^2}{3!} + \dots
+\]
+When $z = 0$ in this series, it evaluates to $1$, so it represents both of the cases defined in $f(z)$. Since this sum of polynomial terms is clearly entire, $f(z)$ must also be entire. The continuity of $f$ could also be evaluated by confirming that
+\[
+	\lim_{z \to 0} \frac{e^z - 1}{z} = f(0) = 1
+\]}
+
+Note that this corollary confirms that we have chosen the largest possible circle of convergence. We picked a circle centered at $z_0$ and intersecting the nearest non-analytic point $z_1$; if we chose a bigger circle, then it would contain $z_1$, incorrectly implying that $f$ is analytic at $z_1$.
+
+\subsection{Differentiability}
+Next, we can look at differentiability of power series:
+
+\textit{Theorem: a power series can be differentiated term-by-term. That is,
+\[
+	S'(z) = \sum_{n=1}^\infty na_n (z - z_0)^{n-1}
+\]}
+
+To prove this, suppose that $C$ is, as above, a contour interior to the circle of convergence and $z$ is any point inside $C$. We can define the function
+\[
+	g(s) = \frac{1}{2\pi i} \frac{1}{(s - z)^2}
+\]
+which is continuous on $C$. Then, we can use Cauchy's integral formulas to write
+\[
+	\int_C g(s) S(s) ds 
+	= \frac{1}{2\pi i} \int_C \frac{S(s)}{(s - z)^2} ds = S'(z) 
+\]
+However, we can alternatively write
+\[
+	\int_C g(s) S(s) ds = \sum_{n=0}^\infty a_n \int C g(s) (s - z_0)^n ds
+\]
+where each term of this sum is
+\[
+	\int_C g(s) (s - z_0)^n
+	= \frac{1}{2\pi i} \int_C \frac{(s - z_0)^n}{(s - z)^2} ds
+	= \frac{d}{dz} (z - z_0)^n
+\]
+so
+\[
+	S'(z) = \sum_{n=0}^\infty a_n \frac{d}{dz} (z - z_0)^n
+\]
+
+\textit{Example: we saw earlier that
+\[
+	\frac{1}{z} = \sum_{n=0}^\infty (-1)^n (z - 1)^n
+\]
+We can differentiate both sides to write
+\[
+	-\frac{1}{z^2} = \sum_{n=1}^\infty (-1)^n n(z - 1)^{n-1}
+\]
+or
+\[
+	\frac{1}{z^2} = \sum_{n=0}^\infty (-1)^n (n+1) (z - 1)^n
+\]}
+
 
 
 \end{document}
