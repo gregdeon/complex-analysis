@@ -694,5 +694,57 @@ or
 \]}
 
 
+\clearpage
+\section{Frame 66 -- Uniqueness of Power Series}
+This section will discuss the uniqueness of the Taylor and Laurent series expansions.
+
+\subsection{Taylor Series}
+\textit{Theorem: If a series
+\[
+	\sum_{n=0}^\infty a_n (z - z_0)^n 
+\]
+converges to $f(z)$ at each point within a circle $|z - z_0| < R$, then it is \emph{the} Taylor series expansion for $f$ in powers of $z - z_0$.}
+
+First, according to the theorem, we should write
+\[
+	f(z) = \sum_{n=0}^\infty a_n(z - z_0)^n = \sum_{m=0}^\infty a_m(z - z_0)^m
+\]
+Then, if we define $g(z)$ as any of the functions ($n \ge 0$)
+\[
+	g(z) = \frac{1}{2\pi i} \frac{1}{(z - z_0)^{n+1}}
+\]
+we can write
+\begin{align*}
+	\int_C g(z) f(z) dz 
+	&= \sum_{m=0}^\infty a_m \int_C g(z) (z - z_0)^m dz \\
+	&= \sum_{m=0}^\infty a_m \frac{1}{2\pi i} \int_C \frac{dz}{(z - z_0)^{n-m+1}} \\
+	&= a_n
+\end{align*}
+However, we also know that
+\[
+	\int_C g(z) f(z) dz
+	= \frac{1}{2\pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz
+	= \frac{f^{(n)}(z_0)}{n!}
+\]
+so
+\[
+	a_n = \frac{f^{(n)}(z_0)}{n!}
+\]
+and the Taylor series is unique.
+
+\subsection{Laurent series}
+\textit{Theorem: If a series
+\[
+	\sum_{n=-\infty}^\infty c_n (z - z_0)^n
+\]
+converges to $f(z)$ at all points in an annular domain centered at $z_0$, then it is \emph{the} Laurent series expansion for $f$ in powers of $z - z_0$ in that domain.}
+
+The proof of this theorem has a similar structure to the previous proof. The result is that
+\[
+	c_n = \frac{1}{2\pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz
+\]
+
+
+
 
 \end{document}

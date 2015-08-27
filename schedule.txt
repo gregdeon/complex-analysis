@@ -65,7 +65,7 @@ August 26
 * 64
 August 27
 * 65
-- 66
+* 66
 August 28
 - 67
 - 68
