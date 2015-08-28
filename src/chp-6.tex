@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{tikz}
+\renewcommand{\emph}{\textbf}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+\begin{document}
+
+\section{Frame 68 -- Isolated Singular Points}
+\subsection{Definition}
+Earlier, we defined a \emph{singular point} of a function $f$ as a point $z_0$ where $f$ is not analytic, but $f$ is analytic at some point in every neighbourhood of $z_0$. Additionally, we will define an \emph{isolated} singular point as such a point where there exists a deleted neighbourhood on which $f$ is analytic.
+
+\subsection{Examples}
+\textit{The function
+\[
+	f(z) = \frac{z+1}{z^3 (z^2 + 1)}
+\]
+has three singular points at $z = 0$ and $z = \pm i$. These three points are isolated singularities.}
+
+\textit{The principal branch of the logarithm
+\[
+	\Log z = \ln r + i\Theta 	\quad (-\pi < \theta < \pi)
+\]
+has a singular point at $z = 0$. However, this is not an isolated singular point, since every neighbourhood of $0$ also contains some points on the negative real axis, where the function is not analytic.}
+
+\textit{The function
+\[
+	f(z) = \frac{1}{\sin(\pi / z)}
+\]
+has singular points at $z = 0$ and $z = 1/n$ for all integers $n$. All of these singular points are isolated except for the one at $z = 0$ -- every neighbourhood of $0$ also contains a point $z = 1/m$ because we can find such a point
+\[
+	0 < 1/m < \epsilon
+\]
+for each $\epsilon$.}
+
+\subsection{Important Points}
+Note that if a function has a finite number of singular points, then all of these must be isolated -- we can make a neighbourhood around each singular point that does not contain any others.
+
+Finally, note that we may also refer to the point at infinity as an isolated singular point. This happens if there exists a positive $R_1$ such that there are no singularities in the region
+\[
+	R_1 < |z| < \infty
+\]
+
+\end{document}
