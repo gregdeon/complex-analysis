@@ -140,4 +140,60 @@ so
 \]}
 
 
+\clearpage
+\section{Frame 70 -- Cauchy's Residue Theorem}
+\subsection{Theorem}
+If a function has a finite number of singularities inside a contour, then we can use residues to simplify these contour integrals. The following theorem is Cauchy's residue theorem:
+
+\textit{Theorem: Suppose that $C$ is a positively-oriented, simple, closed contour. If a function $f$ is analytic on $C$ and has a finite number of singularities at $z_k$ (where $k = 1, 2, \dots, n$) inside $C$, then
+\[
+	\int_C f(z) dz = 2\pi i \sum_{k=1}^\infty \Res_{z = z_k} f(z)
+\]}
+
+Proof: suppose that the contours $C_k$ are small, positively-oriented circles centered at the points $z_k$. Then, the region $C - \sum C_k$ is a multiply connected domain over which $f$ is analytic, so
+\[
+	\int_C f(z)~dz - \sum_{k=1}^\infty \int_{C_k} f(z)~dz = 0
+\]
+Then, since
+\[
+	\int_{C_k} f(z)~dz = 2\pi i \Res_{z = z_k} f(z)
+\]
+the integral can be written as in the theorem.
+
+\subsection{Example}
+If $C$ is the counterclockwise circular contour $|z| = 2$, then we can evaluate the integral
+\[
+	\int_C \frac{5z - 2}{z(z - 1)} dz
+\]
+using Cauchy's residue theorem. First, we can find the residue $B_1$ at $z = 0$ by writing out the function as the series
+\begin{align*}
+	\frac{5z - 2}{z(z - 1)}
+	&= \frac{5z - 2}{z} \cdot \frac{-1}{1 - z} \\
+	&= \left( 5 - \frac{2}{z} \right) (-1 - z - z^2 - \dots) \\
+	&= \frac{2}{z} - 3 - 3z - \dots
+\end{align*}
+so $B_1 = 2$. Then, we can find the residue $B_2$ at $z = 1$ by writing
+\begin{align*}
+	\frac{5z - 2}{z(z - 1)}
+	&= \frac{5(z - 1) + 3}{z - 1} \cdot \frac{1}{1 + (z - 1)} \\
+	&= \left( 5 + \frac{3}{z - 1} \right) (1 - (z-1) + (z-1)^2 - \dots) \\
+	&= \frac{3}{z - 1} + 2 - 2(z - 1) + \dots
+\end{align*}
+so $B_2 = 3$, and
+\[
+	\int_C \frac{5z - 2}{z(z - 1)}
+	= 2\pi i(2 + 3)
+	= 10\pi i
+\]
+
+Alternatively, we could use partial fractions to write
+\[	
+	\frac{5z - 2}{z(z - 1)} = \frac{2}{z} + \frac{3}{z-1}
+\]
+and immediately discover that $B_1 = 2$ and $B_2 = 3$.
+
+
+
+
+
 \end{document}
