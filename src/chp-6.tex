@@ -193,7 +193,63 @@ Alternatively, we could use partial fractions to write
 and immediately discover that $B_1 = 2$ and $B_2 = 3$.
 
 
+\clearpage
+\section{Frame 71 -- Residue at Infinity}
+\subsection{Definition}
+Next, suppose that a function $f$ is analytic everywhere in the plane except for a finite number of singular points and $C$ is a positively oriented, simple, closed contour containing all of these points. Then, we can make a circle containing all of these points ($|z| = R_1$), and $f$ must be analytic in the domain $R_1 < |z| < \infty$. 
 
+We can define the residue at infinity by making another circular contour, this one in the \emph{negative direction} (ie: keeping infinity on the left), with a radius $R_0 > R_1$. Then, the \emph{residue at infinity} is
+\[
+	\int_{C_0} f(z)~dz = 2\pi i \Res_{z = \infty} f(z)
+\]
+To simplify this integral, we know that
+\[
+	\int_C f(z)~dz = \int_{-C_0} f(z)~dz = -\int_{C_0} f(z)~dz
+\]
+so
+\[
+	\int_C f(z)~dz = -2\pi i \Res_{z = \infty} f(z)
+\]
 
+\subsection{Main Theorem}
+We can find the residue at infinity by writing
+\[
+	f(z) = \sum_{n = -\infty}^\infty c_n z^n	\quad	(R_1 < |z| < \infty)
+\]
+where
+\[
+	c_n = \frac{1}{2\pi i} \int_{-C_0} \frac{f(z)}{z^{n+1}} dz
+\]
+Then, if we modify the series to represent $f(1/z) / z^2$, we can write
+\[
+	\frac{1}{z^2} f\left(\frac{1}{z} \right)
+	= \sum_{n=-\infty}^\infty \frac{c_n}{z^{n+2}}
+	= \sum_{n=-\infty}^\infty \frac{c_{n-2}}{z^n}
+\]
+so the residue of this modified function at zero is nearly the same as the original residue at infinity. Symbolically,
+\[
+	\Res_{z = \infty} f(z) = -2\pi i \Res_{z = 0} \left[ \frac{1}{z^2} f\left(\frac{1}{z} \right) \right]
+\]
+
+This result is shown in the following theorem:
+
+\textit{Theorem: If a function $f$ is analytic everywhere except a finite number of singular points, and all of these points are interior to $C$, then
+\[
+	\int_C f(z)~dz = 2\pi i \Res_{z = 0} \left[ \frac{1}{z^2} f\left( \frac{1}{z} \right)\right]
+\]}
+
+\subsection{Example}
+We can now re-do the problem from the previous section. Since all of the singular points were contained inside $|z| = 2$, we can write
+\begin{align*}
+	\frac{1}{z^2} f\left( \frac{1}{z} \right)
+	&= \frac{1}{z^2} \frac{5/z - 2}{1/z \cdot (1/z - 1)} \\
+	&= \frac{5 - 2z}{z(1 - z)} \\
+	&= \left( \frac{5}{z} - 2 \right) (1 + z + z^2 + \dots) \\
+	&= \frac{5}{z} + 3 + 3z + \dots
+\end{align*}
+so the residue at infinity is $5$, and
+\[
+	\int_C \frac{5z - 2}{z(z - 1)} dz = 2\pi i(5) = 10\pi i
+\]
 
 \end{document}
