@@ -1,0 +1,163 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{tikz}
+\renewcommand{\emph}{\textbf}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\Res}{Res}
+
+\begin{document}
+
+\section{Frame 71 -- Residues}
+\textbf{1(a)}
+This function is
+\begin{align*}
+	\frac{1}{z(1 + z)}
+	&= \frac{1}{z} \frac{1}{1 + z} \\
+	&= \frac{1}{z} (1 - z + z^2 - \dots) \\
+	&= \frac{1}{z} - 1 + z - \dots
+\end{align*}
+so the residue at $0$ is $1$.
+
+\textbf{1(b)}
+This function is
+\begin{align*}
+	z\cos \left(\frac{1}{z} \right)
+	&= z \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} z^{-2n} \\
+	&= \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} z^{1 - 2n} \\
+	&= z - \frac{1}{2z} + \frac{1}{24 z^3} - \dots
+\end{align*}
+so the residue at zero is $-1/2$.
+
+\textbf{1(c)}
+This function is
+\begin{align*}
+	\frac{z - \sin z}{z}
+	&= 1 - \frac{\sin z}{z} \\
+	&= 1 - \frac{1}{z} \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} z^{2n + 1} \\
+	&= 1 - \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} z^{2n} 
+\end{align*}
+This series has no $1/z$ term, so the residue at zero is $0$.
+
+\textbf{1(d)}
+The Laurent series expansion for this function is
+\begin{align*}
+	\frac{1}{z^4} \cot z
+	&= \frac{1}{z^4} \left( \frac{1}{z} - \frac{z}{3} - \frac{z^3}{45} - \frac{2z^5}{945} - \dots \right) \\
+	&= \frac{1}{z^5} - \frac{1}{3z^3} - \frac{1}{45z} - \frac{2z}{945} - \dots
+\end{align*}
+so the residue at $z = 0$ is $-1/45$.
+
+\textbf{1(e)}
+A series expansion for this function is
+\begin{align*}
+	\frac{\sinh z}{z^4 (1 - z^2)}
+	&= \frac{1}{z^4} \left( \sum_{n=0}^\infty \frac{1}{(2n+1)!} z^{2n+1} \right) \left(\sum_{n=0}^\infty z^{2n} \right) \\
+	&= \frac{1}{z^4} \left( z + \frac{z^3}{6} + \frac{z^5}{120} \right) \left( 1 + z^2 + z^4 + \dots \right) \\
+	&= \frac{1}{z^4} \left( z + \frac{7z^3}{6} + \frac{141 z^5}{120} + \dots \right) \\
+	&= \frac{1}{z^3} + \frac{7}{6z} + \frac{141z}{120} + \dots
+\end{align*}
+so the residue at zero is $7/6$.
+
+\textbf{2(a)}
+This function only has a singularity at $z = 0$. Finding the Laurent series here, the expansion is
+\begin{align*}
+	\frac{1}{z^2} e^{-z}
+	&= \frac{1}{z^2} \sum_{n=0}^\infty \frac{(-1)^n}{n!} z^n \\
+	&= \frac{1}{z^2} \left( 1 - z + \frac{z^2}{2} - \frac{z^3}{6} + \dots \right) \\
+	&= \frac{1}{z^2} - \frac{1}{z} + \frac{1}{2} - \frac{z}{6} + \dots 
+\end{align*}
+so the residue at zero is $-1$, and
+\[
+	\int_C \frac{e^{-z}}{z^2}~dz = 2\pi i (-1) = -2\pi i
+\]
+
+\textbf{2(b)} 
+This function now has a singular point at $z = 1$. The series expansion here is
+\begin{align*}
+	\frac{1}{(z - 1)^2} e^{-z}
+	&= \frac{1}{(z - 1)^2} e^{-(z - 1)} \frac{1}{e} \\
+	&= \frac{1}{e(z - 1)^2} \sum_{n=0}^\infty \frac{(-1)^n}{n!} (z - 1)^n \\
+	&= \frac{1}{e} \left( \frac{1}{(z-1)^2} - \frac{1}{z-1} + \frac{1}{2} - \frac{z-1}{6} + \dots \right)
+\end{align*}
+so the residue at $z = 1$ is $-1/e$, and
+\[
+	\int_C f(z)~dz = 2\pi i (-1/e) = -\frac{2\pi}{e} i
+\]
+
+\textbf{2(c)}
+This function only has a singular point at $z = 0$, with the series expansion
+\begin{align*}
+	z^2 e^{1/z}
+	&= z^2 \sum_{n=0}^\infty \frac{1}{n!} z^{-n} \\
+	&= z^2 \left(1 + \frac{1}{z} + \frac{1}{2z^2} + \frac{1}{6z^3} + \dots \right) \\
+	&= z^2 + z + \frac{1}{2} + \frac{1}{6z} + \dots 
+\end{align*}
+so the residue here is $1/6$, and
+\[
+	\int_C z^2 e^{1/z} dz = 2\pi i \frac{1}{6} = \frac{\pi i}{3}
+\]
+
+\textbf{2(d)}
+This function has singular points at $z = 0$ and $z = 2$. Expanding the function at $z = 0$ gives
+\begin{align*}
+	\frac{z + 1}{z} \frac{1}{z - 2}
+	&= \left(1 + \frac{1}{z} \right) \frac{-1}{2(1 - z/2)} \\
+	&= \left(1 + \frac{1}{z} \right) \frac{-1}{2} \left(1 + \frac{z}{2} + \frac{z^2}{4} + \frac{z^3}{8} + \dots\right) \\
+	&= -\frac{1}{2z} - \frac{3}{2} - \frac{3z}{4} - \dots
+\end{align*}
+so the residue at $z = 0$ is $-1/2$. Then,
+\begin{align*}
+	\frac{z + 1}{z - 2} \frac{1}{z}
+	&= \frac{(z - 2) + 3}{z - 2} \frac{1}{2 + (z - 2)} \\
+	&= \frac{1}{2} \left(1 + \frac{3}{z - 2} \right) \frac{1}{1 + (z-2)/2} \\
+	&= \frac{1}{2} \left(1 + \frac{3}{z - 2} \right) \left( 1 - \frac{z-2}{2} + \frac{(z-2)^2}{4} - \dots \right) \\
+	&= \frac{3}{2 (z-2)} - \frac{1}{4} + \dots
+\end{align*}
+so the residue at $z = 2$ is $3/2$. Thus,
+\[
+	\int_C \frac{z + 1}{z^2 - 2z} dz = 2\pi i (-1/2 + 3/2) = 2\pi i
+\]
+
+\textbf{3(a)}
+The residue at infinity can be found by writing the function
+\begin{align*}
+	\frac{1}{z^2} \frac{(1 / z)^5}{1 - (1/z)^3}
+	&= \frac{-1}{z^4} \frac{1}{1 - z^3} \\
+	&= \frac{-1}{z^4} \left(1 + z^3 + z^6 + \dots \right) \\
+	&= -\frac{1}{z^4} - \frac{1}{z} - z^2 - \dots
+\end{align*}
+so the residue at infinity is $- (-1)$, and
+\[
+	\int_C f(z)~dz = 2\pi i \cdot (-1) = -2\pi i
+\] 
+
+\textbf{3(b)}
+The residue at infinity can be found via
+\begin{align*}
+	\frac{1}{z^2} \frac{1}{1 + (1/z)^2} 
+	&= \frac{1}{1 + z^2} \\
+	&= 1 - z^2 + z^4 - \dots
+\end{align*}
+so the residue at infinity is zero, and
+\[
+	\int_C f(z)~dz = 0
+\]
+
+\textbf{3(c)}
+The residue at infinity, from 
+\[
+	\frac{1}{z^2} \frac{1}{1/z}
+	= \frac{1}{z} 
+\]
+is $-1$, so
+\[
+	\int_C f(z)~dz = 2\pi i
+\]
+
+\end{document}
