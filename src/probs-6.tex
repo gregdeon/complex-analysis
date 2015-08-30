@@ -160,4 +160,140 @@ is $-1$, so
 	\int_C f(z)~dz = 2\pi i
 \]
 
+
+\clearpage
+\section{Frame 72 -- Singular Points}
+\textbf{1(a)}
+This function is
+\[
+	ze^{1/z}
+	= z\left(1 + \frac{1}{z} + \frac{1}{2z^2} + \dots \right)
+	= z + 1 + \frac{1}{2z} + \dots
+\]
+so it has an essential singular point at the origin.
+
+\textbf{1(b)}
+This function is
+\[
+	\frac{z^2}{z + 1}
+	= \frac{(z+1)^2 - 2(z+1) + 1}{z + 1}
+	= (z + 1) - 2 + \frac{1}{z + 1}
+\]
+so it has a simple pole at $z = -1$.
+
+\textbf{1(c)}
+This function is
+\[
+	\frac{\sin z}{z}
+	= \frac{1}{z} \left(z - \frac{z^3}{3!} + \frac{z^5}{5!} - \dots \right)
+	= 1 - \frac{z^2}{3!} + \frac{z^4}{5!} - \dots
+\]
+so it has a removable singular point at the origin.
+
+\textbf{1(d)}
+This function is
+\[
+	\frac{\cos z}{z}
+	= \frac{1}{z} \left(1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \dots \right)
+	= \frac{1}{z} - \frac{z}{2!} + \frac{z^3}{4!} - \dots
+\]
+so it has a simple pole at the origin.
+
+\textbf{1(e)}
+This function is already in principal form. It has a third order pole at $z = 2$.
+
+\textbf{2(a)}
+This function is
+\begin{align*}
+	\frac{1 - \cosh z}{z^3}
+	&= \frac{1}{z^3} \left[ 1 - \left( 1 + \frac{z^2}{2!} + \frac{z^4}{4!} + \dots \right) \right] \\
+	&= \frac{1}{z^3} \left[ -\frac{z^2}{2!} - \frac{z^4}{4!} - \dots \right] \\
+	&= -\frac{1}{2! \cdot z} - \frac{z}{4!} - \dots
+\end{align*}
+so it has a first-order pole at the origin with a residue of $B = -1/2$.
+
+\textbf{2(b)}
+This function is
+\begin{align*}
+	\frac{1 - e^{2z}}{z^4}
+	&= \frac{1}{z^4} \left[ -\frac{2z}{1!} - \frac{4z^2}{2!} - \frac{8z^3}{3!} - \frac{16z^4}{4!} \dots \right] \\
+	&= -\frac{2}{z^3} - \frac{2}{z^2} - \frac{4}{3z} - \frac{2}{3} - \dots
+\end{align*}
+so it has a third-order pole at the origin with a residue of $B = -4/3$.
+
+\textbf{4}
+To solve the equation
+\[
+	e^{1/z} = -1
+\]
+we note that this occurs when
+\[
+	\frac{1}{z} = (2n + 1) \pi i
+\]
+or
+\[
+	z = \frac{1}{(2n + 1)\pi i} = -\frac{i}{(2n + 1)\pi}
+\]
+
+\textbf{5}
+If we write the function
+\[
+	f(z) = \frac{8a^3z^2}{(z^2 + a^2)^3}
+\]
+as
+\[
+	f(z) = \frac{\phi(z)}{(z - ai)^3} \quad \text{where} \quad
+	\phi(z) = \frac{8a^3z^2}{(z + ai)^3}
+\]
+then, since $\phi(z)$ has no singular points at $z = ai$, we can write its Taylor series as
+\begin{align*}
+	\phi(z)
+	&= \frac{8a^3z^2}{(z + ai)^3} \\
+	&= \phi(ai) + \phi'(ai) (z - ai) + \frac{\phi''(ai)}{2} (z - ai)^2 + \dots
+\end{align*}
+To find these coefficients, the derivative of $\phi(z)$ is
+\begin{align*}
+	\phi'(z)
+	&= \frac{d}{dz} \frac{8a^3z^2}{(z + ai)^3} \\
+	&= \frac{16a^3z (z + ai)^3 - 24a^3z^2(z + ai)^2}{(z + ai)^6} \\
+	&= \frac{16a^3z (z + ai) - 24a^3z^2}{(z + ai)^4} \\
+	&= \frac{8a^3z (-z + 2ai)}{(z + ai)^4}
+\end{align*}
+and the second derivative is
+\begin{align*}
+	\phi''(z)
+	&= \frac{d}{dz} \frac{8a^3z (-z + 2ai)}{(z + ai)^4} \\
+	&= \frac{d}{dz} \frac{-8a^3z^2 + 16a^4z i}{(z + ai)^4} \\
+	&= \frac{(-16a^3z + 16a^4 i)(z + ai)^4 - 4(z + ai)^3(-8a^3z^2 + 16a^4z i)}{(z + ai)^8} \\
+	&= \frac{(-16a^3z + 16a^4 i)(z + ai) - 4(-8a^3z^2 + 16a^4z i)}{(z + ai)^5}
+\end{align*}
+Evaluating these at $z = ai$,
+\begin{align*}
+	\phi(ai) 
+	&= \frac{8a^3(ai)^2}{(2ai)^3} \\
+	&= - i \frac{8a^5}{8a^3} \\
+	&= - a^2i
+\end{align*}
+\begin{align*}
+	\phi'(ai)
+	&= \frac{8a^3(ai)^2}{(2ai)^4} \\
+	&= -\frac{8a^5}{16a^4} \\
+	&= -\frac{a}{2}
+\end{align*}
+\begin{align*}
+	\phi''(ai)
+	&= \frac{(-16a^3(ai) + 16a^4 i)(2ai) - 4(8a^3(ai)^2)}{(2ai)^5} \\
+	&= \frac{(0) + 4(8a^5)}{32a^5 i} \\
+	&= -i
+\end{align*}
+so we find that
+\[
+	\phi(z)
+	= -a^2 i - \frac{a}{2} (z - ai) - \frac{i}{2} (z - ai)^2
+\]
+and
+\[
+	f(z) = \frac{\phi(z)}{(z - ai)^3}
+	= \frac{-i/2}{z - ai} - \frac{a/2}{(z - ai)^2} - \frac{a^2 i}{(z - ai)^3}
+\]
 \end{document}
