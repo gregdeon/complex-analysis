@@ -252,4 +252,80 @@ so the residue at infinity is $5$, and
 	\int_C \frac{5z - 2}{z(z - 1)} dz = 2\pi i(5) = 10\pi i
 \]
 
+
+\clearpage
+\section{Frame 72 -- The Three Singular Points}
+We saw in the previous section that a function $f$ with an isolated singular point at $z_0$ can be written as the Laurent series
+\[
+	f(z) = \sum_{n=0}^\infty a_n (z - z_0)^n
+	+ \frac{b_1}{z - z_0}
+	+ \frac{b_2}{(z - z_0)^2} + \dots
+	+ \frac{b_n}{(z - z_0)^n} + \dots
+\]
+on the domain $0 < |z - z_0| < R$. We refer to the negative powers as the \emph{principal part} of $f$ at $z_0$. We can use the qualities of this principal part to classify a singular point into one of three categories.
+
+\subsection{Poles}
+If the principal part has at least one non-zero term but a finite number of terms, as in
+\[
+	f(z) = \sum_{n=0}^\infty a_n (z - z_0)^n
+	+ \frac{b_1}{z - z_0}
+	+ \frac{b_2}{(z - z_0)^2} + \dots
+	+ \frac{b_m}{(z - z_0)^m}
+\]
+then the isolated singular point is referred to as a \emph{pole of order $m$}. A first-order pole is called a \emph{simple pole}.
+
+\textit{Example 1: the function
+\[
+	\frac{z^2 - 2z + 3}{z - 2}
+	= \frac{z(z-2) + 3}{z - 2}
+	= 2 + (z - 2) + \frac{3}{z - 2}
+\]
+has a simple pole at $z = 2$. Its residue there is $3$.}
+
+\textit{Example 2: the function
+\[
+	\frac{1}{z^2(1 + z)}
+	= \frac{1}{z^2}(1 - z + z^2 - z^3 + \dots)
+	= \frac{1}{z^2} - \frac{1}{z} + 1 - z + \dots
+\]
+has a pole of order $2$ at the origin. Its residue there is $-1$.}
+
+\textit{Example 3: the function
+\[
+	\frac{\sinh z}{z^4}
+	= \frac{1}{z^4} \left(z + \frac{z^3}{3!} + \frac{z^5}{5!} + \dots \right)
+	= \frac{1}{z^3} + \frac{1}{3! \cdot z} + \frac{z}{5!} + \dots
+\]
+has a third-order pole at the origin with a residue of $1/6$.}
+
+\subsection{Removable Singular Points}
+If every term of the principal part is zero, then we say that $z_0$ is a \emph{removable singular point}. This allows us to (re)define $f$ at the point $z_0$ as
+\[
+	f(z_0) = a_0
+\]
+so that the function becomes defined over the non-deleted disk, removing the singularity. Note that the residue at any removable singular point is zero.
+
+\textit{Example 4: we can write
+\begin{align*}
+	\frac{1 - \cos z}{z^2}
+	&= \frac{1}{z^2} \left[ 1 - \left(1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \frac{z^6}{6!} + \dots \right) \right] \\
+	&= \frac{1}{z^2} \left[ \frac{z^2}{2!} - \frac{z^4}{4!} + \frac{z^6}{6!} - \dots \right] \\
+	&= \frac{1}{2} - \frac{z^2}{4!} + \frac{z^4}{6!}
+\end{align*}
+so if we assign the value $f(0) = 1/2$, then the function becomes entire.}
+
+\subsection{Essential Singular Points}
+If the principal part has an infinite number of non-zero terms, we say that $z_0$ is an \emph{essential singular point} of $f$.
+
+\textit{Example 5: the function
+\[
+	e^{1/z}
+	= \sum_{n=0}^\infty \frac{1}{n! \cdot z^n}
+	= 1 + \frac{1}{z} + \frac{1}{2! \cdot z^2} + \dots
+\]
+has an essential singular point at the origin, with a residue of $1$.}
+
+We can also briefly state \emph{Picard's theorem}: \textit{In every neighbourhood of an essential singular point, a function assumes every finite value (except possibly zero) an infinite number of times.}
+
+
 \end{document}
