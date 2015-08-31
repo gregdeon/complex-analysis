@@ -366,4 +366,101 @@ so the Laurent expansion of $f$ is
 	+ \dots
 \]
 and the residue is the expression theorized above.
+
+
+\clearpage
+\section{Frame 74 -- Examples of Poles}
+This section will contain several examples of the theorem from the previous section.
+
+\subsection{Example 1}
+The function
+\[
+	f(z) = \frac{z + 1}{z^2 + 9}
+\]
+has singular points at $z = \pm 3i$. At $z = 3i$, we can write the function as
+\[
+	f(z) = \frac{\phi(z)}{z - 3i} \quad \text{where} \quad
+	\phi(z) = \frac{z+1}{z + 3i}
+\]
+so the residue $B_1$ at this point is
+\[
+	B_1 = \phi(3i)
+	= \frac{1 + 3i}{6i}
+	= \frac{3 - i}{6}
+\]
+Similarly, the residue $B_2$ at $z = -3i$ is
+\[
+	B_2 = \frac{3 + i}{6}
+\]
+
+\subsection{Example 2}
+The function
+\[
+	f(z) = \frac{z^3 + 2z}{(z - i)^3}
+\]
+can be written as
+\[
+	f(z) = \frac{\phi(z)}{(z - i)^3} \quad \text{where} \quad
+	\phi(z) = z^3 + 2z
+\]
+Note that $\phi(i) \neq 0$, so $f$ has a pole of order $3$ at $z = i$. The residue here is
+\[
+	B = \frac{\phi''(i)}{2!}
+	= \frac{6z |_{z = i}}{2}
+	= 3i
+\]
+
+\subsection{Example 3}
+The function 
+\[
+	f(z) = \frac{(\log z)^3}{z^2 + 1}
+\]
+(where $\log z$ uses the branch $0 < \theta < 2\pi$) has simple poles at $z = \pm i$. To find the residue at $z = i$, we can write
+\[
+	f(z) = \frac{\frac{(\log z)^3}{z + i}}{z - i}
+\]
+Then, since the numerator is analytic at $z = i$, we can find the residue as
+\[
+	B = \frac{(\log i)^3}{2i} 
+	= \frac{(0 + i\pi/2)^3}{2i}
+	= -\frac{\pi^3}{16}
+\]
+
+\subsection{Example 4}
+Sometimes, it is easier to characterize poles and find residues using Laurent series. For example, the function
+\[
+	f(z) = \frac{\sinh z}{z^4}
+\]
+can \emph{not} be written as
+\[
+	f(z) = \frac{\phi(z)}{z^4},	\quad \phi(z) = \sinh z
+\]
+because $\sinh 0 = 0$. This tells us that the origin is not, in fact, a pole of order $4$. It is simpler to write out the Laurent series for this function.
+
+\subsection{Example 5}
+The origin is an isolated singular point of the function
+\[
+	f(z) = \frac{1}{z(e^z - 1)}.
+\]
+We can write the Maclaurin series for $z(e^z - 1)$ as
+\begin{align*}
+	z(e^z - 1)
+	&= z\left( \frac{z}{1!} + \frac{z^2}{2!} + \frac{z^3}{3!} + \dots \right) \\
+	&= z^2 \left( 1 + \frac{z}{2!} + \frac{z^2}{3!} + \dots \right)
+\end{align*}
+which allows us to write the function as
+\[
+	f(z) = \frac{\phi(z)}{z^2}, \quad
+	\phi(z) = \frac{1}{1 + z/2! + z^2/3! + \dots}
+\]
+Then, the residue at the origin is $\phi'(0)$, which is
+\begin{align*}
+	B &=\phi'(0) \\
+	&= \frac{d}{dz} \phi(z) \Big|_{z = 0} \\
+	&= \frac{-(1/2! + 2z/3! + \dots)}{(1 + z/2! + z^2/3! + \dots)^2} \Big|_{z = 0} \\
+	&= \frac{-1/2}{1}  \\
+	&= -1/2
+\end{align*}
+
+
 \end{document}
