@@ -328,4 +328,42 @@ has an essential singular point at the origin, with a residue of $1$.}
 We can also briefly state \emph{Picard's theorem}: \textit{In every neighbourhood of an essential singular point, a function assumes every finite value (except possibly zero) an infinite number of times.}
 
 
+\clearpage
+\section{Frame 73 -- Residues at Poles}
+The following theorem makes it more convenient to find residues at poles.
+
+\textit{Theorem: If $\phi(z)$ is a function that is analytic and non-zero at $z_0$, then the isolated singular point at $z_0$ of the function 
+\[
+	f(z) = \frac{\phi(z)}{(z - z_0)^m}
+\]
+is a pole of order $m$. Also, 
+\[
+	\Res_{z = z_0} f(z) = \frac{\phi^{(m-1)}(z_0)}{(m - 1)!}
+\]
+In particular, if $m = 1$,
+\[
+	\Res_{z = z_0} f(z) = \phi(z_0)
+\]}
+
+To prove this, we can write the Taylor expansion of $\phi(z)$ as
+\[
+	\phi(z)
+	= \phi(z_0)
+	+ \frac{\phi' (z_0)}{1!} (z - z_0)
+	+ \frac{\phi''(z_0)}{2!} (z - z_0)^2
+	+ \dots
+	+ \frac{\phi^{(m-1)}(z_0)}{(m-1)!} (z - z_0)^{m-1}
+	+ \dots
+\]
+so the Laurent expansion of $f$ is
+\[
+	f(z)
+	= \frac{\phi(z_0)}{(z - z_0)^m}
+	+ \frac{\phi'(z_0) / 1!}{(z - z_0)^{m-1}}
+	+ \frac{\phi''(z_0)/ 2!}{(z - z_0)^{m-2}}
+	+ \dots
+	+ \frac{\phi^{(m-1)}(z_0) / (m-1)!}{z - z_0}
+	+ \dots
+\]
+and the residue is the expression theorized above.
 \end{document}

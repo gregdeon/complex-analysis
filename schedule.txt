@@ -74,13 +74,12 @@ August 29
 * 71
 August 30
 * 72
-- 73
+* 73
 August 31
 - 74
 - 75
 Sept 1
 - 76
-- 77
 Sept 2
 - 78
 - 79
