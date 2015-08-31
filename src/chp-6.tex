@@ -463,4 +463,71 @@ Then, the residue at the origin is $\phi'(0)$, which is
 \end{align*}
 
 
+\clearpage
+\section{Frame 75 -- Zeros of Analytic Functions}
+\subsection{Definition}
+Suppose that a function $f$ is analytic at a point $z_0$, which means that its derivatives of all orders exist at this point. Then, if $f(z_0) = 0$, but eventually for some integer $m$, $f^{(m)}(z_0) \neq 0$, we say that $f$ has a \emph{zero of order $m$} at $z_0$.
+
+We can characterize zeroes using the following theorem:
+
+\textit{Theorem: Suppose that $f$ is analytic at $z_0$. It has a zero of order $m$ at the point $z_0$ iff there is an analytic, non-zero function $g$ at $z_0$ such that
+\[
+	f(z) = (z - z_0)^m g(z)
+\]}
+
+Both conditions of this theorem can be derived from the Taylor series expansions for $f$ and $g$.
+
+\subsection{Examples}
+\textit{Example 1: the polynomial
+\[
+	f(z) = z^3 - 8 = (z - 2)(z^2 + 2z + 4)
+\]
+has a first-order zero at $z = 2$, since
+\[
+	z^2 + 2z + 4 \Big|_{z = 2} = 12 \neq 0
+\]}
+
+\textit{Example 2: the entire function
+\[
+	f(z) = z(e^z - 1)
+\]
+satisfies $f(0) = f'(0) = 0$ and $f''(0) = 2 \neq 0$. This lets the function be written as
+\[
+	f(z) = z^2 \left( g(z) \right)
+\]
+where
+\[
+	g(z) = \begin{cases}
+		(e^z - 1) / z,	& z \neq 0 \\
+		1,				& z = 0
+	\end{cases}
+\]
+Note that this function is entire, as we showed earlier.}
+
+\subsection{Isolated Zeros}
+The next theorem states that zeroes of an analytic function are isolated.
+
+\textit{Theorem: suppose that a function $f$ is analytic and zero at a point $z_0$, but not identically zero in any neighbourhood of $z_0$. Then, there is a deleted neighbourhood of $z_0$ where $f(z) \neq 0$.}
+
+To prove this, notice that some derivative of $f$ must be non-zero -- otherwise, the function would be zero everywhere. Thus, $f$ must have a zero of finite order $m$, and
+\[	
+	f(z) = (z - z_0)^m g(z)
+\]
+Then, since $g$ must be analytic, it is continuous and non-zero in a neighbourhood of $z_0$. Therefore, $f(z) \neq 0$ in some neighbourhood of $z_0$.
+
+Finally, we can look at what happens when zeroes are not isolated.
+
+\textit{Theorem: suppose that $f$ is analytic throughout a neighbourhood $N_0$ of a point $z_0$ and $f(z) = 0$ at each point in a domain $D$ or line segment $L$ which contains $z_0$. Then, $f(z) = 0$ in $N_0$.}
+
+Proof: first, there must be some neighbourhood $N$ of $z_0$ where $f(z) = 0$. If there was not, then there could not be a domain or line segment with $z_0$ where $f(z) = 0$, according to the previous theorem.
+
+Then, if there is some neighbourhood where $f(z) = 0$, its Taylor series is identically zero, so it must be zero everywhere in $N_0$ as well.
+
+
+
+
+
+
+
+
 \end{document}

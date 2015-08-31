@@ -77,7 +77,7 @@ August 30
 * 73
 August 31
 * 74
-- 75
+* 75
 Sept 1
 - 76
 Sept 2
