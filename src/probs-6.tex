@@ -365,7 +365,7 @@ Now, the circle contains every singular point of $f$. The residue at infinity is
 	&= -\Res_{z = 0} \frac{1}{z^2} \frac{3 + 2z^3}{(1 - z)(1 + 9z^2)} \\
 	&= -\frac{d}{dz} \frac{3 + 2z^3}{-9z^3 + 9z^2 - z + 1} \Big|_{z = 0} \\
 	&= -\frac{(6z^2)(-9z^3 + 9z^2 - z + 1) - (-27z^2 + 18z - 1)(3 + 2z^3)}{(1 - z + 9z^2 - 9z^3)^2} \Big|_{z = 0} \\
-	&= -\frac{0 - (-1)(3)}{1}
+	&= -\frac{0 - (-1)(3)}{1} \\
 	&= -3
 \end{align*}
 so
@@ -400,8 +400,47 @@ so the sum of the two residues is zero, and
 \]
 
 
+\clearpage
+\section{Frame 76 -- Poles and Zeroes}
+\textbf{1}
+The residue at $z = 0$ is
+\[
+	B = \frac{1}{\cos 0} = 1
+\]
 
+\textbf{2(a)}
+The derivative of the denominator is
+\[
+	\frac{d}{dz} z^2 \sinh z
+	= z^2 \cosh z + 2z \sinh z
+\]
+At $z = i\pi$, then, the residue is
+\[
+	B
+	= \frac{i \pi - \sinh(i \pi)}{(i\pi)^2 \cosh(i\pi) + (i\pi) \sinh(i\pi)}
+	= \frac{i \pi}{ -\pi^2 \cdot (-1)}
+	= \frac{i}{\pi}
+\]
 
+\textbf{3(a)}
+Since this function is $\frac{z}{\cos z}$, the residue is
+\[
+	B 
+	= \frac{z_n}{-\sin(z_n)}
+	= \frac{z_n}{-(-1)^n}
+	= (-1)^{n+1} z_n
+\]
 
+\textbf{4(a)}
+Since $\tan z = \sin z / \cos z$, this contour contains the two poles at $z = \pm \pi/2$. Here, the residues are
+\[
+	B_n
+	= \frac{\sin(\pm \pi/2)}{-\sin(\pm \pi/2)}
+	= -1
+\]
+so the sum of the residues is $-2$ and the contour integral evaluates to
+\[
+	\int_C \tan z~dz = 2\pi i(-2) = -4\pi i
+\]
 
 \end{document}
