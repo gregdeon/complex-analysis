@@ -524,10 +524,114 @@ Proof: first, there must be some neighbourhood $N$ of $z_0$ where $f(z) = 0$. If
 Then, if there is some neighbourhood where $f(z) = 0$, its Taylor series is identically zero, so it must be zero everywhere in $N_0$ as well.
 
 
+\clearpage
+\section{Frame 76 -- Zeros and Poles}
+Next, we can use our knowledge of zeroes to study poles.
 
+\subsection{Reciprocals of Poles}
+\textit{Theorem: suppose that two functions $p$ and $q$ are analytic at $z_0$. Also, suppose that $p(z_0) \neq 0$ and $q(z_0)$ has a zero of order $m$ at $z_0$. Then, the quotient
+\[
+	\frac{p(z)}{q(z)}
+\]
+has a pole of order $m$ at $z_0$.}
 
+This can easily be shown: if $q$ has a zero of order $m$ at $z_0$, this must be an isolated singularity. Then, we can write
+\[
+	q(z) = (z - z_0)^m g(z)
+\]
+where $g$ is analytic and non-zero at $z_0$. This allows us to write
+\[
+	\frac{p(z)}{q(z)} = \frac{\phi(z)}{(z - z_0)^m}
+	\quad \text{where} \quad
+	\phi(z) = \frac{p(z)}{g(z)}
+\]
+so this quotient has a pole of order $m$.
 
+\textit{The function
+\[
+	z(e^z - 1)
+\]
+has a second-order zero at the origin, so the function
+\[
+	\frac{1}{z(e^z - 1)}
+\]
+has a second-order pole there.}
 
+\subsection{Residues}
+We can now use this quotient to simplify residue calculations.
 
+\textit{Theorem: suppose that $p$ and $q$ are analytic at $z_0$. If 
+\begin{align*}
+	p(z_0) &\neq 0 \\
+	q(z_0) &= 0 \\
+	q'(z_0) &\neq 0
+\end{align*}
+then $z_0$ is a simple pole of the quotient, and
+\[
+	\Res_{z = z_0} \frac{p(z)}{q(z)} = \frac{p(z_0)}{q'(z_0)}
+\]}
+
+To prove this, we first know that $z_0$ is a first order zero of $p$ -- the derivative is non-zero. Then, we can write
+\[
+	q(z) = (z - z_0) g(z)
+\]
+and
+\[
+	\frac{p(z)}{q(z)} = \frac{p(z) / g(z)}{z - z_0}
+\]
+so
+\[
+	\Res_{z = z_0} \frac{p(z)}{q(z)}
+	= \frac{p(z_0)}{g (z_0)}
+	= \frac{p(z_0)}{q'(z_0)}
+\]
+
+\subsection{Examples}
+\textit{Example: the function
+\[
+	f(z) = \cot z = \frac{\cos z}{\sin z}
+\]
+has simple poles at $z = n \pi$. Here, the residue is
+\[
+	B = \frac{\cos (n\pi)}{\cos (n\pi)} = 1
+\]}
+
+\textit{Example: the function
+\[
+	f(z) = \frac{\tanh z}{z^2} = \frac{\sinh z}{z^2 \cosh z}
+\]
+has a simple pole at $z = i \pi/2$. Here,
+\begin{align*}
+	p\left(\frac{i\pi}{2}\right) 
+	&= \sinh\left(\frac{i\pi}{2}\right) 
+	= i\sin\left(\frac{\pi}{2}\right) 
+	= i \\
+	q'\left(\frac{i\pi}{2}\right) 
+	&= \left(\frac{i\pi}{2}\right)^2 \sinh \left(\frac{i\pi}{2}\right)
+	= -i\frac{\pi^2}{4} 
+\end{align*}
+so
+\[
+	B 
+	= \frac{p(i\pi/2)}{q'(i\pi/2)}
+	= -\frac{4}{\pi^2}
+\] }
+
+\textit{Example: the function
+\[
+	q(z) = z^4 + 4
+\]
+has a zero at $z_0 = 1 + i$. Thus, at this point, the function
+\[
+	f(z) = \frac{z}{z^4 + 4}
+\]
+has a residue of
+\[
+	B 
+	= \frac{z_0}{4z_0^3}
+	= \frac{1}{4z_0^2}
+	= \frac{1}{8i}
+	= -\frac{i}{8}
+\]}
 
 \end{document}
