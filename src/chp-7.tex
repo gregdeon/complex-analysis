@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{tikz}
+\renewcommand{\emph}{\textbf}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\Res}{Res}
+
+\begin{document}
+
+\section{Evaluating Improper Integrals}
+\subsection{Improper Integrals}
+The \emph{improper integral} of a continuous function $f(x)$ over the interval $0 \le x < \infty$ is defined as
+\[
+	\int_0^\infty f(x)~dx = \lim_{R \to \infty} \int_0^R f(x)~dx
+\]
+If this limit exists, we say that the improper integral \emph{converges} to this limit. The improper integral of $f$ over the infinite interval $-\infty < x < \infty$ is
+\[
+	\int_{-\infty}^\infty 
+	= \lim_{R_1 \to \infty} \int_{-R_1}^0 f(x)~dx
+	+ \lim_{R_2 \to \infty} \int_0^{R_2}  f(x)~dx
+\]
+If both of these limits exist, we say that the integral converges to their sum.
+
+\subsection{The Cauchy Principal Value}
+We say that the \emph{Cauchy Principal Value} of an indefinite integral is
+\[
+	\text{P.V.} \int_{-\infty}^\infty f(x)~dx
+	= \lim_{R \to \infty} \int_{-R}^R f(x)~dx
+\]
+as long as this limit exists. 
+
+If the regular improper integral converges, then
+\begin{align*}
+	\lim_{R \to \infty} \int_{-R}^R f(x)~dx 
+	&= \lim_{R \to \infty} \left[ \int_{-R}^0 f(x)~dx + \int_0^R f(x)~dx \right] \\
+	&= \lim_{R \to \infty} \int_{-R}^0 f(x)~dx + \lim_{R \to \infty} \int_0^R f(x)~dx
+\end{align*}
+so the principal value also exists. However, the converse is not true -- the existence of the principal value does not imply the existence of the improper integral.
+
+Next, suppose that $f(x)$ is an even function; ie:
+\[
+	f(-x) = f(x)
+\]
+and assume that the principal value exists. Then, the evenness of $f$ allows us to write
+\begin{align*}
+	\int_{-R_1}^0 f(x)~dx &= \frac{1}{2} \int_{-R_1}^{R_1} f(x)~dx \\
+	\int_0^{R_2}  f(x)~dx &= \frac{1}{2} \int_{-R_2}^{R_2} f(x)~dx
+\end{align*}
+so we can convert both single-sided limits into double-sided limits, and
+\[
+	\int_{-\infty}^\infty f(x)~dx = \text{P.V.} \int_{-\infty}^\infty f(x)~dx
+\]
+Also, extending this formula,
+\[
+	\int_0^\infty f(x)~dx = \frac{1}{2} \text{P.V.} \int_{-\infty}^\infty f(x)~dx
+\]
+
+\subsection{Using Residues}
+Now, we apply our knowledge of residues to integrate $f(z) = p(z)/q(z)$ along the real axis when $p$ and $q$ are polynomials. In this discussion, suppose that $q$ has at least one zero above the real axis and no zeroes on the real axis.
+
+From our knowledge of polynomials, we know that $q$ has a finite number of distinct zeroes, which we can label as $z_1$, $z_2$, $\dots$, $z_n$. Then, we can integrate the function $f(z)$ along the contour:
+\begin{itemize}
+	\item Along the real axis from $-R$ to $R$;
+	\item Along the upper semicircle with a radius of $R$ from $(R, 0$ to $(-R, 0)$, which we call $C_R$.
+\end{itemize}
+This contour allows us to write
+\[
+	\int_{-R}^R f(x)~dx + \int_{C_R} f(z)~dz 
+	= 2\pi i \sum_{k=1}^n \Res_{z = z_k} f(z)
+\]
+or
+\[
+	\int_{-R}^R f(x)~dx  
+	= 2\pi i \sum_{k=1}^n \Res_{z = z_k} f(z)
+	- \int_{C_R} f(z)~dz
+\]
+
+Using this expression, we can say that if
+\[
+	\lim_{R \to \infty} \int_{C_R} f(z)~dz = 0
+\]
+then the following three equations hold (the latter two if $f$ is even):
+\begin{align*}
+	\text{P.V.}\int_{-\infty}^\infty f(x)~dx &= 2\pi i\sum{k=1}^n \Res_{z=z_k} f(z) \\
+	\int_{-\infty}^\infty f(x)~dx &= 2\pi i \sum_{z=z_k} f(z) \\
+	\int_{0}^\infty       f(x)~dx &=  \pi i \sum_{z=z_k} f(z)
+\end{align*}
+
+
+\end{document}
