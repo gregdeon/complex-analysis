@@ -212,4 +212,91 @@ and this vanishes as $R$ tends to infinity. Thus, equating real parts of the int
 \]
 
 
+\clearpage
+\section{Frame 81 -- Jordan's Lemma}
+\subsection{Jordan's Lemma}
+The following lemma is helpful for evaluating the integrals from the previous section.
+
+\textit{Theorem: Suppose that:
+\begin{itemize}
+	\item A function $f$ is analytic at all points above the real axis outside some circle $|z| = R_0$
+	\item $C_R$ is a semicircle $z = Re^{i\theta}$ ($0 \le \theta \le \pi$) where $R > R_0$
+	\item On $C_R$, there is a constant $M_R$ such that
+	\[
+		|f(z)| \le M_R
+	\]
+	and
+	\[
+		\lim_{R \to \infty} M_R = 0
+	\]
+\end{itemize}
+Then, for any positive $a$,
+\[
+	\lim_{R \to \infty} \int_{C_R} f(z) e^{iaz} dz = 0
+\]}
+
+To prove this, we can write
+\[
+	\int_{C_R} f(z) e^{iaz} dz
+	= \int_0^\pi f(Re^{i\theta}) \exp(iaRe^{i\theta}) Rie^{i\theta} d\theta
+\]
+Then, we know that
+\[
+	|f(Re^{i\theta})| \le M_R
+\]
+and
+\[
+	|\exp(iaRe^{i\theta})| \le e^{-aR \sin \theta}
+\]
+Next, Jordan's inequality tells us that
+\[
+	\int_0^\pi e^{-R\sin \theta} d\theta < \frac{\pi}{R}
+\]
+so we can write the contour integral as
+\begin{align*}
+	\left| \int_{C_R} f(z) e^{iaz} dz \right|
+	&\le M_R R \int_0^\pi e^{-aR\sin \theta} d\theta \\
+	&< M_R R \frac{\pi}{aR} \\
+	&= \frac{M_R \pi}{a}
+\end{align*}
+and this tends to zero as $R \to \infty$.
+
+\subsection{Example}
+We can use this theorem to help us find the principal value of the integral
+\[
+	\int_{-\infty}^\infty \frac{x \sin x}{x^2 + 2x + 2} dx
+\]
+If we write
+\[
+	f(z) = \frac{z}{z^2 + 2z + 2}
+\]
+then we can find the residue at the point $z_1 = -1 + i$ as
+\[
+	B = \frac{z_1 e^{iz_1}}{z_1 - \bar{z_1}}
+\]
+Next, we can use the standard contour integral to write
+\[
+	\int_{-R}^R \frac{xe^{ix}}{x^2 + 2x + 2}
+	= 2\pi i B
+	- \int_{C_R} f(z) e^{iz}~dz
+\]
+and, taking the imaginary components of both sides,
+\[
+	\int_{-R}^R \frac{x\sin x}{x^2 + 2x + 2}~dx
+	= \Im(2\pi i B)
+	- \Im \int_{C_R} f(z) e^{iz}~dz
+\]
+Then, if $|z| = R$, we can write
+\[
+	|f(z)| \le \frac{R}{(R - \sqrt{2})^2}
+\]
+and this tends to zero as $R \to \infty$, so the integral vanishes, leaving
+\[
+	\text{P.V.} \int_{-\infty}^\infty \frac{x\sin x}{x^2 + 2x + 2}~dx
+	= \Im(2\pi i B)
+	= \frac{\pi}{e} (\sin 1 + \cos 1)
+\]
+
+
+
 \end{document}
