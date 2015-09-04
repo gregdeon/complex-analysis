@@ -1,0 +1,153 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{tikz}
+\renewcommand{\emph}{\textbf}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\Res}{Res}
+
+\begin{document}
+\section{Frame 79 -- Evaluating Improper Integrals}
+\textbf{1}
+First, along a semi-circular contour $|z| = R$,
+\[
+	\int_{C_R} \frac{dx}{x^2 + 1}
+	\le \pi R \cdot \frac{1}{R^2 - 1}
+	= \pi \frac{R}{R^2 - 1}
+\]
+and this vanishes as $R$ approaches infinity.
+
+Then, we can find the residue at $z = i$ as
+\[
+	\Res_{z=i} \frac{1}{z^2 + 1}
+	= \frac{1}{z + i} \Big|_{z=i}
+	= -\frac{i}{2}
+\]
+and so
+\[
+	\int_0^\infty \frac{dz}{z^2 + 1}
+	= \frac{1}{2} \left[2\pi i \cdot \frac{-i}{2} \right]
+	= \frac{\pi}{2}
+\]
+
+\textbf{2}
+The integral along the upper semicircle is
+\[
+	\int_{C_R} \frac{dx}{(x^2 + 1)^2} 
+	\le \pi R \cdot \frac{1}{(R^2 - 1)^2}
+\]
+which vanishes for large $R$. Then,
+\begin{align*}
+	\int_0^\infty \frac{dx}{(x^2 + 1)^2}
+	&= \frac{1}{2} 2\pi i \Res_{z=i} \frac{1}{(z^2 + 1)^2} \\
+	&= \pi i \left[ \frac{d}{dz} \frac{1}{(z + i)^2} \Big|_{z=i} \right] \\
+	&= \pi i \left[ \frac{-2}{(2i)^3} \right] \\
+	&= \frac{\pi}{4}
+\end{align*}
+
+\textbf{3}
+The integral along the upper semicircle vanishes as above. Then, there are singular points at $c_k = e^{i\pi/4}, e^{i3\pi/4}$. The residue at these points is
+\[
+	\Res_{z=c_k} \frac{1}{z^4 + 1}
+	= \frac{1}{4c_k^3}
+\]
+or, specifically,
+\begin{align*}
+	\Res_{z=e^{i \pi/4}} f(z) &= \frac{1}{4} e^{-i3\pi/4} \\
+	&= \frac{1}{4\sqrt{2}} (-1 - i) \\ 
+	\Res_{z=e^{i3\pi/4}} f(z) &= \frac{1}{4} e^{-i \pi/4} \\
+	&= \frac{1}{4\sqrt{2}} ( 1 - i) 
+\end{align*}
+so
+\[
+	\sum B_k = \frac{1}{4\sqrt{2}} (-2i) = \frac{-i}{2\sqrt{2}}
+\]
+Finally,
+\[
+	\int_0^\infty \frac{dx}{x^4 + 1} 
+	= \frac{1}{2} 2\pi i \sum B_k
+	= \pi i \cdot \frac{-i}{2\sqrt{2}}
+	= \frac{\pi}{2\sqrt{2}}
+\]
+
+\textbf{4}
+The limit
+\[
+	\lim_{R \to \infty} \frac{R^3}{(R^2 + 1)}{(R^2 + 4)}
+\]
+is zero, so the integral along the semicircular contour vanishes. Then, this function has simple poles at $z = i, 2i$; the residue at each is
+\begin{align*}
+	\Res_{z=i} \frac{z^2}{(z^2 + 1)(z^2 + 4)}
+	&= \frac{z^2}{(z+i)(z^2 + 4)} \Big|_{z=i} \\
+	&= \frac{-1}{(2i)(3)} \\
+	&= \frac{i}{6} \\
+	\Res_{z=2i} \frac{z^2}{(z^2 + 1)(z^2 + 4)}
+	&= \frac{z^2}{(z^2+1)(z + 2i)} \Big|_{z=2i} \\
+	&= \frac{-4}{(-3)(4i)} \\
+	&= -\frac{i}{3} 
+\end{align*}
+so the sum of the residues is $\sum B_k = -i/6$. Then, the improper integral is
+\[
+	\int_0^\infty \frac{x^2}{(x^2 + 1)(x^2 + 4)}
+	= \frac{1}{2} 2\pi i \frac{-i}{6}
+	= \frac{\pi}{6}
+\]
+
+\textbf{5}
+The limit
+\[
+	\lim_{R \to \infty} \frac{R^3}{(R^2 - 9)(R^2 - 4)^2} = 0
+\]
+allows us to neglect the semicircular contour. Then, the function has singular points at $z = 2i, 3i$. The first of these residues is
+\begin{align*}
+	B_1
+	&= \Res_{z = 2i} \frac{z^2}{(z^2 + 9)(z^2 + 4)^2} \\
+	&= \frac{d}{dz} \frac{z^2}{(z^2 + 9)(z + 2i)^2} \Big|_{z = 2i} \\
+	&= \frac{d}{dz} \frac{z^2}{(z^2 + 9)(z^2 + 4iz - 4)}  \Big|_{z = 2i} \\
+	&= \frac{d}{dz} \frac{z^2}{z^4 + 4iz^3 + 5z^2 + 36iz - 36} \Big|_{z = 2i} \\
+	&= \frac{2z(z^2 + 9)(z + 2i)^2 - z^2(4z^3 + 12iz^2 + 10z + 36i)}
+		{(z^2 + 9)^2(z + 2i)^4} \Big|_{z = 2i} \\
+	&= \frac{4i(5)(-16) - (-4)(-32i - 48i + 20i + 36i)}{(25)(256)} \\
+	&= \frac{-320i - 96i}{6400} \\
+	&= \frac{-13i}{200}
+\end{align*}
+and the second is
+\begin{align*}
+	B_2
+	&= \Res_{z = 3i} \frac{z^2}{(z^2 + 9)(z^2 + 4)^2} \\
+	&= \frac{z^2}{(z + 3i)(z^2 + 4)^2} \Big|_{z = 3i} \\
+	&= \frac{-9}{(6i)(-5)^2} \\
+	&= \frac{12i}{200}
+\end{align*}
+so this integral is
+\[
+	\int_0^\infty \frac{x^2}{(x^2 + 9)(x^2 + 4)^2}
+	= \pi i \cdot \frac{-i}{200}
+	= \frac{\pi}{200}
+\]
+
+\textbf{6}
+The function
+\[
+	f(z) = \frac{1}{z^2 + 2z + 2}
+\]
+has simple poles at $z = -1 \pm i$. The residue at the top point is
+\[
+	B
+	= \Res_{z = -1+i} \frac{1}{z^2 + 2z + 2}
+	= \frac{1}{2(-1 + i) + 2} 
+	= \frac{1}{2i}
+\]
+so the principal value of the integral is
+\[
+	\text{P.V.} \int_{-\infty}^\infty \frac{dx}{x^2 + 2x + 2}
+	= 2\pi i \cdot \frac{1}{2i}
+	= \pi
+\]
+
+\end{document}
