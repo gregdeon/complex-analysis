@@ -154,4 +154,62 @@ so
 	\int_0^\infty \frac{x^2}{x^6 + 1} = \frac{\pi}{6}
 \]
 
+
+\clearpage
+\section{Frame 80 -- Improper Integrals from Fourier Analysis}
+In this section, we will look at integrals of the form
+\[
+	\int_{-\infty}^\infty f(x) \sin ax~dx
+\]
+and
+\[
+	\int_{-\infty}^\infty f(x) \cos ax~dx
+\]
+where $f(x) = p(x)/q(x)$ is a rational function with no poles on the real axis, but at least one above it.
+
+Note that we can't apply the process from the previous section directly, since
+\[
+	|\sin az|^2 = \sin^2 ax + \sinh^2 ay
+\]
+is unbounded as $y \to \infty$.
+
+\subsection{Example}
+Consider the integral
+\[
+	\int_{-\infty}^\infty \frac{\cos 3x}{(x^2 + 1)^2} dx = \frac{2\pi}{e^3}
+\]
+We can begin by defining the function
+\[
+	f(z) = \frac{1}{(z^2 + 1)^2}
+\]
+and using the regular semicircular contour from $-R$ to $+R$. Since $f(z)$ only has a single pole in the upper half-plane (at $z = i$), as long as $R > 1$, we can write
+\[
+	\int_{-R}^R \frac{e^{i3x}}{(x^2 + 1)^2}dx 
+	= 2\pi i \Res_{z=i} [f(z) e^{i3z}]
+	- \int_{C_R} f(z) e^{i3z} dz
+\]
+Now, this pole at $z=i$ is a second-order pole, so
+\begin{align*}
+	B
+	&= \frac{d}{dz} \frac{e^{i3z}}{(z + i)^2} \Big|_{z=i} \\
+	&= \frac{3ie^{3iz} (z+i)^2 - 2e^{3iz}(z+i)}{(z+i)^4} \Big|_{z=i} \\
+	&= \frac{e^{3iz} [3iz - 5]}{(z + i)^3} \Big|_{z=i} \\
+	&= \frac{-8e^{-3}}{(2i)^3} \\
+	&= \frac{1}{ie^3}
+\end{align*}
+
+Next, the integral on the semicircle satisfies
+\begin{align*}
+	\left| \int_{C_R} f(z) e^{i3z} \right|
+	&\le \pi R \cdot \frac{|e^{-3y}|}{(R^2 - 1)^2} \\
+	&\le \pi R \cdot \frac{1}{(R^2 - 1)^2}
+\end{align*}
+and this vanishes as $R$ tends to infinity. Thus, equating real parts of the integral formula,
+\[
+	\lim_{R \to \infty} \int_{-R}^R \frac{\cos 3x}{(x^2 + 1)^2}
+	= 2\pi i \frac{1}{ie^3}
+	= \frac{2\pi}{e^3}
+\]
+
+
 \end{document}
