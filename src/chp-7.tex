@@ -93,4 +93,65 @@ then the following three equations hold (the latter two if $f$ is even):
 \end{align*}
 
 
+\clearpage
+\section{Frame 79 -- Example}
+This section will show a sample integral that can be calculated using the method from the previous section.
+
+The goal of this example is to calculate
+\[
+	\int_{0}^\infty \frac{x^2}{x^6 + 1}
+\]
+To do this, we can define 
+\[
+	f(z) = \frac{z^2}{z^6 + 1}
+\]
+and note that this has isolated singularities at the sixth roots of $-1$, or
+\[
+	c_k = e^{i (1 + 2k) \pi/6}
+\]
+Three of these roots lie on the upper half-plane, at
+\begin{align*}
+	c_0 &= e^{i\pi/6} \\
+	c_1 &= e^{i\pi/2} = i \\
+	c_2 &= e^{i5\pi/6}
+\end{align*}
+We can find the residue at these three points through the formula
+\[
+	B_k 
+	= \Res_{z=c_k} \frac{z^2}{z^6 + 1}
+	= \frac{z^2}{6z^5} \Big|_{z=c_k}
+	= \frac{1}{6z^3} \Big|_{z=c_k}
+	= \frac{1}{6c_k^3}
+\]
+so we can write
+\[
+	2\pi i \sum_{k=1}^n B_k
+	= 2\pi i \left( \frac{1}{6i} - \frac{1}{6i} + \frac{1}{6i} \right)
+	= \frac{\pi}{3}
+\]
+and, as long as $R > 1$,
+\[
+	\int_{-R}^R f(x)~dx = \frac{\pi}{3} - \int_{C_R} f(z)~dz
+\]
+
+Next, when $|z| = R$, we can write
+\[
+	\frac{|z^2|}{|z^6 + 1|} < \frac{R^2}{R^6 - 1}
+\]
+so 
+\[
+	\left| \int_{C_R} f(z)~dz \right| 
+	\le \frac{R^2}{R^6 - 1} \pi R
+	= \frac{R^3}{R^6 - 1}
+\]
+and, as $R \to \infty$, this approaches $0$. Thus,
+\[
+	\text{P.V.} \int_{-\infty}^\infty f(z)~dz
+	= \frac{\pi}{3}
+\]
+so
+\[
+	\int_0^\infty \frac{x^2}{x^6 + 1} = \frac{\pi}{6}
+\]
+
 \end{document}
