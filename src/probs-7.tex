@@ -150,4 +150,86 @@ so the principal value of the integral is
 	= \pi
 \]
 
+\clearpage
+\section{Frame 81 -- Fourier Integrals}
+\textbf{1}
+The function
+\[
+	f(z) = \frac{1}{(x^2 + a^2)(x^2 + b^2)}
+\]
+has singular poles at $z = \pm ia, \pm ib$. The residue of the function $f(z) e^{iz}$ at the upper two points is
+\begin{align*}
+	\Res_{z=ia} f(z) e^{iz}
+	&= \frac{e^{-a}}{2ia(b^2 - a^2)} \\
+	&= \frac{-e^{-a}}{2ia(a^2 - b^2)} \\
+	\Res_{z=ib} f(z) e^{iz}
+	&= \frac{e^{-b}}{(a^2 - b^2)2ib} \\
+\end{align*}
+and the integral along the semicircular contour vanishes, leaving
+\[
+	\int_{-\infty}^\infty f(x) \cos x~dx 
+	= \Re\left(2\pi i \cdot \frac{e^{-b}/b - e^{-a}/a}{2i(a^2 - b^2)}  \right)
+	= \frac{\pi}{a^2 - b^2} \left( \frac{e^{-b}}{b} - \frac{e^{-a}}{a} \right)
+\]
+
+\textbf{2}
+The function 
+\[
+	f(z) = \frac{1}{z^2 + 1}
+\]
+has a pole at $z = i$. The residue of $f(z) e^{iaz}$ here is
+\[
+	\Res_{z=i} \frac{e^{iaz}}{z^2 + 1}
+	= \frac{e^{-a}}{2i}
+\]
+so
+\[
+	\int_0^\infty \frac{\cos ax}{x^2 + 1} dx
+	= \Re\left( \pi i \cdot \frac{e^{-a}}{2i} \right)
+	= \frac{\pi}{2} e^{-a}
+\]
+
+\textbf{3}
+The function
+\[
+	f(z) = \frac{1}{(z^2 + b^2)^2} 
+\]
+has a singular point at $z = ib$. The residue of $f(z) e^{iaz}$ here is
+\begin{align*}
+	\Res_{z = ib} \frac{e^{iaz}}{(z^2 + b^2)^2}
+	&= \frac{d}{dz} \frac{e^{iaz}}{(z + ib)^2} \Big|_{z = ib} \\
+	&= \frac{e^{iaz} [ia (z + ib) - 2]}{(z + ib)^3} \Big|_{z = ib} \\
+	&= \frac{-2e^{-ab} (1 + ab)}{-8ib^3} \\
+	&= \frac{(1 + ab)e^{-ab}}{4ib^3}
+\end{align*}
+so
+\[
+	\int_0^\infty f(x) \cos ax~dx
+	= \Re \left( \pi i \cdot \frac{(1 + ab)e^{-ab}}{4ib^3} \right)
+	= \frac{\pi}{4b^3} (1 + ab)e^{-ab}
+\]
+
+\textbf{4}
+The function
+\[
+	f(z) = \frac{z}{z^2 + 3}
+\]
+tends to zero for large $|z|$. It has a singular point at $z = i\sqrt{3}$, where the residue of $f(z) e^{2iz}$ is
+\[
+	\Res_{z = i\sqrt{3}} \frac{z e^{2iz}}{z^2 + 3}
+	= \frac{z e^{2iz}}{z + i\sqrt{3}} \Big|_{z = i\sqrt{3}}
+	= \frac{i\sqrt{3} e^{-2\sqrt{3}}}{2i\sqrt{3}}
+	= \frac{e^{-2\sqrt{3}}}{2}
+\]
+so the integral evaluates to
+\[
+	\int_0^\infty \frac{x \sin 2x}{x^2 + 3}
+	= \Im \left( \pi i \cdot \frac{e^{-2\sqrt{3}}}{2} \right)
+	= \frac{\pi}{2} e^{-2\sqrt{3}}
+\]
+
+
+
+
+
 \end{document}
