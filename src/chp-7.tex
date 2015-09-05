@@ -298,5 +298,104 @@ and this tends to zero as $R \to \infty$, so the integral vanishes, leaving
 \]
 
 
+\clearpage
+\section{Frame 82 -- Indented Paths}
+\subsection{Main Theorem}
+This section will examine the use of indented paths to carry out some more integrals. The following theorem will be useful here:
+
+\textit{Theorem: Suppose that $f$ is a function with a simple pole at $z = x_0$ on the real axis with a Laurent series that is valid for $0 < |z - x_0| < R_2$ and with a residue of $B_0$. Then, if $C_\rho$ is the clockwise upper semicircle
+\[
+	|z - x_0| = \rho	\quad	(\rho < R_2)
+\]
+then
+\[
+	\lim_{\rho \to 0} \int_{C_\rho} f(z)~dz = -B_0 \pi i
+\]}
+
+To prove this, we can write $f$ as
+\[
+	f(z) = g(z) + \frac{B_0}{z - x_0}
+\]
+where
+\[
+	g(z) = \sum_{n=0}^\infty a_n (z - x_0)^n
+\]
+Then, we can write the integral as
+\[
+	\int_{C_\rho} f(z) = \int_{C_\rho} g(z) + B_0 \int_{C_\rho} \frac{1}{z - x_0}
+\]
+and look at these two terms separately. First, $g(z)$ is continuous, so it must be bounded on some disk centered at $\rho_0$ (so that $|g(z)| \le M$). This allows us to write
+\[
+	\left| \int_{C_\rho} g(z)~dz \right|
+	\le ML
+	= M \pi \rho
+\]
+which vanishes as $\rho \to 0$. For the second term, we can write out the contour as the equation
+\[
+	z = x_0 + \rho e^{i\theta}
+\]
+so that
+\[
+	\int_{C_\rho} \frac{dz}{z - x_0}
+	= -\int_0^\pi \frac{1}{\rho e^{i\theta}} \rho i e^{i\theta}~d\theta
+	= -i \int_0^\pi d\theta
+	= -i\pi
+\]
+so
+\[
+	\int_{C_\rho} f(z)~dz = -B_0 \pi i
+\]
+
+\subsection{Example}
+We can evaluate the integral
+\[
+	\int_0^\infty \frac{\sin x}{x}~dx
+\]
+by using the following contour:
+\begin{itemize}
+	\item $L_1$, the real axis from $\rho$ to $R$.
+	\item $C_R$, a positively-oriented semicircle from $R$ to $-R$;
+	\item $L_2$, the real axis from $-R$ to $-\rho$;
+	\item $C_\rho$, a negatively-oriented semicircle from $-\rho$ to $\rho$;
+\end{itemize}
+We do this to avoid the singularity at $z = 0$ in $e^{iz} / z$. Using the Cauchy-Goursat theorem, we can write
+\[
+	\int_{C_R}      \frac{e^{iz}}{z}~dz
+	+ \int_{L_1}    \frac{e^{iz}}{z}~dz
+	+ \int_{C_\rho} \frac{e^{iz}}{z}~dz
+	+ \int_{L_2}    \frac{e^{iz}}{z}~dz
+\]
+Now, since we can write $L_1$ as
+\[
+	z = re^{i0}	\quad (\rho \le r \le R)
+\]
+and $-L_2$ as
+\[
+	z = re^{i\pi} = -r \quad (\rho \le r \le R)
+\]
+we can combine the integrals along the line segments into
+\[
+	\int_\rho^R \frac{e^{ir}}{r}~dr - \int_\rho^R \frac{e^{-ir}}{r}~dr
+	= 2i \int_{\rho}^R \frac{\sin r}{r}~dr
+\]
+ie:
+\[
+	2i \int_\rho^R \frac{\sin r}{r}~dr 
+	= - \int_{C_\rho} \frac{e^{iz}}{z}~dz
+	  - \int_{C_R}    \frac{e^{iz}}{z}~dz
+\]
+Now, according to the theorem above, since this function has a residue of $1$ at the origin, we can write
+\[
+	\lim_{\rho \to 0} \int_{C_\rho} \frac{e^{iz}}{z}~dz = -\pi i
+\]
+and, since $|1 / z| = 1 / R$, we know from Jordan's lemma that
+\[
+	\lim_{R \to \infty} \int_{C_R} \frac{e^{iz}}{z}~dz = 0
+\]
+so, applying these limits, we find that
+\[
+	\int_0^\infty \frac{\sin r}{r}~dr = \frac{1}{2i} -(-\pi i) = \frac{\pi}{2}
+\]
+
 
 \end{document}
